@@ -1,0 +1,1270 @@
+0000.000 (0) Opened log file at time: Wed, 30 Jun 2021 15:39:51 +0000 on http://wordpress
+0000.002 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.16.56 WP: 5.7.2 PHP: 7.3.21 (apache2handler, Windows NT LAPTOP-CLR0P7V8 10.0 build 19042 (Windows 10) AMD64) MySQL: 5.7.31 WPLANG: fr_FR Server: Apache/2.4.46 (Win64) PHP/7.3.21 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 39M | 6M) multisite: N openssl: OpenSSL 1.1.1g  21 Apr 2020 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.003 (0) Free space on disk containing Updraft's temporary directory: 11431.4 MB
+0000.011 (0) Tasks: Backup files: 1 (schedule: manual) Backup DB: 1 (schedule: manual)
+0000.014 (0) Requesting semaphore lock (fd) (apparently not via scheduler)
+0000.015 (0) Set semaphore last lock (fd) time to 2021-06-30 15:39:51
+0000.016 (0) Semaphore lock (fd) complete
+0000.019 (0) Backup run: resumption=0, nonce=2ad77de19924, file_nonce=2ad77de19924 begun at=1625067591 (0s ago), job type=backup
+0000.021 (0) Scheduling a resumption (1) after 300 seconds (1625067891) in case this run gets aborted
+0000.024 (0) Checking if we have a zip executable available
+0000.025 (0) Creation of backups of directories: beginning
+0000.029 (0) Beginning creation of dump of plugins (split every: 300 MB)
+0010.487 (0) Total entities for the zip file: 3132 directories, 17374 files (0 skipped as non-modified), 231.7 MB
+0010.498 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0 MB, 1 (1) files added so far); re-opening (prior size: 0 KB)
+0010.619 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 100 files added (on-disk size: 592.7 KB)
+0010.683 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 200 files added (on-disk size: 592.7 KB)
+0010.812 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 300 files added (on-disk size: 592.7 KB)
+0010.962 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 400 files added (on-disk size: 592.7 KB)
+0011.059 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 500 files added (on-disk size: 592.7 KB)
+0011.167 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 600 files added (on-disk size: 592.7 KB)
+0011.267 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 700 files added (on-disk size: 592.7 KB)
+0011.406 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 800 files added (on-disk size: 592.7 KB)
+0011.557 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 900 files added (on-disk size: 592.7 KB)
+0011.831 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 1000 files added (on-disk size: 592.7 KB)
+0011.835 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (15.5 MB, 17374 files batched, 1001 (1002) added so far); re-opening (prior size: 592.7 KB)
+0013.040 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 1100 files added (on-disk size: 4542.3 KB)
+0013.167 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 1200 files added (on-disk size: 4542.3 KB)
+0013.279 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 1300 files added (on-disk size: 4542.3 KB)
+0013.429 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 1400 files added (on-disk size: 4542.3 KB)
+0013.543 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 1500 files added (on-disk size: 4542.3 KB)
+0013.651 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 1600 files added (on-disk size: 4542.3 KB)
+0013.761 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 1700 files added (on-disk size: 4542.3 KB)
+0013.867 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 1800 files added (on-disk size: 4542.3 KB)
+0013.964 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 1900 files added (on-disk size: 4542.3 KB)
+0014.053 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 2000 files added (on-disk size: 4542.3 KB)
+0014.056 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (6.6 MB, 17374 files batched, 1001 (2003) added so far); re-opening (prior size: 4542.3 KB)
+0014.802 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 2100 files added (on-disk size: 6831.4 KB)
+0014.888 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 2200 files added (on-disk size: 6831.4 KB)
+0015.006 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 2300 files added (on-disk size: 6831.4 KB)
+0015.153 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 2400 files added (on-disk size: 6831.4 KB)
+0015.524 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 2500 files added (on-disk size: 6831.4 KB)
+0015.722 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 2600 files added (on-disk size: 6831.4 KB)
+0015.848 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 2700 files added (on-disk size: 6831.4 KB)
+0015.965 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 2800 files added (on-disk size: 6831.4 KB)
+0016.104 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 2900 files added (on-disk size: 6831.4 KB)
+0016.248 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 3000 files added (on-disk size: 6831.4 KB)
+0016.254 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (22.8 MB, 17374 files batched, 1001 (3004) added so far); re-opening (prior size: 6831.4 KB)
+0017.766 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 3100 files added (on-disk size: 13323.3 KB)
+0017.844 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 3200 files added (on-disk size: 13323.3 KB)
+0017.963 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 3300 files added (on-disk size: 13323.3 KB)
+0018.079 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 3400 files added (on-disk size: 13323.3 KB)
+0018.441 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 3500 files added (on-disk size: 13323.3 KB)
+0018.660 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 3600 files added (on-disk size: 13323.3 KB)
+0018.789 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 3700 files added (on-disk size: 13323.3 KB)
+0018.918 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 3800 files added (on-disk size: 13323.3 KB)
+0019.046 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 3900 files added (on-disk size: 13323.3 KB)
+0019.199 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 4000 files added (on-disk size: 13323.3 KB)
+0019.204 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (20.6 MB, 17374 files batched, 1001 (4005) added so far); re-opening (prior size: 13323.3 KB)
+0020.394 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 4100 files added (on-disk size: 22333.3 KB)
+0020.530 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 4200 files added (on-disk size: 22333.3 KB)
+0020.660 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 4300 files added (on-disk size: 22333.3 KB)
+0020.874 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 4400 files added (on-disk size: 22333.3 KB)
+0020.950 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 4500 files added (on-disk size: 22333.3 KB)
+0021.080 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 4600 files added (on-disk size: 22333.3 KB)
+0021.234 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 4700 files added (on-disk size: 22333.3 KB)
+0021.364 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 4800 files added (on-disk size: 22333.3 KB)
+0021.480 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 4900 files added (on-disk size: 22333.3 KB)
+0021.526 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 5000 files added (on-disk size: 22333.3 KB)
+0021.529 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (13.3 MB, 17374 files batched, 1001 (5006) added so far); re-opening (prior size: 22333.3 KB)
+0022.574 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 5100 files added (on-disk size: 27001.7 KB)
+0022.693 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 5200 files added (on-disk size: 27001.7 KB)
+0022.817 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 5300 files added (on-disk size: 27001.7 KB)
+0022.969 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 5400 files added (on-disk size: 27001.7 KB)
+0023.072 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 5500 files added (on-disk size: 27001.7 KB)
+0023.210 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 5600 files added (on-disk size: 27001.7 KB)
+0023.402 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 5700 files added (on-disk size: 27001.7 KB)
+0023.599 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 5800 files added (on-disk size: 27001.7 KB)
+0023.790 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 5900 files added (on-disk size: 27001.7 KB)
+0023.902 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 6000 files added (on-disk size: 27001.7 KB)
+0023.911 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (16.3 MB, 17374 files batched, 1001 (6007) added so far); re-opening (prior size: 27001.7 KB)
+0024.940 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 6100 files added (on-disk size: 36464.2 KB)
+0025.134 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 6200 files added (on-disk size: 36464.2 KB)
+0025.233 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 6300 files added (on-disk size: 36464.2 KB)
+0025.373 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 6400 files added (on-disk size: 36464.2 KB)
+0025.484 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 6500 files added (on-disk size: 36464.2 KB)
+0025.609 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 6600 files added (on-disk size: 36464.2 KB)
+0025.734 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 6700 files added (on-disk size: 36464.2 KB)
+0025.843 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 6800 files added (on-disk size: 36464.2 KB)
+0025.905 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 6900 files added (on-disk size: 36464.2 KB)
+0025.973 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 7000 files added (on-disk size: 36464.2 KB)
+0025.983 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (7.8 MB, 17374 files batched, 1001 (7008) added so far); re-opening (prior size: 36464.2 KB)
+0027.054 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 7100 files added (on-disk size: 39517.7 KB)
+0027.174 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 7200 files added (on-disk size: 39517.7 KB)
+0027.266 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 7300 files added (on-disk size: 39517.7 KB)
+0027.436 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 7400 files added (on-disk size: 39517.7 KB)
+0027.576 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 7500 files added (on-disk size: 39517.7 KB)
+0027.687 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 7600 files added (on-disk size: 39517.7 KB)
+0027.794 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 7700 files added (on-disk size: 39517.7 KB)
+0027.882 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 7800 files added (on-disk size: 39517.7 KB)
+0028.038 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 7900 files added (on-disk size: 39517.7 KB)
+0028.147 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 8000 files added (on-disk size: 39517.7 KB)
+0028.158 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (22 MB, 17374 files batched, 1001 (8009) added so far); re-opening (prior size: 39517.7 KB)
+0030.055 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 8100 files added (on-disk size: 46262.6 KB)
+0030.163 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 8200 files added (on-disk size: 46262.6 KB)
+0030.314 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 8300 files added (on-disk size: 46262.6 KB)
+0030.406 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 8400 files added (on-disk size: 46262.6 KB)
+0030.512 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 8500 files added (on-disk size: 46262.6 KB)
+0030.689 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 8600 files added (on-disk size: 46262.6 KB)
+0030.880 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 8700 files added (on-disk size: 46262.6 KB)
+0031.035 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 8800 files added (on-disk size: 46262.6 KB)
+0031.247 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 8900 files added (on-disk size: 46262.6 KB)
+0031.560 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 9000 files added (on-disk size: 46262.6 KB)
+0031.582 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (11.7 MB, 17374 files batched, 1001 (9010) added so far); re-opening (prior size: 46262.6 KB)
+0032.768 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 9100 files added (on-disk size: 51048.4 KB)
+0032.977 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 9200 files added (on-disk size: 51048.4 KB)
+0033.183 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 9300 files added (on-disk size: 51048.4 KB)
+0033.456 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 9400 files added (on-disk size: 51048.4 KB)
+0033.665 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 9500 files added (on-disk size: 51048.4 KB)
+0033.863 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 9600 files added (on-disk size: 51048.4 KB)
+0034.081 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 9700 files added (on-disk size: 51048.4 KB)
+0034.473 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 9800 files added (on-disk size: 51048.4 KB)
+0034.716 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 9900 files added (on-disk size: 51048.4 KB)
+0034.918 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 10000 files added (on-disk size: 51048.4 KB)
+0034.936 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (10.9 MB, 17374 files batched, 1001 (10011) added so far); re-opening (prior size: 51048.4 KB)
+0036.082 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 10100 files added (on-disk size: 54263.1 KB)
+0036.293 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 10200 files added (on-disk size: 54263.1 KB)
+0036.484 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 10300 files added (on-disk size: 54263.1 KB)
+0036.680 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 10400 files added (on-disk size: 54263.1 KB)
+0036.873 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 10500 files added (on-disk size: 54263.1 KB)
+0037.072 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 10600 files added (on-disk size: 54263.1 KB)
+0037.265 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 10700 files added (on-disk size: 54263.1 KB)
+0037.456 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 10800 files added (on-disk size: 54263.1 KB)
+0037.641 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 10900 files added (on-disk size: 54263.1 KB)
+0037.825 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 11000 files added (on-disk size: 54263.1 KB)
+0037.851 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (2.5 MB, 17374 files batched, 1001 (11012) added so far); re-opening (prior size: 54263.1 KB)
+0038.825 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 11100 files added (on-disk size: 55562.5 KB)
+0039.347 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 11200 files added (on-disk size: 55562.5 KB)
+0039.529 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 11300 files added (on-disk size: 55562.5 KB)
+0039.734 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 11400 files added (on-disk size: 55562.5 KB)
+0039.941 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 11500 files added (on-disk size: 55562.5 KB)
+0040.102 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 11600 files added (on-disk size: 55562.5 KB)
+0040.275 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 11700 files added (on-disk size: 55562.5 KB)
+0040.462 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 11800 files added (on-disk size: 55562.5 KB)
+0040.644 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 11900 files added (on-disk size: 55562.5 KB)
+0040.808 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 12000 files added (on-disk size: 55562.5 KB)
+0040.827 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (7.1 MB, 17374 files batched, 1001 (12013) added so far); re-opening (prior size: 55562.5 KB)
+0041.718 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 12100 files added (on-disk size: 57777.2 KB)
+0041.880 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 12200 files added (on-disk size: 57777.2 KB)
+0042.219 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 12300 files added (on-disk size: 57777.2 KB)
+0042.418 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 12400 files added (on-disk size: 57777.2 KB)
+0042.632 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 12500 files added (on-disk size: 57777.2 KB)
+0042.883 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 12600 files added (on-disk size: 57777.2 KB)
+0043.057 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 12700 files added (on-disk size: 57777.2 KB)
+0043.235 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 12800 files added (on-disk size: 57777.2 KB)
+0043.561 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 12900 files added (on-disk size: 57777.2 KB)
+0043.811 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 13000 files added (on-disk size: 57777.2 KB)
+0043.847 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (14.2 MB, 17374 files batched, 1001 (13014) added so far); re-opening (prior size: 57777.2 KB)
+0047.167 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 13100 files added (on-disk size: 63021.7 KB)
+0047.415 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 13200 files added (on-disk size: 63021.7 KB)
+0047.652 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 13300 files added (on-disk size: 63021.7 KB)
+0047.873 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 13400 files added (on-disk size: 63021.7 KB)
+0048.128 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 13500 files added (on-disk size: 63021.7 KB)
+0048.314 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 13600 files added (on-disk size: 63021.7 KB)
+0048.509 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 13700 files added (on-disk size: 63021.7 KB)
+0048.677 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 13800 files added (on-disk size: 63021.7 KB)
+0049.199 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 13900 files added (on-disk size: 63021.7 KB)
+0049.401 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (12.9 MB, 958 (13972) files added so far); re-opening (prior size: 63021.7 KB)
+0051.141 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 14000 files added (on-disk size: 66834 KB)
+0051.512 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 14100 files added (on-disk size: 66834 KB)
+0051.684 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 14200 files added (on-disk size: 66834 KB)
+0051.859 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 14300 files added (on-disk size: 66834 KB)
+0052.052 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 14400 files added (on-disk size: 66834 KB)
+0052.273 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 14500 files added (on-disk size: 66834 KB)
+0052.471 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 14600 files added (on-disk size: 66834 KB)
+0052.685 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 14700 files added (on-disk size: 66834 KB)
+0052.902 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 14800 files added (on-disk size: 66834 KB)
+0053.187 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 14900 files added (on-disk size: 66834 KB)
+0053.251 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (10.9 MB, 17374 files batched, 1001 (14973) added so far); re-opening (prior size: 66834 KB)
+0054.171 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 15000 files added (on-disk size: 73659 KB)
+0054.369 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 15100 files added (on-disk size: 73659 KB)
+0054.483 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 15200 files added (on-disk size: 73659 KB)
+0054.712 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 15300 files added (on-disk size: 73659 KB)
+0054.885 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 15400 files added (on-disk size: 73659 KB)
+0055.109 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 15500 files added (on-disk size: 73659 KB)
+0055.713 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 15600 files added (on-disk size: 73659 KB)
+0055.908 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 15700 files added (on-disk size: 73659 KB)
+0056.114 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 15800 files added (on-disk size: 73659 KB)
+0056.305 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 15900 files added (on-disk size: 73659 KB)
+0056.402 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (18.4 MB, 974 (15947) files added so far); re-opening (prior size: 73659 KB)
+0058.051 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 16000 files added (on-disk size: 78346.4 KB)
+0058.270 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 16100 files added (on-disk size: 78346.4 KB)
+0058.490 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 16200 files added (on-disk size: 78346.4 KB)
+0058.764 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 16300 files added (on-disk size: 78346.4 KB)
+0058.996 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 16400 files added (on-disk size: 78346.4 KB)
+0059.203 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 16500 files added (on-disk size: 78346.4 KB)
+0059.396 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 16600 files added (on-disk size: 78346.4 KB)
+0059.634 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 16700 files added (on-disk size: 78346.4 KB)
+0059.938 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 16800 files added (on-disk size: 78346.4 KB)
+0060.162 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 16900 files added (on-disk size: 78346.4 KB)
+0060.268 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (15.4 MB, 17374 files batched, 1001 (16948) added so far); re-opening (prior size: 78346.4 KB)
+0061.783 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 17000 files added (on-disk size: 84890.3 KB)
+0061.947 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 17100 files added (on-disk size: 84890.3 KB)
+0062.159 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 17200 files added (on-disk size: 84890.3 KB)
+0062.365 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip.tmp: 17300 files added (on-disk size: 84890.3 KB)
+0065.023 (0) Created plugins zip (0) - 85847.2 KB in 65 s (1320.9 KB/s) (sha1: 3f9b2e6eedcafe4a84d681254eb5162fd6e55e3a, sha256: 022dd6205a108b0057a3c23047c207a9dfa1f3f35ea26084e85b1a9e86ea9fb7)
+0065.027 (0) Beginning creation of dump of themes (split every: 300 MB)
+0065.980 (0) Total entities for the zip file: 604 directories, 3145 files (0 skipped as non-modified), 68.4 MB
+0066.126 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0066.298 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 200 files added (on-disk size: 0 KB)
+0066.456 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 300 files added (on-disk size: 0 KB)
+0066.579 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 400 files added (on-disk size: 0 KB)
+0066.760 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 500 files added (on-disk size: 0 KB)
+0066.848 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 600 files added (on-disk size: 0 KB)
+0067.005 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 700 files added (on-disk size: 0 KB)
+0067.136 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 800 files added (on-disk size: 0 KB)
+0067.271 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 900 files added (on-disk size: 0 KB)
+0067.377 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 1000 files added (on-disk size: 0 KB)
+0067.379 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (24 MB, 3145 files batched, 1001 (1001) added so far); re-opening (prior size: 0 KB)
+0068.496 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 1100 files added (on-disk size: 15456.3 KB)
+0068.599 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 1200 files added (on-disk size: 15456.3 KB)
+0068.728 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 1300 files added (on-disk size: 15456.3 KB)
+0068.871 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 1400 files added (on-disk size: 15456.3 KB)
+0069.015 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 1500 files added (on-disk size: 15456.3 KB)
+0069.094 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 1600 files added (on-disk size: 15456.3 KB)
+0069.138 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 1700 files added (on-disk size: 15456.3 KB)
+0069.259 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 1800 files added (on-disk size: 15456.3 KB)
+0069.353 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 1900 files added (on-disk size: 15456.3 KB)
+0069.507 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 2000 files added (on-disk size: 15456.3 KB)
+0069.511 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (21.8 MB, 3145 files batched, 1001 (2002) added so far); re-opening (prior size: 15456.3 KB)
+0070.883 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 2100 files added (on-disk size: 24633.9 KB)
+0070.994 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 2200 files added (on-disk size: 24633.9 KB)
+0071.142 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 2300 files added (on-disk size: 24633.9 KB)
+0071.283 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 2400 files added (on-disk size: 24633.9 KB)
+0071.517 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 2500 files added (on-disk size: 24633.9 KB)
+0071.657 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 2600 files added (on-disk size: 24633.9 KB)
+0071.750 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 2700 files added (on-disk size: 24633.9 KB)
+0071.871 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 2800 files added (on-disk size: 24633.9 KB)
+0071.955 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 2900 files added (on-disk size: 24633.9 KB)
+0072.112 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 3000 files added (on-disk size: 24633.9 KB)
+0072.115 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (21.6 MB, 3145 files batched, 1001 (3003) added so far); re-opening (prior size: 24633.9 KB)
+0073.308 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip.tmp: 3100 files added (on-disk size: 36232.8 KB)
+0073.834 (0) Created themes zip (0) - 36735.4 KB in 8.8 s (4172.7 KB/s) (sha1: 768f882b71d250d08c6aa0916fce95bc40bf3fab, sha256: 712b9255006bc19d263eac95fa3e8333d7036719883c5bfb043d89629337de6e)
+0073.838 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0073.839 (0) Looking for candidates to backup in: C:\wamp64\www\wordpress/wp-content/uploads
+0073.840 (0) finding files: 2021: adding to list (1)
+0073.841 (0) finding files: astra-sites: adding to list (2)
+0073.842 (0) finding files: bws-custom-code: adding to list (3)
+0073.843 (0) finding files: elementor: adding to list (4)
+0073.843 (0) finding files: essential-addons-elementor: adding to list (5)
+0073.844 (0) finding files: hurrytimer: adding to list (6)
+0073.845 (0) finding files: ithemes-security: adding to list (7)
+0073.846 (0) finding files: wc-logs: adding to list (8)
+0073.846 (0) finding files: woocommerce-placeholder-100x100.png: adding to list (9)
+0073.847 (0) finding files: woocommerce-placeholder-1024x1024.png: adding to list (10)
+0073.848 (0) finding files: woocommerce-placeholder-150x150.png: adding to list (11)
+0073.849 (0) finding files: woocommerce-placeholder-300x300.png: adding to list (12)
+0073.850 (0) finding files: woocommerce-placeholder-350x200.png: adding to list (13)
+0073.851 (0) finding files: woocommerce-placeholder-538x280.png: adding to list (14)
+0073.852 (0) finding files: woocommerce-placeholder-540x300.png: adding to list (15)
+0073.853 (0) finding files: woocommerce-placeholder-600x600.png: adding to list (16)
+0073.854 (0) finding files: woocommerce-placeholder-768x768.png: adding to list (17)
+0073.855 (0) finding files: woocommerce-placeholder-790x400.png: adding to list (18)
+0073.857 (0) finding files: woocommerce-placeholder.png: adding to list (19)
+0073.858 (0) finding files: woocommerce_uploads: adding to list (20)
+0073.858 (0) finding files: wpcf7_captcha: adding to list (21)
+0073.860 (0) finding files: wpcf7_uploads: adding to list (22)
+0073.861 (0) finding files: wpforms: adding to list (23)
+0073.862 (0) Beginning creation of dump of uploads (split every: 300 MB)
+0074.052 (0) Total entities for the zip file: 20 directories, 686 files (0 skipped as non-modified), 37.7 MB
+0074.317 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+0074.554 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip.tmp: 200 files added (on-disk size: 0 KB)
+0074.826 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip.tmp: 300 files added (on-disk size: 0 KB)
+0075.081 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip.tmp: 400 files added (on-disk size: 0 KB)
+0075.247 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 25 MB added on this batch (25.2 MB, 686 files batched, 462 (462) added so far); re-opening (prior size: 0 KB)
+0075.379 (0) A useful amount of data was added after this amount of zip processing: 2 s (normalised: 2 s, rate: 13046.8 KB/s)
+0075.380 (0) Performance is good - will increase the amount of data we attempt to batch (time=1.9786109924316, normalised_time=1.9621674062106, max_time=75.379216909409, data points known=1, old_max_bytes=26214400, new_max_bytes=209715200)
+0075.478 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip.tmp: 500 files added (on-disk size: 25890.1 KB)
+0075.710 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip.tmp: 600 files added (on-disk size: 25890.1 KB)
+0076.806 (0) Created uploads zip (0) - 36559.4 KB in 2.9 s (12447.4 KB/s) (sha1: 4b72445fb301cdda33a5f7b2e9c22db26d4fbc6e, sha256: 2c48960803a0a6311f525d8ab0cd5f9c5107561708920154a11e59a9c5d65687)
+0076.810 (0) Beginning backup of other directories found in the content directory (index: 0)
+0076.811 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0076.812 (0) Looking for candidates to backup in: C:\wamp64\www\wordpress/wp-content
+0076.813 (0) finding files: ai1wm-backups: skipping: excluded by options (glob)
+0076.814 (0) finding files: aiowps_backups: skipping: excluded by options (glob)
+0076.815 (0) finding files: gallery: adding to list (1)
+0076.815 (0) finding files: index.php: adding to list (2)
+0076.816 (0) finding files: languages: adding to list (3)
+0076.817 (0) finding files: logs: adding to list (4)
+0076.818 (0) finding files: ngg: adding to list (5)
+0076.819 (0) finding files: plugins: skipping: this is the plugins directory
+0076.819 (0) finding files: themes: skipping: this is the themes directory
+0076.820 (0) finding files: updraft: skipping: this is the updraft directory
+0076.821 (0) finding files: upgrade: skipping: excluded by options
+0076.822 (0) finding files: uploads: skipping: this is the uploads directory
+0076.954 (0) Total entities for the zip file: 53 directories, 477 files (0 skipped as non-modified), 12.4 MB
+0077.064 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip.tmp: 100 files added (on-disk size: 0 KB)
+0077.143 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip.tmp: 200 files added (on-disk size: 0 KB)
+0077.242 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip.tmp: 300 files added (on-disk size: 0 KB)
+0077.342 (0) Zip: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip.tmp: 400 files added (on-disk size: 0 KB)
+0078.275 (0) Created others zip (0) - 5671.9 KB in 1.5 s (3911.1 KB/s) (sha1: b1076ccf4ef5218486a5f5dabec18b0fd370aae6, sha256: 29c40d6cdf027e109575112c0bf17a12eb717edc7497c31bd7fc134063fec795)
+0078.284 (0) Saving backup status to database (elements: 8)
+0078.288 (0) Beginning creation of database dump (WordPress DB)
+0078.289 (0) SQL compatibility mode is: NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER
+0078.312 (0) Table wp_options: Total expected rows (approximate): 964
+0078.412 (0) Table wp_options: Rows added in this batch (next record: 4812): 958 (uncompressed bytes in this segment=3871646) in 0.10 seconds
+0078.418 (0) Table wp_options: finishing file(s) (2, 320.9 KB)
+0078.422 (0) Table wp_users: Total expected rows (approximate): 2
+0078.424 (0) Table wp_users: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=1573) in 0.00 seconds
+0078.430 (0) Table wp_users: finishing file(s) (2, 0.7 KB)
+0078.435 (0) Table wp_usermeta: Total expected rows (approximate): 126
+0078.441 (0) Table wp_usermeta: Rows added in this batch (next record: 160): 126 (uncompressed bytes in this segment=18056) in 0.01 seconds
+0078.448 (0) Table wp_usermeta: finishing file(s) (2, 4.6 KB)
+0078.451 (0) Table wp_actionscheduler_actions: Total expected rows (approximate): 49
+0078.458 (0) Table wp_actionscheduler_actions: Rows added in this batch (next record: 143): 49 (uncompressed bytes in this segment=18801) in 0.01 seconds
+0078.465 (0) Table wp_actionscheduler_actions: finishing file(s) (2, 2.4 KB)
+0078.470 (0) Table wp_actionscheduler_claims: Total expected rows (approximate): 0
+0078.472 (0) Table wp_actionscheduler_claims: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=635) in 0.00 seconds
+0078.478 (0) Table wp_actionscheduler_claims: finishing file(s) (2, 0.4 KB)
+0078.482 (0) Table wp_actionscheduler_groups: Total expected rows (approximate): 5
+0078.484 (0) Table wp_actionscheduler_groups: Rows added in this batch (next record: 5): 5 (uncompressed bytes in this segment=790) in 0.00 seconds
+0078.490 (0) Table wp_actionscheduler_groups: finishing file(s) (2, 0.5 KB)
+0078.494 (0) Table wp_actionscheduler_logs: Total expected rows (approximate): 141
+0078.503 (0) Table wp_actionscheduler_logs: Rows added in this batch (next record: 141): 141 (uncompressed bytes in this segment=12942) in 0.01 seconds
+0078.509 (0) Table wp_actionscheduler_logs: finishing file(s) (2, 2 KB)
+0078.513 (0) Table wp_commentmeta: Total expected rows (approximate): 0
+0078.515 (0) Table wp_commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=685) in 0.00 seconds
+0078.521 (0) Table wp_commentmeta: finishing file(s) (2, 0.4 KB)
+0078.524 (0) Table wp_comments: Total expected rows (approximate): 15
+0078.528 (0) Table wp_comments: Rows added in this batch (next record: 15): 15 (uncompressed bytes in this segment=5723) in 0.00 seconds
+0078.534 (0) Table wp_comments: finishing file(s) (2, 1.4 KB)
+0078.538 (0) Table wp_itsec_bans: Total expected rows (approximate): 0
+0078.540 (0) Table wp_itsec_bans: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=876) in 0.00 seconds
+0078.546 (0) Table wp_itsec_bans: finishing file(s) (2, 0.4 KB)
+0078.550 (0) Table wp_itsec_distributed_storage: Total expected rows (approximate): 0
+0078.552 (0) Table wp_itsec_distributed_storage: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=915) in 0.00 seconds
+0078.558 (0) Table wp_itsec_distributed_storage: finishing file(s) (2, 0.4 KB)
+0078.561 (0) Table wp_itsec_fingerprints: Total expected rows (approximate): 0
+0078.564 (0) Table wp_itsec_fingerprints: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1223) in 0.00 seconds
+0078.570 (0) Table wp_itsec_fingerprints: finishing file(s) (2, 0.5 KB)
+0078.573 (0) Table wp_itsec_geolocation_cache: Total expected rows (approximate): 0
+0078.575 (0) Table wp_itsec_geolocation_cache: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=937) in 0.00 seconds
+0078.581 (0) Table wp_itsec_geolocation_cache: finishing file(s) (2, 0.4 KB)
+0078.585 (0) Table wp_itsec_lockouts: Total expected rows (approximate): 0
+0078.587 (0) Table wp_itsec_lockouts: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1209) in 0.00 seconds
+0078.594 (0) Table wp_itsec_lockouts: finishing file(s) (2, 0.5 KB)
+0078.598 (0) Table wp_itsec_logs: Total expected rows (approximate): 46
+0078.604 (0) Table wp_itsec_logs: Rows added in this batch (next record: 46): 46 (uncompressed bytes in this segment=47958) in 0.01 seconds
+0078.611 (0) Table wp_itsec_logs: finishing file(s) (2, 3.7 KB)
+0078.614 (0) Table wp_itsec_mutexes: Total expected rows (approximate): 0
+0078.616 (0) Table wp_itsec_mutexes: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=617) in 0.00 seconds
+0078.622 (0) Table wp_itsec_mutexes: finishing file(s) (2, 0.4 KB)
+0078.626 (0) Table wp_itsec_opaque_tokens: Total expected rows (approximate): 0
+0078.628 (0) Table wp_itsec_opaque_tokens: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=767) in 0.00 seconds
+0078.634 (0) Table wp_itsec_opaque_tokens: finishing file(s) (2, 0.4 KB)
+0078.638 (0) Table wp_itsec_temp: Total expected rows (approximate): 36
+0078.642 (0) Table wp_itsec_temp: Rows added in this batch (next record: 36): 36 (uncompressed bytes in this segment=4248) in 0.00 seconds
+0078.647 (0) Table wp_itsec_temp: finishing file(s) (2, 0.9 KB)
+0078.651 (0) Table wp_itsec_user_groups: Total expected rows (approximate): 5
+0078.654 (0) Table wp_itsec_user_groups: Rows added in this batch (next record: 1000): 5 (uncompressed bytes in this segment=1467) in 0.00 seconds
+0078.659 (0) Table wp_itsec_user_groups: finishing file(s) (2, 0.6 KB)
+0078.663 (0) Table wp_links: Total expected rows (approximate): 0
+0078.665 (0) Table wp_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1310) in 0.00 seconds
+0078.672 (0) Table wp_links: finishing file(s) (2, 0.5 KB)
+0078.675 (0) Table wp_postmeta: Total expected rows (approximate): 1331
+0078.740 (0) Table wp_postmeta: Rows added in this batch (next record: 1623): 1331 (uncompressed bytes in this segment=629381) in 0.06 seconds
+0078.749 (0) Table wp_postmeta: finishing file(s) (2, 55.2 KB)
+0078.754 (0) Table wp_posts: Total expected rows (approximate): 299
+0078.824 (0) Table wp_posts: Rows added in this batch (next record: 350): 299 (uncompressed bytes in this segment=548550) in 0.07 seconds
+0078.831 (0) Table wp_posts: finishing file(s) (2, 78.3 KB)
+0078.835 (0) Table wp_term_relationships: Total expected rows (approximate): 58
+0078.839 (0) Table wp_term_relationships: Rows added in this batch (next record: 100000): 58 (uncompressed bytes in this segment=1543) in 0.00 seconds
+0078.846 (0) Table wp_term_relationships: finishing file(s) (2, 0.6 KB)
+0078.849 (0) Table wp_term_taxonomy: Total expected rows (approximate): 90
+0078.856 (0) Table wp_term_taxonomy: Rows added in this batch (next record: 92): 90 (uncompressed bytes in this segment=4121) in 0.01 seconds
+0078.863 (0) Table wp_term_taxonomy: finishing file(s) (2, 1 KB)
+0078.868 (0) Table wp_termmeta: Total expected rows (approximate): 25
+0078.871 (0) Table wp_termmeta: Rows added in this batch (next record: 27): 25 (uncompressed bytes in this segment=1603) in 0.00 seconds
+0078.878 (0) Table wp_termmeta: finishing file(s) (2, 0.6 KB)
+0078.881 (0) Table wp_terms: Total expected rows (approximate): 90
+0078.886 (0) Table wp_terms: Rows added in this batch (next record: 92): 90 (uncompressed bytes in this segment=3824) in 0.00 seconds
+0078.893 (0) Table wp_terms: finishing file(s) (2, 1.4 KB)
+0078.896 (0) Table wp_wc_category_lookup: Total expected rows (approximate): 1
+0078.899 (0) Table wp_wc_category_lookup: Rows added in this batch (next record: 1000): 1 (uncompressed bytes in this segment=589) in 0.00 seconds
+0078.905 (0) Table wp_wc_category_lookup: finishing file(s) (2, 0.3 KB)
+0078.908 (0) Table wp_wc_product_meta_lookup: Total expected rows (approximate): 8
+0078.912 (0) Table wp_wc_product_meta_lookup: Rows added in this batch (next record: 163): 8 (uncompressed bytes in this segment=2120) in 0.00 seconds
+0078.918 (0) Table wp_wc_product_meta_lookup: finishing file(s) (2, 0.7 KB)
+0078.922 (0) Table wp_wc_reserved_stock: Total expected rows (approximate): 0
+0078.924 (0) Table wp_wc_reserved_stock: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=665) in 0.00 seconds
+0078.930 (0) Table wp_wc_reserved_stock: finishing file(s) (2, 0.4 KB)
+0078.934 (0) Table wp_wc_tax_rate_classes: Total expected rows (approximate): 2
+0078.936 (0) Table wp_wc_tax_rate_classes: Rows added in this batch (next record: 4): 2 (uncompressed bytes in this segment=812) in 0.00 seconds
+0078.942 (0) Table wp_wc_tax_rate_classes: finishing file(s) (2, 0.4 KB)
+0078.946 (0) Table wp_woocommerce_order_itemmeta: Total expected rows (approximate): 200
+0078.954 (0) Table wp_woocommerce_order_itemmeta: Rows added in this batch (next record: 200): 200 (uncompressed bytes in this segment=13639) in 0.01 seconds
+0078.960 (0) Table wp_woocommerce_order_itemmeta: finishing file(s) (2, 2.5 KB)
+0078.964 (0) Table wp_woocommerce_payment_tokenmeta: Total expected rows (approximate): 0
+0078.966 (0) Table wp_woocommerce_payment_tokenmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=798) in 0.00 seconds
+0078.972 (0) Table wp_woocommerce_payment_tokenmeta: finishing file(s) (2, 0.4 KB)
+0078.976 (0) Table wp_aiowps_events: Total expected rows (approximate): 0
+0078.979 (0) Table wp_aiowps_events: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1019) in 0.00 seconds
+0078.984 (0) Table wp_aiowps_events: finishing file(s) (2, 0.4 KB)
+0078.989 (0) Table wp_aiowps_failed_logins: Total expected rows (approximate): 0
+0078.991 (0) Table wp_aiowps_failed_logins: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=724) in 0.00 seconds
+0078.997 (0) Table wp_aiowps_failed_logins: finishing file(s) (2, 0.4 KB)
+0079.000 (0) Table wp_aiowps_global_meta: Total expected rows (approximate): 0
+0079.003 (0) Table wp_aiowps_global_meta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1192) in 0.00 seconds
+0079.009 (0) Table wp_aiowps_global_meta: finishing file(s) (2, 0.4 KB)
+0079.012 (0) Table wp_aiowps_login_activity: Total expected rows (approximate): 0
+0079.014 (0) Table wp_aiowps_login_activity: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=945) in 0.00 seconds
+0079.022 (0) Table wp_aiowps_login_activity: finishing file(s) (2, 0.4 KB)
+0079.026 (0) Table wp_aiowps_login_lockdown: Total expected rows (approximate): 0
+0079.028 (0) Table wp_aiowps_login_lockdown: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=952) in 0.00 seconds
+0079.035 (0) Table wp_aiowps_login_lockdown: finishing file(s) (2, 0.4 KB)
+0079.040 (0) Table wp_aiowps_permanent_block: Total expected rows (approximate): 0
+0079.042 (0) Table wp_aiowps_permanent_block: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=833) in 0.00 seconds
+0079.048 (0) Table wp_aiowps_permanent_block: finishing file(s) (2, 0.4 KB)
+0079.053 (0) Table wp_gglcptch_allowlist: Total expected rows (approximate): 0
+0079.055 (0) Table wp_gglcptch_allowlist: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=593) in 0.00 seconds
+0079.061 (0) Table wp_gglcptch_allowlist: finishing file(s) (2, 0.4 KB)
+0079.064 (0) Table wp_hurrytimer_evergreen: Total expected rows (approximate): 0
+0079.067 (0) Table wp_hurrytimer_evergreen: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=802) in 0.00 seconds
+0079.072 (0) Table wp_hurrytimer_evergreen: finishing file(s) (2, 0.4 KB)
+0079.076 (0) Table wp_newsletter: Total expected rows (approximate): 1
+0079.081 (0) Table wp_newsletter: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=6043) in 0.00 seconds
+0079.087 (0) Table wp_newsletter: finishing file(s) (2, 0.9 KB)
+0079.091 (0) Table wp_newsletter_emails: Total expected rows (approximate): 0
+0079.093 (0) Table wp_newsletter_emails: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=2013) in 0.00 seconds
+0079.099 (0) Table wp_newsletter_emails: finishing file(s) (2, 0.6 KB)
+0079.103 (0) Table wp_newsletter_sent: Total expected rows (approximate): 0
+0079.105 (0) Table wp_newsletter_sent: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=870) in 0.00 seconds
+0079.111 (0) Table wp_newsletter_sent: finishing file(s) (2, 0.4 KB)
+0079.115 (0) Table wp_newsletter_stats: Total expected rows (approximate): 0
+0079.117 (0) Table wp_newsletter_stats: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=821) in 0.00 seconds
+0079.123 (0) Table wp_newsletter_stats: finishing file(s) (2, 0.4 KB)
+0079.127 (0) Table wp_newsletter_user_logs: Total expected rows (approximate): 0
+0079.129 (0) Table wp_newsletter_user_logs: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=742) in 0.00 seconds
+0079.135 (0) Table wp_newsletter_user_logs: finishing file(s) (2, 0.4 KB)
+0079.138 (0) Table wp_ngg_album: Total expected rows (approximate): 0
+0079.140 (0) Table wp_ngg_album: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=837) in 0.00 seconds
+0079.146 (0) Table wp_ngg_album: finishing file(s) (2, 0.4 KB)
+0079.150 (0) Table wp_ngg_gallery: Total expected rows (approximate): 1
+0079.152 (0) Table wp_ngg_gallery: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1066) in 0.00 seconds
+0079.159 (0) Table wp_ngg_gallery: finishing file(s) (2, 0.5 KB)
+0079.163 (0) Table wp_ngg_pictures: Total expected rows (approximate): 7
+0079.166 (0) Table wp_ngg_pictures: Rows added in this batch (next record: 7): 7 (uncompressed bytes in this segment=7126) in 0.00 seconds
+0079.172 (0) Table wp_ngg_pictures: finishing file(s) (2, 1.4 KB)
+0079.176 (0) Table wp_wc_admin_note_actions: Total expected rows (approximate): 46
+0079.182 (0) Table wp_wc_admin_note_actions: Rows added in this batch (next record: 1997): 46 (uncompressed bytes in this segment=8570) in 0.00 seconds
+0079.189 (0) Table wp_wc_admin_note_actions: finishing file(s) (2, 2.3 KB)
+0079.193 (0) Table wp_wc_admin_notes: Total expected rows (approximate): 45
+0079.200 (0) Table wp_wc_admin_notes: Rows added in this batch (next record: 45): 45 (uncompressed bytes in this segment=22366) in 0.01 seconds
+0079.207 (0) Table wp_wc_admin_notes: finishing file(s) (2, 6.5 KB)
+0079.211 (0) Table wp_wc_customer_lookup: Total expected rows (approximate): 1
+0079.214 (0) Table wp_wc_customer_lookup: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1473) in 0.00 seconds
+0079.220 (0) Table wp_wc_customer_lookup: finishing file(s) (2, 0.6 KB)
+0079.224 (0) Table wp_wc_download_log: Total expected rows (approximate): 0
+0079.226 (0) Table wp_wc_download_log: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=747) in 0.00 seconds
+0079.232 (0) Table wp_wc_download_log: finishing file(s) (2, 0.4 KB)
+0079.236 (0) Table wp_wc_order_coupon_lookup: Total expected rows (approximate): 4
+0079.238 (0) Table wp_wc_order_coupon_lookup: Rows added in this batch (next record: 1000): 4 (uncompressed bytes in this segment=944) in 0.00 seconds
+0079.245 (0) Table wp_wc_order_coupon_lookup: finishing file(s) (2, 0.5 KB)
+0079.249 (0) Table wp_wc_order_product_lookup: Total expected rows (approximate): 14
+0079.253 (0) Table wp_wc_order_product_lookup: Rows added in this batch (next record: 23): 14 (uncompressed bytes in this segment=2460) in 0.00 seconds
+0079.259 (0) Table wp_wc_order_product_lookup: finishing file(s) (2, 0.7 KB)
+0079.262 (0) Table wp_wc_order_stats: Total expected rows (approximate): 4
+0079.265 (0) Table wp_wc_order_stats: Rows added in this batch (next record: 339): 4 (uncompressed bytes in this segment=1569) in 0.00 seconds
+0079.271 (0) Table wp_wc_order_stats: finishing file(s) (2, 0.6 KB)
+0079.275 (0) Table wp_wc_order_tax_lookup: Total expected rows (approximate): 4
+0079.277 (0) Table wp_wc_order_tax_lookup: Rows added in this batch (next record: 1000): 4 (uncompressed bytes in this segment=1039) in 0.00 seconds
+0079.284 (0) Table wp_wc_order_tax_lookup: finishing file(s) (2, 0.5 KB)
+0079.287 (0) Table wp_wc_webhooks: Total expected rows (approximate): 0
+0079.290 (0) Table wp_wc_webhooks: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1230) in 0.00 seconds
+0079.296 (0) Table wp_wc_webhooks: finishing file(s) (2, 0.5 KB)
+0079.299 (0) Table wp_woocommerce_api_keys: Total expected rows (approximate): 0
+0079.302 (0) Table wp_woocommerce_api_keys: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1046) in 0.00 seconds
+0079.308 (0) Table wp_woocommerce_api_keys: finishing file(s) (2, 0.5 KB)
+0079.312 (0) Table wp_woocommerce_attribute_taxonomies: Total expected rows (approximate): 1
+0079.314 (0) Table wp_woocommerce_attribute_taxonomies: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1086) in 0.00 seconds
+0079.321 (0) Table wp_woocommerce_attribute_taxonomies: finishing file(s) (2, 0.5 KB)
+0079.325 (0) Table wp_woocommerce_downloadable_product_permissions: Total expected rows (approximate): 0
+0079.327 (0) Table wp_woocommerce_downloadable_product_permissions: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1538) in 0.00 seconds
+0079.335 (0) Table wp_woocommerce_downloadable_product_permissions: finishing file(s) (2, 0.5 KB)
+0079.338 (0) Table wp_woocommerce_log: Total expected rows (approximate): 0
+0079.341 (0) Table wp_woocommerce_log: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=722) in 0.00 seconds
+0079.347 (0) Table wp_woocommerce_log: finishing file(s) (2, 0.4 KB)
+0079.351 (0) Table wp_woocommerce_order_items: Total expected rows (approximate): 26
+0079.354 (0) Table wp_woocommerce_order_items: Rows added in this batch (next record: 26): 26 (uncompressed bytes in this segment=1985) in 0.00 seconds
+0079.360 (0) Table wp_woocommerce_order_items: finishing file(s) (2, 0.7 KB)
+0079.364 (0) Table wp_woocommerce_payment_tokens: Total expected rows (approximate): 0
+0079.366 (0) Table wp_woocommerce_payment_tokens: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=841) in 0.00 seconds
+0079.373 (0) Table wp_woocommerce_payment_tokens: finishing file(s) (2, 0.4 KB)
+0079.378 (0) Table wp_woocommerce_sessions: Total expected rows (approximate): 1
+0079.382 (0) Table wp_woocommerce_sessions: Rows added in this batch (next record: 10): 1 (uncompressed bytes in this segment=2376) in 0.00 seconds
+0079.391 (0) Table wp_woocommerce_sessions: finishing file(s) (2, 0.9 KB)
+0079.397 (0) Table wp_woocommerce_shipping_zone_locations: Total expected rows (approximate): 6
+0079.401 (0) Table wp_woocommerce_shipping_zone_locations: Rows added in this batch (next record: 6): 6 (uncompressed bytes in this segment=1107) in 0.00 seconds
+0079.408 (0) Table wp_woocommerce_shipping_zone_locations: finishing file(s) (2, 0.5 KB)
+0079.414 (0) Table wp_woocommerce_shipping_zone_methods: Total expected rows (approximate): 3
+0079.416 (0) Table wp_woocommerce_shipping_zone_methods: Rows added in this batch (next record: 3): 3 (uncompressed bytes in this segment=941) in 0.00 seconds
+0079.422 (0) Table wp_woocommerce_shipping_zone_methods: finishing file(s) (2, 0.5 KB)
+0079.427 (0) Table wp_woocommerce_shipping_zones: Total expected rows (approximate): 1
+0079.429 (0) Table wp_woocommerce_shipping_zones: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=728) in 0.00 seconds
+0079.435 (0) Table wp_woocommerce_shipping_zones: finishing file(s) (2, 0.4 KB)
+0079.439 (0) Table wp_woocommerce_tax_rate_locations: Total expected rows (approximate): 0
+0079.442 (0) Table wp_woocommerce_tax_rate_locations: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=848) in 0.00 seconds
+0079.448 (0) Table wp_woocommerce_tax_rate_locations: finishing file(s) (2, 0.4 KB)
+0079.451 (0) Table wp_woocommerce_tax_rates: Total expected rows (approximate): 1
+0079.454 (0) Table wp_woocommerce_tax_rates: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1412) in 0.00 seconds
+0079.460 (0) Table wp_woocommerce_tax_rates: finishing file(s) (2, 0.5 KB)
+0079.464 (0) Table wp_wpforms_tasks_meta: Total expected rows (approximate): 6
+0079.466 (0) Table wp_wpforms_tasks_meta: Rows added in this batch (next record: 6): 6 (uncompressed bytes in this segment=1129) in 0.00 seconds
+0079.472 (0) Table wp_wpforms_tasks_meta: finishing file(s) (2, 0.5 KB)
+0079.476 (0) Table wp_wpgmza: Total expected rows (approximate): 1
+0079.479 (0) Table wp_wpgmza: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1600) in 0.00 seconds
+0079.486 (0) Table wp_wpgmza: finishing file(s) (2, 0.6 KB)
+0079.489 (0) Table wp_wpgmza_circles: Total expected rows (approximate): 0
+0079.491 (0) Table wp_wpgmza_circles: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=662) in 0.00 seconds
+0079.497 (0) Table wp_wpgmza_circles: finishing file(s) (2, 0.4 KB)
+0079.501 (0) Table wp_wpgmza_maps: Total expected rows (approximate): 1
+0079.504 (0) Table wp_wpgmza_maps: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=2576) in 0.00 seconds
+0079.511 (0) Table wp_wpgmza_maps: finishing file(s) (2, 0.8 KB)
+0079.514 (0) Table wp_wpgmza_polygon: Total expected rows (approximate): 0
+0079.517 (0) Table wp_wpgmza_polygon: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1308) in 0.00 seconds
+0079.523 (0) Table wp_wpgmza_polygon: finishing file(s) (2, 0.4 KB)
+0079.526 (0) Table wp_wpgmza_polylines: Total expected rows (approximate): 0
+0079.528 (0) Table wp_wpgmza_polylines: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=797) in 0.00 seconds
+0079.535 (0) Table wp_wpgmza_polylines: finishing file(s) (2, 0.4 KB)
+0079.538 (0) Table wp_wpgmza_rectangles: Total expected rows (approximate): 0
+0079.540 (0) Table wp_wpgmza_rectangles: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=682) in 0.00 seconds
+0079.546 (0) Table wp_wpgmza_rectangles: finishing file(s) (2, 0.4 KB)
+0079.550 (0) Table wp_wpmailsmtp_tasks_meta: Total expected rows (approximate): 1
+0079.552 (0) Table wp_wpmailsmtp_tasks_meta: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=766) in 0.00 seconds
+0079.558 (0) Table wp_wpmailsmtp_tasks_meta: finishing file(s) (2, 0.4 KB)
+0079.561 (0) Table wp_yoast_indexable: Total expected rows (approximate): 52
+0079.580 (0) Table wp_yoast_indexable: Rows added in this batch (next record: 52): 52 (uncompressed bytes in this segment=28726) in 0.02 seconds
+0079.596 (0) Table wp_yoast_indexable: finishing file(s) (2, 5.3 KB)
+0079.599 (0) Table wp_yoast_indexable_hierarchy: Total expected rows (approximate): 49
+0079.602 (0) Table wp_yoast_indexable_hierarchy: Rows added in this batch (next record: 1000): 49 (uncompressed bytes in this segment=1578) in 0.00 seconds
+0079.608 (0) Table wp_yoast_indexable_hierarchy: finishing file(s) (2, 0.5 KB)
+0079.612 (0) Table wp_yoast_migrations: Total expected rows (approximate): 21
+0079.614 (0) Table wp_yoast_migrations: Rows added in this batch (next record: 21): 21 (uncompressed bytes in this segment=1149) in 0.00 seconds
+0079.620 (0) Table wp_yoast_migrations: finishing file(s) (2, 0.6 KB)
+0079.624 (0) Table wp_yoast_primary_term: Total expected rows (approximate): 0
+0079.626 (0) Table wp_yoast_primary_term: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=858) in 0.00 seconds
+0079.632 (0) Table wp_yoast_primary_term: finishing file(s) (2, 0.4 KB)
+0079.636 (0) Table wp_yoast_seo_links: Total expected rows (approximate): 16
+0079.639 (0) Table wp_yoast_seo_links: Rows added in this batch (next record: 24): 16 (uncompressed bytes in this segment=2570) in 0.00 seconds
+0079.647 (0) Table wp_yoast_seo_links: finishing file(s) (2, 0.6 KB)
+0079.649 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_options.table.tmpr4813.gz (1/82): adding to final database dump
+0079.720 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_options.table.gz (2/82): adding to final database dump
+0079.721 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_users.table.tmpr3.gz (3/82): adding to final database dump
+0079.722 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_users.table.gz (4/82): adding to final database dump
+0079.723 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_usermeta.table.tmpr161.gz (5/82): adding to final database dump
+0079.725 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_usermeta.table.gz (6/82): adding to final database dump
+0079.726 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_actionscheduler_actions.table.tmpr144.gz (7/82): adding to final database dump
+0079.728 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_actionscheduler_actions.table.gz (8/82): adding to final database dump
+0079.729 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_actionscheduler_claims.table.tmpr0.gz (9/82): adding to final database dump
+0079.730 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_actionscheduler_claims.table.gz (10/82): adding to final database dump
+0079.731 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_actionscheduler_groups.table.tmpr6.gz (11/82): adding to final database dump
+0079.732 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_actionscheduler_groups.table.gz (12/82): adding to final database dump
+0079.733 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_actionscheduler_logs.table.tmpr142.gz (13/82): adding to final database dump
+0079.734 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_actionscheduler_logs.table.gz (14/82): adding to final database dump
+0079.735 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_commentmeta.table.tmpr0.gz (15/82): adding to final database dump
+0079.737 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_commentmeta.table.gz (16/82): adding to final database dump
+0079.738 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_comments.table.tmpr16.gz (17/82): adding to final database dump
+0079.739 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_comments.table.gz (18/82): adding to final database dump
+0079.740 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_bans.table.tmpr0.gz (19/82): adding to final database dump
+0079.741 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_bans.table.gz (20/82): adding to final database dump
+0079.742 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_distributed_storage.table.tmpr0.gz (21/82): adding to final database dump
+0079.743 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_distributed_storage.table.gz (22/82): adding to final database dump
+0079.744 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_fingerprints.table.tmpr0.gz (23/82): adding to final database dump
+0079.745 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_fingerprints.table.gz (24/82): adding to final database dump
+0079.746 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_geolocation_cache.table.tmpr0.gz (25/82): adding to final database dump
+0079.747 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_geolocation_cache.table.gz (26/82): adding to final database dump
+0079.748 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_lockouts.table.tmpr0.gz (27/82): adding to final database dump
+0079.749 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_lockouts.table.gz (28/82): adding to final database dump
+0079.750 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_logs.table.tmpr47.gz (29/82): adding to final database dump
+0079.752 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_logs.table.gz (30/82): adding to final database dump
+0079.754 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_mutexes.table.tmpr0.gz (31/82): adding to final database dump
+0079.756 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_mutexes.table.gz (32/82): adding to final database dump
+0079.757 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_opaque_tokens.table.tmpr1.gz (33/82): adding to final database dump
+0079.758 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_opaque_tokens.table.gz (34/82): adding to final database dump
+0079.759 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_temp.table.tmpr37.gz (35/82): adding to final database dump
+0079.760 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_temp.table.gz (36/82): adding to final database dump
+0079.761 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_user_groups.table.tmpr1001.gz (37/82): adding to final database dump
+0079.762 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_itsec_user_groups.table.gz (38/82): adding to final database dump
+0079.763 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_links.table.tmpr0.gz (39/82): adding to final database dump
+0079.764 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_links.table.gz (40/82): adding to final database dump
+0079.765 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_postmeta.table.tmpr1624.gz (41/82): adding to final database dump
+0079.781 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_postmeta.table.gz (42/82): adding to final database dump
+0079.782 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_posts.table.tmpr351.gz (43/82): adding to final database dump
+0079.796 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_posts.table.gz (44/82): adding to final database dump
+0079.797 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_term_relationships.table.tmpr100001.gz (45/82): adding to final database dump
+0079.798 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_term_relationships.table.gz (46/82): adding to final database dump
+0079.799 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_term_taxonomy.table.tmpr93.gz (47/82): adding to final database dump
+0079.800 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_term_taxonomy.table.gz (48/82): adding to final database dump
+0079.801 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_termmeta.table.tmpr28.gz (49/82): adding to final database dump
+0079.803 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_termmeta.table.gz (50/82): adding to final database dump
+0079.804 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_terms.table.tmpr93.gz (51/82): adding to final database dump
+0079.805 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_terms.table.gz (52/82): adding to final database dump
+0079.806 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_category_lookup.table.tmpr1001.gz (53/82): adding to final database dump
+0079.807 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_category_lookup.table.gz (54/82): adding to final database dump
+0079.808 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_product_meta_lookup.table.tmpr164.gz (55/82): adding to final database dump
+0079.809 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_product_meta_lookup.table.gz (56/82): adding to final database dump
+0079.810 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_reserved_stock.table.tmpr1.gz (57/82): adding to final database dump
+0079.811 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_reserved_stock.table.gz (58/82): adding to final database dump
+0079.812 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_tax_rate_classes.table.tmpr5.gz (59/82): adding to final database dump
+0079.813 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_tax_rate_classes.table.gz (60/82): adding to final database dump
+0079.814 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_order_itemmeta.table.tmpr201.gz (61/82): adding to final database dump
+0079.816 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_order_itemmeta.table.gz (62/82): adding to final database dump
+0079.817 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_payment_tokenmeta.table.tmpr0.gz (63/82): adding to final database dump
+0079.818 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_payment_tokenmeta.table.gz (64/82): adding to final database dump
+0079.819 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_aiowps_events.table.tmpr0.gz (65/82): adding to final database dump
+0079.820 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_aiowps_events.table.gz (66/82): adding to final database dump
+0079.821 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_aiowps_failed_logins.table.tmpr0.gz (67/82): adding to final database dump
+0079.822 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_aiowps_failed_logins.table.gz (68/82): adding to final database dump
+0079.823 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_aiowps_global_meta.table.tmpr0.gz (69/82): adding to final database dump
+0079.824 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_aiowps_global_meta.table.gz (70/82): adding to final database dump
+0079.825 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_aiowps_login_activity.table.tmpr0.gz (71/82): adding to final database dump
+0079.826 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_aiowps_login_activity.table.gz (72/82): adding to final database dump
+0079.828 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_aiowps_login_lockdown.table.tmpr0.gz (73/82): adding to final database dump
+0079.829 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_aiowps_login_lockdown.table.gz (74/82): adding to final database dump
+0079.830 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_aiowps_permanent_block.table.tmpr0.gz (75/82): adding to final database dump
+0079.831 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_aiowps_permanent_block.table.gz (76/82): adding to final database dump
+0079.831 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_gglcptch_allowlist.table.tmpr0.gz (77/82): adding to final database dump
+0079.832 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_gglcptch_allowlist.table.gz (78/82): adding to final database dump
+0079.833 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_hurrytimer_evergreen.table.tmpr0.gz (79/82): adding to final database dump
+0079.834 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_hurrytimer_evergreen.table.gz (80/82): adding to final database dump
+0079.835 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_newsletter.table.tmpr2.gz (81/82): adding to final database dump
+0079.836 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_newsletter.table.gz (82/82): adding to final database dump
+0079.837 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_newsletter_emails.table.tmpr0.gz (83/82): adding to final database dump
+0079.838 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_newsletter_emails.table.gz (84/82): adding to final database dump
+0079.839 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_newsletter_sent.table.tmpr1.gz (85/82): adding to final database dump
+0079.840 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_newsletter_sent.table.gz (86/82): adding to final database dump
+0079.841 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_newsletter_stats.table.tmpr0.gz (87/82): adding to final database dump
+0079.842 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_newsletter_stats.table.gz (88/82): adding to final database dump
+0079.843 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_newsletter_user_logs.table.tmpr0.gz (89/82): adding to final database dump
+0079.844 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_newsletter_user_logs.table.gz (90/82): adding to final database dump
+0079.845 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_ngg_album.table.tmpr0.gz (91/82): adding to final database dump
+0079.846 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_ngg_album.table.gz (92/82): adding to final database dump
+0079.847 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_ngg_gallery.table.tmpr2.gz (93/82): adding to final database dump
+0079.848 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_ngg_gallery.table.gz (94/82): adding to final database dump
+0079.849 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_ngg_pictures.table.tmpr8.gz (95/82): adding to final database dump
+0079.850 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_ngg_pictures.table.gz (96/82): adding to final database dump
+0079.851 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_admin_note_actions.table.tmpr1998.gz (97/82): adding to final database dump
+0079.852 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_admin_note_actions.table.gz (98/82): adding to final database dump
+0079.853 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_admin_notes.table.tmpr46.gz (99/82): adding to final database dump
+0079.856 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_admin_notes.table.gz (100/82): adding to final database dump
+0079.857 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_customer_lookup.table.tmpr2.gz (101/82): adding to final database dump
+0079.858 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_customer_lookup.table.gz (102/82): adding to final database dump
+0079.859 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_download_log.table.tmpr0.gz (103/82): adding to final database dump
+0079.860 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_download_log.table.gz (104/82): adding to final database dump
+0079.861 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_order_coupon_lookup.table.tmpr1001.gz (105/82): adding to final database dump
+0079.862 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_order_coupon_lookup.table.gz (106/82): adding to final database dump
+0079.863 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_order_product_lookup.table.tmpr24.gz (107/82): adding to final database dump
+0079.864 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_order_product_lookup.table.gz (108/82): adding to final database dump
+0079.865 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_order_stats.table.tmpr340.gz (109/82): adding to final database dump
+0079.866 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_order_stats.table.gz (110/82): adding to final database dump
+0079.866 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_order_tax_lookup.table.tmpr1001.gz (111/82): adding to final database dump
+0079.868 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_order_tax_lookup.table.gz (112/82): adding to final database dump
+0079.868 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_webhooks.table.tmpr0.gz (113/82): adding to final database dump
+0079.869 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wc_webhooks.table.gz (114/82): adding to final database dump
+0079.870 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_api_keys.table.tmpr0.gz (115/82): adding to final database dump
+0079.871 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_api_keys.table.gz (116/82): adding to final database dump
+0079.872 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_attribute_taxonomies.table.tmpr2.gz (117/82): adding to final database dump
+0079.873 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_attribute_taxonomies.table.gz (118/82): adding to final database dump
+0079.874 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_downloadable_product_permissions.table.tmpr0.gz (119/82): adding to final database dump
+0079.875 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_downloadable_product_permissions.table.gz (120/82): adding to final database dump
+0079.876 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_log.table.tmpr0.gz (121/82): adding to final database dump
+0079.877 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_log.table.gz (122/82): adding to final database dump
+0079.878 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_order_items.table.tmpr27.gz (123/82): adding to final database dump
+0079.879 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_order_items.table.gz (124/82): adding to final database dump
+0079.880 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_payment_tokens.table.tmpr0.gz (125/82): adding to final database dump
+0079.881 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_payment_tokens.table.gz (126/82): adding to final database dump
+0079.882 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_sessions.table.tmpr11.gz (127/82): adding to final database dump
+0079.883 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_sessions.table.gz (128/82): adding to final database dump
+0079.884 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_shipping_zone_locations.table.tmpr7.gz (129/82): adding to final database dump
+0079.885 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_shipping_zone_locations.table.gz (130/82): adding to final database dump
+0079.886 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_shipping_zone_methods.table.tmpr4.gz (131/82): adding to final database dump
+0079.887 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_shipping_zone_methods.table.gz (132/82): adding to final database dump
+0079.888 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_shipping_zones.table.tmpr2.gz (133/82): adding to final database dump
+0079.889 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_shipping_zones.table.gz (134/82): adding to final database dump
+0079.890 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_tax_rate_locations.table.tmpr0.gz (135/82): adding to final database dump
+0079.891 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_tax_rate_locations.table.gz (136/82): adding to final database dump
+0079.891 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_tax_rates.table.tmpr2.gz (137/82): adding to final database dump
+0079.893 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_woocommerce_tax_rates.table.gz (138/82): adding to final database dump
+0079.893 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wpforms_tasks_meta.table.tmpr7.gz (139/82): adding to final database dump
+0079.894 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wpforms_tasks_meta.table.gz (140/82): adding to final database dump
+0079.895 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wpgmza.table.tmpr2.gz (141/82): adding to final database dump
+0079.896 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wpgmza.table.gz (142/82): adding to final database dump
+0079.897 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wpgmza_circles.table.tmpr0.gz (143/82): adding to final database dump
+0079.898 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wpgmza_circles.table.gz (144/82): adding to final database dump
+0079.899 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wpgmza_maps.table.tmpr2.gz (145/82): adding to final database dump
+0079.900 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wpgmza_maps.table.gz (146/82): adding to final database dump
+0079.901 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wpgmza_polygon.table.tmpr0.gz (147/82): adding to final database dump
+0079.902 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wpgmza_polygon.table.gz (148/82): adding to final database dump
+0079.903 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wpgmza_polylines.table.tmpr0.gz (149/82): adding to final database dump
+0079.904 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wpgmza_polylines.table.gz (150/82): adding to final database dump
+0079.905 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wpgmza_rectangles.table.tmpr0.gz (151/82): adding to final database dump
+0079.906 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wpgmza_rectangles.table.gz (152/82): adding to final database dump
+0079.907 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wpmailsmtp_tasks_meta.table.tmpr2.gz (153/82): adding to final database dump
+0079.908 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_wpmailsmtp_tasks_meta.table.gz (154/82): adding to final database dump
+0079.909 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_yoast_indexable.table.tmpr53.gz (155/82): adding to final database dump
+0079.910 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_yoast_indexable.table.gz (156/82): adding to final database dump
+0079.911 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_yoast_indexable_hierarchy.table.tmpr1001.gz (157/82): adding to final database dump
+0079.913 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_yoast_indexable_hierarchy.table.gz (158/82): adding to final database dump
+0079.914 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_yoast_migrations.table.tmpr22.gz (159/82): adding to final database dump
+0079.915 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_yoast_migrations.table.gz (160/82): adding to final database dump
+0079.915 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_yoast_primary_term.table.tmpr0.gz (161/82): adding to final database dump
+0079.916 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_yoast_primary_term.table.gz (162/82): adding to final database dump
+0079.917 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_yoast_seo_links.table.tmpr25.gz (163/82): adding to final database dump
+0079.918 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db-table-wp_yoast_seo_links.table.gz (164/82): adding to final database dump
+0079.926 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db.gz: finished writing out complete database file (488 KB)
+0079.977 (0) Total database tables backed up: 82 (backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db.gz, size: 508798, sha1: d1dbab105605bb4a9faf6deabf806073f7fc09dd, sha256: d34ee09cd31fba3840278f0c872075f9d6c61be0a1674da713b8276c1e64a835)
+0079.982 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0079.983 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0079.984 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0079.985 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip: others: This file has not yet been successfully uploaded: will queue
+0079.986 (0) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db.gz: db: This file has not yet been successfully uploaded: will queue
+0079.987 (0) Saving backup history. Total backup size: 161.4 MB
+0079.989 (0) Requesting upload of the files that have not yet been successfully uploaded (5)
+0079.991 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0079.993 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-0b09d5947c6b8f5cf10eff995603f047)
+0081.018 (0) Google Drive: quota usage: used=8068.5 MB, total=15360 MB, available=7291.5 MB
+0081.020 (0) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+0141.417 (0) Google Drive: Upload error: Operation timed out after 59999 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+0141.418 (0) An error condition has occurred for the first time during this job
+0141.717 (0) Google Drive: quota usage: used=8068.5 MB, total=15360 MB, available=7291.5 MB
+0141.718 (0) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+0202.124 (0) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+0202.462 (0) Google Drive: quota usage: used=8068.5 MB, total=15360 MB, available=7291.5 MB
+0202.463 (0) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+0262.805 (0) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+0263.088 (0) Google Drive: quota usage: used=8068.5 MB, total=15360 MB, available=7291.5 MB
+0263.089 (0) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+0274.140 (0) The time we have been running (274.1) is approaching the resumption interval (300) - increasing resumption interval to 305
+0274.143 (0) The scheduled resumption is within 45 seconds - will reschedule
+0274.145 (0) Rescheduling resumption 1: moving to 350 seconds from now (1625068215)
+0274.148 (0) To decrease the likelihood of overlaps, increasing resumption interval to: 305 + 45 = 350
+0274.149 (0) Googledrive chunked upload: 18.1 % uploaded (1048576)
+0334.153 (0) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+0334.485 (0) Google Drive: quota usage: used=8068.5 MB, total=15360 MB, available=7291.5 MB
+0334.486 (0) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db.gz: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+0341.275 (0) The time we have been running (341.3) is approaching the resumption interval (350) - increasing resumption interval to 372
+0341.279 (0) Googledrive chunked upload: 100 % uploaded
+0341.284 (0) Google Drive: OK: Archive backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db.gz uploaded in 6.8 seconds
+0341.286 (0) Recording as successfully uploaded: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db.gz
+0341.291 (0) Deleting local file: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db.gz: OK
+0341.294 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0341.296 (0) Number of backup sets in history: 2; groups (db): 1
+0341.297 (0) Examining (for databases) backup set with group_id=0, nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+0341.298 (0) This backup set is the backup set just made, so will not be deleted.
+0341.298 (0) Examining (for databases) backup set with group_id=0, nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+0341.298 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0341.300 (0) Number of backup sets in history: 2; groups (files): 1
+0341.301 (0) Examining (for files) backup set with nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+0341.301 (0) This backup set is the backup set just made, so will not be deleted.
+0341.302 (0) This backup set is the backup set just made, so will not be deleted.
+0341.302 (0) This backup set is the backup set just made, so will not be deleted.
+0341.303 (0) This backup set is the backup set just made, so will not be deleted.
+0341.303 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0341.304 (0) Examining (for files) backup set with nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+0341.304 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0341.304 (0) Retain: saving new backup history (sets now: 2) and finishing retain operation
+0341.307 (0) Resume backup (2ad77de19924, 0): finish run
+0341.309 (0) Decremented the semaphore (fd) by 1
+0341.310 (0) Semaphore (fd) unlocked
+0341.311 (0) There were errors in the uploads, so the 'resume' event is remaining scheduled
+0341.314 (0) Rescheduling resumption 1: moving to 60 seconds from now (1625067992)
+0341.316 (0) La sauvegarde ne s'est pas terminée; une relance de la procédure est prévue
+0425.582 (1) Opened log file at time: Wed, 30 Jun 2021 15:46:57 +0000 on http://wordpress
+0425.583 (1) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.16.56 WP: 5.7.2 PHP: 7.3.21 (apache2handler, Windows NT LAPTOP-CLR0P7V8 10.0 build 19042 (Windows 10) AMD64) MySQL: 5.7.31 WPLANG: fr_FR Server: Apache/2.4.46 (Win64) PHP/7.3.21 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 33M | 2M) multisite: N openssl: OpenSSL 1.1.1g  21 Apr 2020 mcrypt: N LANG:  ZipArchive::addFile: Y
+0425.584 (1) Free space on disk containing Updraft's temporary directory: 11230.9 MB
+0425.585 (1) Requesting backup semaphore lock (2ad77de19924)
+0425.587 (1) [Lock option (updraft_lock_2ad77de19924, wp_options) was created in the database] debug
+0425.588 (1) [Lock (updraft_lock_2ad77de19924, wp_options) acquired after initialising the database] info
+0425.590 (1) Backup run: resumption=1, nonce=2ad77de19924, file_nonce=2ad77de19924 begun at=1625067591 (426s ago), job type=backup, previous check-in=341.3s
+0425.592 (1) Scheduling a resumption (2) after 372 seconds (1625068389) in case this run gets aborted
+0425.594 (1) Checking if we have a zip executable available
+0425.595 (1) Creation of backups of directories: already finished
+0425.596 (1) Saving backup status to database (elements: 8)
+0425.599 (1) Database dump (WordPress DB): Creation was completed already
+0425.601 (1) SQL compatibility mode is: NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER
+0425.604 (1) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0425.604 (1) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0425.605 (1) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0425.606 (1) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip: others: This file has not yet been successfully uploaded: will queue
+0425.607 (1) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db.gz: db: This file has already been successfully uploaded
+0425.608 (1) Saving backup history. Total backup size: Unknown
+0425.610 (1) Requesting upload of the files that have not yet been successfully uploaded (4)
+0425.612 (1) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0425.613 (1) Beginning dispatch of backup to remote (googledrive) (instance identifier s-0b09d5947c6b8f5cf10eff995603f047)
+0426.867 (1) Google Drive: quota usage: used=8068.9 MB, total=15360 MB, available=7291.1 MB
+0426.868 (1) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+0487.198 (1) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+0487.199 (1) An error condition has occurred for the first time during this job
+0487.533 (1) Google Drive: quota usage: used=8068.9 MB, total=15360 MB, available=7291.1 MB
+0487.534 (1) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+0499.599 (1) Googledrive chunked upload: 2.8 % uploaded (1048576)
+0559.602 (1) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+0559.943 (1) Google Drive: quota usage: used=8068.9 MB, total=15360 MB, available=7291.1 MB
+0559.944 (1) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+0620.327 (1) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+0620.691 (1) Google Drive: quota usage: used=8068.9 MB, total=15360 MB, available=7291.1 MB
+0620.692 (1) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+0620.801 (1) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip: upload already began; attempting to resume from byte 2097151
+0680.803 (1) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+0680.806 (1) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0680.807 (1) Number of backup sets in history: 2; groups (db): 1
+0680.808 (1) Examining (for databases) backup set with group_id=0, nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+0680.809 (1) This backup set is the backup set just made, so will not be deleted.
+0680.809 (1) Examining (for databases) backup set with group_id=0, nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+0680.809 (1) This backup set remains non-empty (f=1/d=1); will retain in history
+0680.810 (1) Number of backup sets in history: 2; groups (files): 1
+0680.811 (1) Examining (for files) backup set with nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+0680.811 (1) This backup set is the backup set just made, so will not be deleted.
+0680.811 (1) This backup set is the backup set just made, so will not be deleted.
+0680.812 (1) This backup set is the backup set just made, so will not be deleted.
+0680.812 (1) This backup set is the backup set just made, so will not be deleted.
+0680.812 (1) This backup set remains non-empty (f=1/d=1); will retain in history
+0680.813 (1) Examining (for files) backup set with nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+0680.813 (1) This backup set remains non-empty (f=1/d=1); will retain in history
+0680.813 (1) Retain: saving new backup history (sets now: 2) and finishing retain operation
+0680.816 (1) Resume backup (2ad77de19924, 1): finish run
+0680.818 (1) [Lock option (updraft_lock_2ad77de19924, wp_options) released] info
+0680.819 (1) There were errors in the uploads, so the 'resume' event is remaining scheduled
+0680.821 (1) La sauvegarde ne s'est pas terminée; une relance de la procédure est prévue
+0799.886 (2) Opened log file at time: Wed, 30 Jun 2021 15:53:11 +0000 on http://wordpress
+0799.887 (2) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.16.56 WP: 5.7.2 PHP: 7.3.21 (apache2handler, Windows NT LAPTOP-CLR0P7V8 10.0 build 19042 (Windows 10) AMD64) MySQL: 5.7.31 WPLANG: fr_FR Server: Apache/2.4.46 (Win64) PHP/7.3.21 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 33.1M | 2M) multisite: N openssl: OpenSSL 1.1.1g  21 Apr 2020 mcrypt: N LANG:  ZipArchive::addFile: Y
+0799.888 (2) Free space on disk containing Updraft's temporary directory: 11180.4 MB
+0799.889 (2) Requesting backup semaphore lock (2ad77de19924)
+0799.890 (2) [Lock (updraft_lock_2ad77de19924, wp_options) acquired] info
+0799.893 (2) Backup run: resumption=2, nonce=2ad77de19924, file_nonce=2ad77de19924 begun at=1625067591 (800s ago), job type=backup, previous check-in=74s
+0799.895 (2) Scheduling a resumption (3) after 372 seconds (1625068763) in case this run gets aborted
+0799.898 (2) Checking if we have a zip executable available
+0799.899 (2) Creation of backups of directories: already finished
+0799.901 (2) Saving backup status to database (elements: 8)
+0799.904 (2) Database dump (WordPress DB): Creation was completed already
+0799.905 (2) SQL compatibility mode is: NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER
+0799.908 (2) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0799.909 (2) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0799.910 (2) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0799.911 (2) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip: others: This file has not yet been successfully uploaded: will queue
+0799.911 (2) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db.gz: db: This file has already been successfully uploaded
+0799.912 (2) Saving backup history. Total backup size: Unknown
+0799.914 (2) Requesting upload of the files that have not yet been successfully uploaded (4)
+0799.917 (2) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0799.918 (2) Beginning dispatch of backup to remote (googledrive) (instance identifier s-0b09d5947c6b8f5cf10eff995603f047)
+0800.855 (2) Google Drive: quota usage: used=8068.9 MB, total=15360 MB, available=7291.1 MB
+0800.856 (2) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+0861.241 (2) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+0861.242 (2) An error condition has occurred for the first time during this job
+0861.555 (2) Google Drive: quota usage: used=8068.9 MB, total=15360 MB, available=7291.1 MB
+0861.556 (2) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+0861.693 (2) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: upload already began; attempting to resume from byte 1835007
+0872.796 (2) Googledrive chunked upload: 7.7 % uploaded (2883584)
+0882.892 (2) Googledrive chunked upload: 10.5 % uploaded (3932160)
+0893.267 (2) Googledrive chunked upload: 13.2 % uploaded (4980736)
+0903.350 (2) Googledrive chunked upload: 16 % uploaded (6029312)
+0963.353 (2) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+0963.662 (2) Google Drive: quota usage: used=8068.9 MB, total=15360 MB, available=7291.1 MB
+0963.663 (2) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+1023.976 (2) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+1024.272 (2) Google Drive: quota usage: used=8068.9 MB, total=15360 MB, available=7291.1 MB
+1024.274 (2) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+1024.428 (2) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip: upload already began; attempting to resume from byte 3145727
+1034.886 (2) Googledrive chunked upload: 72.2 % uploaded (4194304)
+1044.912 (2) Googledrive chunked upload: 90.3 % uploaded (5242880)
+1051.545 (2) Googledrive chunked upload: 100 % uploaded (5242880)
+1051.549 (2) Google Drive: OK: Archive backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip uploaded in 27.27 seconds
+1051.550 (2) Recording as successfully uploaded: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip
+1051.553 (2) Deleting local file: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip: OK
+1051.555 (2) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+1051.556 (2) Number of backup sets in history: 2; groups (db): 1
+1051.557 (2) Examining (for databases) backup set with group_id=0, nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+1051.558 (2) This backup set is the backup set just made, so will not be deleted.
+1051.558 (2) Examining (for databases) backup set with group_id=0, nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+1051.558 (2) This backup set remains non-empty (f=1/d=1); will retain in history
+1051.559 (2) Number of backup sets in history: 2; groups (files): 1
+1051.560 (2) Examining (for files) backup set with nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+1051.560 (2) This backup set is the backup set just made, so will not be deleted.
+1051.561 (2) This backup set is the backup set just made, so will not be deleted.
+1051.561 (2) This backup set is the backup set just made, so will not be deleted.
+1051.561 (2) This backup set is the backup set just made, so will not be deleted.
+1051.562 (2) This backup set remains non-empty (f=1/d=1); will retain in history
+1051.563 (2) Examining (for files) backup set with nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+1051.563 (2) This backup set remains non-empty (f=1/d=1); will retain in history
+1051.563 (2) Retain: saving new backup history (sets now: 2) and finishing retain operation
+1051.565 (2) Resume backup (2ad77de19924, 2): finish run
+1051.567 (2) [Lock option (updraft_lock_2ad77de19924, wp_options) released] info
+1051.568 (2) There were errors in the uploads, so the 'resume' event is remaining scheduled
+1051.571 (2) La sauvegarde ne s'est pas terminée; une relance de la procédure est prévue
+1220.009 (3) Opened log file at time: Wed, 30 Jun 2021 16:00:11 +0000 on http://wordpress
+1220.011 (3) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.16.56 WP: 5.7.2 PHP: 7.3.21 (apache2handler, Windows NT LAPTOP-CLR0P7V8 10.0 build 19042 (Windows 10) AMD64) MySQL: 5.7.31 WPLANG: fr_FR Server: Apache/2.4.46 (Win64) PHP/7.3.21 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 33M | 2M) multisite: N openssl: OpenSSL 1.1.1g  21 Apr 2020 mcrypt: N LANG:  ZipArchive::addFile: Y
+1220.012 (3) Free space on disk containing Updraft's temporary directory: 11209.8 MB
+1220.013 (3) Requesting backup semaphore lock (2ad77de19924)
+1220.014 (3) [Lock (updraft_lock_2ad77de19924, wp_options) acquired] info
+1220.016 (3) Backup run: resumption=3, nonce=2ad77de19924, file_nonce=2ad77de19924 begun at=1625067591 (1220s ago), job type=backup, previous check-in=251.7s
+1220.019 (3) Scheduling a resumption (4) after 372 seconds (1625069183) in case this run gets aborted
+1220.022 (3) Checking if we have a zip executable available
+1220.023 (3) Creation of backups of directories: already finished
+1220.026 (3) Saving backup status to database (elements: 8)
+1220.029 (3) Database dump (WordPress DB): Creation was completed already
+1220.031 (3) SQL compatibility mode is: NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER
+1220.034 (3) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+1220.035 (3) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+1220.036 (3) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+1220.037 (3) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip: others: This file has already been successfully uploaded
+1220.038 (3) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db.gz: db: This file has already been successfully uploaded
+1220.039 (3) Saving backup history. Total backup size: Unknown
+1220.042 (3) Requesting upload of the files that have not yet been successfully uploaded (3)
+1220.045 (3) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+1220.046 (3) Beginning dispatch of backup to remote (googledrive) (instance identifier s-0b09d5947c6b8f5cf10eff995603f047)
+1221.121 (3) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+1221.123 (3) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+1281.524 (3) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+1281.526 (3) An error condition has occurred for the first time during this job
+1281.852 (3) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+1281.853 (3) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+1281.987 (3) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: upload already began; attempting to resume from byte 7077887
+56543.904 (3) Google Drive: Upload error: Operation timed out after 55261934 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+56544.960 (3) Google Drive: quota usage: failed to obtain this information: Could not resolve host: accounts.google.com
+56544.962 (3) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+56544.965 (3) Google Drive: Upload error: Could not resolve host: accounts.google.com (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+56544.968 (3) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+56544.969 (3) Number of backup sets in history: 2; groups (db): 1
+56544.970 (3) Examining (for databases) backup set with group_id=0, nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+56544.971 (3) This backup set is the backup set just made, so will not be deleted.
+56544.971 (3) Examining (for databases) backup set with group_id=0, nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+56544.971 (3) This backup set remains non-empty (f=1/d=1); will retain in history
+56544.972 (3) Number of backup sets in history: 2; groups (files): 1
+56544.973 (3) Examining (for files) backup set with nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+56544.973 (3) This backup set is the backup set just made, so will not be deleted.
+56544.974 (3) This backup set is the backup set just made, so will not be deleted.
+56544.975 (3) This backup set is the backup set just made, so will not be deleted.
+56544.975 (3) This backup set is the backup set just made, so will not be deleted.
+56544.975 (3) This backup set remains non-empty (f=1/d=1); will retain in history
+56544.976 (3) Examining (for files) backup set with nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+56544.976 (3) This backup set remains non-empty (f=1/d=1); will retain in history
+56544.977 (3) Retain: saving new backup history (sets now: 2) and finishing retain operation
+56544.980 (3) Resume backup (2ad77de19924, 3): finish run
+56544.981 (3) [Lock option (updraft_lock_2ad77de19924, wp_options) released] info
+56544.982 (3) There were errors in the uploads, so the 'resume' event is remaining scheduled
+56544.984 (3) La sauvegarde ne s'est pas terminée; une relance de la procédure est prévue
+56569.543 (4) Opened log file at time: Thu, 01 Jul 2021 07:22:41 +0000 on http://wordpress
+56569.544 (4) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.16.56 WP: 5.7.2 PHP: 7.3.21 (apache2handler, Windows NT LAPTOP-CLR0P7V8 10.0 build 19042 (Windows 10) AMD64) MySQL: 5.7.31 WPLANG: fr_FR Server: Apache/2.4.46 (Win64) PHP/7.3.21 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 33.2M | 2M) multisite: N openssl: OpenSSL 1.1.1g  21 Apr 2020 mcrypt: N LANG:  ZipArchive::addFile: Y
+56569.546 (4) Free space on disk containing Updraft's temporary directory: 11193.5 MB
+56569.547 (4) Requesting backup semaphore lock (2ad77de19924)
+56569.549 (4) [Lock (updraft_lock_2ad77de19924, wp_options) acquired] info
+56569.551 (4) Backup run: resumption=4, nonce=2ad77de19924, file_nonce=2ad77de19924 begun at=1625067591 (56570s ago), job type=backup
+56569.552 (4) Long time past since expected resumption time: approx expected=1625069183.6, now=1625124161.1, diff=54977.5
+56569.555 (4) [Warning] Votre site est consulté rarement et UpdraftPlus ne peut récupérer les ressources qu'il recherche; veuillez prendre connaissance de cette page: https://updraftplus.com/faqs/why-am-i-getting-warnings-about-my-site-not-having-enough-visitors/
+56569.557 (4) Scheduling a resumption (5) after 372 seconds (1625124533) in case this run gets aborted
+56569.560 (4) Checking if we have a zip executable available
+56569.561 (4) Creation of backups of directories: already finished
+56569.563 (4) Saving backup status to database (elements: 8)
+56569.566 (4) Database dump (WordPress DB): Creation was completed already
+56569.568 (4) SQL compatibility mode is: NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER
+56569.571 (4) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+56569.572 (4) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+56569.573 (4) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+56569.574 (4) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip: others: This file has already been successfully uploaded
+56569.575 (4) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db.gz: db: This file has already been successfully uploaded
+56569.575 (4) Saving backup history. Total backup size: Unknown
+56569.578 (4) Requesting upload of the files that have not yet been successfully uploaded (3)
+56569.580 (4) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+56569.582 (4) Beginning dispatch of backup to remote (googledrive) (instance identifier s-0b09d5947c6b8f5cf10eff995603f047)
+56581.922 (4) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+56581.924 (4) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+56643.741 (4) Google Drive: Upload error: Operation timed out after 60003 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+56643.748 (4) An error condition has occurred for the first time during this job
+56649.063 (4) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+56649.068 (4) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+56651.076 (4) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: upload already began; attempt to resume did not succeed (HTTP code: 404)
+56711.097 (4) Google Drive: Upload error: Operation timed out after 60011 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+56712.114 (4) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+56712.117 (4) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+56748.689 (4) Googledrive chunked upload: 2.8 % uploaded (1048576)
+56808.705 (4) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+56808.716 (4) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+56808.722 (4) Number of backup sets in history: 2; groups (db): 1
+56808.726 (4) Examining (for databases) backup set with group_id=0, nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+56808.731 (4) This backup set is the backup set just made, so will not be deleted.
+56808.731 (4) Examining (for databases) backup set with group_id=0, nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+56808.731 (4) This backup set remains non-empty (f=1/d=1); will retain in history
+56808.735 (4) Number of backup sets in history: 2; groups (files): 1
+56808.739 (4) Examining (for files) backup set with nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+56808.739 (4) This backup set is the backup set just made, so will not be deleted.
+56808.744 (4) This backup set is the backup set just made, so will not be deleted.
+56808.745 (4) This backup set is the backup set just made, so will not be deleted.
+56808.747 (4) This backup set is the backup set just made, so will not be deleted.
+56808.748 (4) This backup set remains non-empty (f=1/d=1); will retain in history
+56808.752 (4) Examining (for files) backup set with nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+56808.753 (4) This backup set remains non-empty (f=1/d=1); will retain in history
+56808.755 (4) Retain: saving new backup history (sets now: 2) and finishing retain operation
+56808.768 (4) Resume backup (2ad77de19924, 4): finish run
+56808.776 (4) [Lock option (updraft_lock_2ad77de19924, wp_options) released] info
+56808.780 (4) There were errors in the uploads, so the 'resume' event is remaining scheduled
+56808.788 (4) La sauvegarde ne s'est pas terminée; une relance de la procédure est prévue
+56942.758 (5) Opened log file at time: Thu, 01 Jul 2021 07:28:54 +0000 on http://wordpress
+56942.762 (5) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.16.56 WP: 5.7.2 PHP: 7.3.21 (apache2handler, Windows NT LAPTOP-CLR0P7V8 10.0 build 19042 (Windows 10) AMD64) MySQL: 5.7.31 WPLANG: fr_FR Server: Apache/2.4.46 (Win64) PHP/7.3.21 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 33.1M | 2M) multisite: N openssl: OpenSSL 1.1.1g  21 Apr 2020 mcrypt: N LANG:  ZipArchive::addFile: Y
+56942.766 (5) Free space on disk containing Updraft's temporary directory: 11157.6 MB
+56942.770 (5) Requesting backup semaphore lock (2ad77de19924)
+56942.774 (5) [Lock (updraft_lock_2ad77de19924, wp_options) acquired] info
+56942.782 (5) Backup run: resumption=5, nonce=2ad77de19924, file_nonce=2ad77de19924 begun at=1625067591 (56943s ago), job type=backup, previous check-in=179.1s
+56942.790 (5) Scheduling a resumption (6) after 372 seconds (1625124906) in case this run gets aborted
+56942.802 (5) Checking if we have a zip executable available
+56942.806 (5) Creation of backups of directories: already finished
+56942.811 (5) Saving backup status to database (elements: 8)
+56942.823 (5) Database dump (WordPress DB): Creation was completed already
+56942.828 (5) SQL compatibility mode is: NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER
+56942.840 (5) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+56942.844 (5) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+56942.848 (5) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+56942.851 (5) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip: others: This file has already been successfully uploaded
+56942.855 (5) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db.gz: db: This file has already been successfully uploaded
+56942.858 (5) Saving backup history. Total backup size: Unknown
+56942.868 (5) Requesting upload of the files that have not yet been successfully uploaded (3)
+56942.877 (5) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+56942.885 (5) Beginning dispatch of backup to remote (googledrive) (instance identifier s-0b09d5947c6b8f5cf10eff995603f047)
+56945.943 (5) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+56945.947 (5) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+57006.820 (5) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+57006.823 (5) An error condition has occurred for the first time during this job
+57007.201 (5) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+57007.204 (5) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+57007.401 (5) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: upload already began; attempt to resume did not succeed (HTTP code: 404)
+57031.190 (5) Google Drive: ERROR: upload error (UDP_Google_Service_Exception): Error calling PUT https://www.googleapis.com/upload/drive/v2/files?uploadType=resumable&upload_id=ADPycdsa-rf_FVZiVFyVfU9kpPQvPJZr5eVrATlM77LGtXdxGS0AqEu5r9g806Y9GBhtjPtPknK_gsKmcSsr1DRrIWfSEHyURA: (404)  (line: 110, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\Http\REST.php)
+57091.889 (5) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+57092.409 (5) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+57092.412 (5) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+57093.071 (5) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: upload already began; attempting to resume from byte 2097151
+57153.080 (5) Google Drive: Upload error: Operation timed out after 59999 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+57153.087 (5) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+57153.090 (5) Number of backup sets in history: 2; groups (db): 1
+57153.093 (5) Examining (for databases) backup set with group_id=0, nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+57153.095 (5) This backup set is the backup set just made, so will not be deleted.
+57153.095 (5) Examining (for databases) backup set with group_id=0, nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+57153.096 (5) This backup set remains non-empty (f=1/d=1); will retain in history
+57153.098 (5) Number of backup sets in history: 2; groups (files): 1
+57153.100 (5) Examining (for files) backup set with nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+57153.100 (5) This backup set is the backup set just made, so will not be deleted.
+57153.103 (5) This backup set is the backup set just made, so will not be deleted.
+57153.104 (5) This backup set is the backup set just made, so will not be deleted.
+57153.105 (5) This backup set is the backup set just made, so will not be deleted.
+57153.108 (5) This backup set remains non-empty (f=1/d=1); will retain in history
+57153.111 (5) Examining (for files) backup set with nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+57153.111 (5) This backup set remains non-empty (f=1/d=1); will retain in history
+57153.112 (5) Retain: saving new backup history (sets now: 2) and finishing retain operation
+57153.119 (5) Resume backup (2ad77de19924, 5): finish run
+57153.125 (5) [Lock option (updraft_lock_2ad77de19924, wp_options) released] info
+57153.127 (5) There were errors in the uploads, so the 'resume' event is remaining scheduled
+57153.132 (5) La sauvegarde ne s'est pas terminée; une relance de la procédure est prévue
+57326.924 (6) Opened log file at time: Thu, 01 Jul 2021 07:35:18 +0000 on http://wordpress
+57326.928 (6) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.16.56 WP: 5.7.2 PHP: 7.3.21 (apache2handler, Windows NT LAPTOP-CLR0P7V8 10.0 build 19042 (Windows 10) AMD64) MySQL: 5.7.31 WPLANG: fr_FR Server: Apache/2.4.46 (Win64) PHP/7.3.21 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 33.1M | 2M) multisite: N openssl: OpenSSL 1.1.1g  21 Apr 2020 mcrypt: N LANG:  ZipArchive::addFile: Y
+57326.931 (6) Free space on disk containing Updraft's temporary directory: 11136.4 MB
+57326.934 (6) Requesting backup semaphore lock (2ad77de19924)
+57326.937 (6) [Lock (updraft_lock_2ad77de19924, wp_options) acquired] info
+57326.943 (6) Backup run: resumption=6, nonce=2ad77de19924, file_nonce=2ad77de19924 begun at=1625067591 (57327s ago), job type=backup
+57326.949 (6) Scheduling a resumption (7) after 372 seconds (1625125290) in case this run gets aborted
+57326.959 (6) Checking if we have a zip executable available
+57326.964 (6) Creation of backups of directories: already finished
+57326.968 (6) Saving backup status to database (elements: 8)
+57326.977 (6) Database dump (WordPress DB): Creation was completed already
+57326.981 (6) SQL compatibility mode is: NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER
+57326.991 (6) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+57326.993 (6) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+57326.996 (6) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+57326.998 (6) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip: others: This file has already been successfully uploaded
+57327.002 (6) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db.gz: db: This file has already been successfully uploaded
+57327.005 (6) Saving backup history. Total backup size: Unknown
+57327.013 (6) Requesting upload of the files that have not yet been successfully uploaded (3)
+57327.019 (6) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+57327.022 (6) Beginning dispatch of backup to remote (googledrive) (instance identifier s-0b09d5947c6b8f5cf10eff995603f047)
+57328.676 (6) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+57328.678 (6) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+57344.088 (6) Googledrive chunked upload: 1.2 % uploaded (1048576)
+57357.430 (6) Googledrive chunked upload: 2.4 % uploaded (2097152)
+57417.450 (6) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+57417.453 (6) An error condition has occurred for the first time during this job
+57418.170 (6) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+57418.173 (6) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+57478.839 (6) Google Drive: Upload error: Operation timed out after 59999 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+57479.463 (6) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+57479.468 (6) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+57479.844 (6) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: upload already began; attempting to resume from byte 3145727
+57539.858 (6) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+57539.865 (6) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+57539.869 (6) Number of backup sets in history: 2; groups (db): 1
+57539.871 (6) Examining (for databases) backup set with group_id=0, nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+57539.874 (6) This backup set is the backup set just made, so will not be deleted.
+57539.874 (6) Examining (for databases) backup set with group_id=0, nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+57539.874 (6) This backup set remains non-empty (f=1/d=1); will retain in history
+57539.877 (6) Number of backup sets in history: 2; groups (files): 1
+57539.879 (6) Examining (for files) backup set with nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+57539.879 (6) This backup set is the backup set just made, so will not be deleted.
+57539.881 (6) This backup set is the backup set just made, so will not be deleted.
+57539.882 (6) This backup set is the backup set just made, so will not be deleted.
+57539.883 (6) This backup set is the backup set just made, so will not be deleted.
+57539.883 (6) This backup set remains non-empty (f=1/d=1); will retain in history
+57539.886 (6) Examining (for files) backup set with nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+57539.886 (6) This backup set remains non-empty (f=1/d=1); will retain in history
+57539.887 (6) Retain: saving new backup history (sets now: 2) and finishing retain operation
+57539.894 (6) Resume backup (2ad77de19924, 6): finish run
+57539.897 (6) [Lock option (updraft_lock_2ad77de19924, wp_options) released] info
+57539.900 (6) There were errors in the uploads, so the 'resume' event is remaining scheduled
+57539.906 (6) La sauvegarde ne s'est pas terminée; une relance de la procédure est prévue
+57748.017 (7) Opened log file at time: Thu, 01 Jul 2021 07:42:19 +0000 on http://wordpress
+57748.021 (7) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.16.56 WP: 5.7.2 PHP: 7.3.21 (apache2handler, Windows NT LAPTOP-CLR0P7V8 10.0 build 19042 (Windows 10) AMD64) MySQL: 5.7.31 WPLANG: fr_FR Server: Apache/2.4.46 (Win64) PHP/7.3.21 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 33.2M | 2M) multisite: N openssl: OpenSSL 1.1.1g  21 Apr 2020 mcrypt: N LANG:  ZipArchive::addFile: Y
+57748.023 (7) Free space on disk containing Updraft's temporary directory: 10747.7 MB
+57748.026 (7) Requesting backup semaphore lock (2ad77de19924)
+57748.030 (7) [Lock (updraft_lock_2ad77de19924, wp_options) acquired] info
+57748.036 (7) Backup run: resumption=7, nonce=2ad77de19924, file_nonce=2ad77de19924 begun at=1625067591 (57748s ago), job type=backup, previous check-in=30.5s
+57748.042 (7) Scheduling a resumption (8) after 372 seconds (1625125711) in case this run gets aborted
+57748.050 (7) Checking if we have a zip executable available
+57748.052 (7) Creation of backups of directories: already finished
+57748.056 (7) Saving backup status to database (elements: 8)
+57748.065 (7) Database dump (WordPress DB): Creation was completed already
+57748.069 (7) SQL compatibility mode is: NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER
+57748.078 (7) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+57748.080 (7) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+57748.083 (7) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+57748.086 (7) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip: others: This file has already been successfully uploaded
+57748.089 (7) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db.gz: db: This file has already been successfully uploaded
+57748.092 (7) Saving backup history. Total backup size: Unknown
+57748.099 (7) Requesting upload of the files that have not yet been successfully uploaded (3)
+57748.106 (7) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+57748.109 (7) Beginning dispatch of backup to remote (googledrive) (instance identifier s-0b09d5947c6b8f5cf10eff995603f047)
+57750.355 (7) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+57750.359 (7) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+57750.818 (7) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: upload already began; attempting to resume from byte 3145727
+57810.831 (7) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+57810.835 (7) An error condition has occurred for the first time during this job
+57811.293 (7) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+57811.297 (7) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+57871.894 (7) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+57872.494 (7) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+57872.498 (7) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+57872.846 (7) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: upload already began; attempting to resume from byte 4194303
+57932.855 (7) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+57932.864 (7) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+57932.867 (7) Number of backup sets in history: 2; groups (db): 1
+57932.870 (7) Examining (for databases) backup set with group_id=0, nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+57932.872 (7) This backup set is the backup set just made, so will not be deleted.
+57932.872 (7) Examining (for databases) backup set with group_id=0, nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+57932.872 (7) This backup set remains non-empty (f=1/d=1); will retain in history
+57932.875 (7) Number of backup sets in history: 2; groups (files): 1
+57932.877 (7) Examining (for files) backup set with nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+57932.878 (7) This backup set is the backup set just made, so will not be deleted.
+57932.880 (7) This backup set is the backup set just made, so will not be deleted.
+57932.881 (7) This backup set is the backup set just made, so will not be deleted.
+57932.881 (7) This backup set is the backup set just made, so will not be deleted.
+57932.882 (7) This backup set remains non-empty (f=1/d=1); will retain in history
+57932.885 (7) Examining (for files) backup set with nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+57932.885 (7) This backup set remains non-empty (f=1/d=1); will retain in history
+57932.886 (7) Retain: saving new backup history (sets now: 2) and finishing retain operation
+57932.896 (7) Resume backup (2ad77de19924, 7): finish run
+57932.899 (7) [Lock option (updraft_lock_2ad77de19924, wp_options) released] info
+57932.902 (7) There were errors in the uploads, so the 'resume' event is remaining scheduled
+57932.908 (7) La sauvegarde ne s'est pas terminée; une relance de la procédure est prévue
+58168.308 (8) Opened log file at time: Thu, 01 Jul 2021 07:49:19 +0000 on http://wordpress
+58168.311 (8) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.16.56 WP: 5.7.2 PHP: 7.3.21 (apache2handler, Windows NT LAPTOP-CLR0P7V8 10.0 build 19042 (Windows 10) AMD64) MySQL: 5.7.31 WPLANG: fr_FR Server: Apache/2.4.46 (Win64) PHP/7.3.21 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 33M | 36M) multisite: N openssl: OpenSSL 1.1.1g  21 Apr 2020 mcrypt: N LANG:  ZipArchive::addFile: Y
+58168.314 (8) Free space on disk containing Updraft's temporary directory: 10752.9 MB
+58168.318 (8) Requesting backup semaphore lock (2ad77de19924)
+58168.321 (8) [Lock (updraft_lock_2ad77de19924, wp_options) acquired] info
+58168.329 (8) Backup run: resumption=8, nonce=2ad77de19924, file_nonce=2ad77de19924 begun at=1625067591 (58168s ago), job type=backup
+58168.334 (8) Scheduling a resumption (9) after 372 seconds (1625126131) in case this run gets aborted
+58168.409 (8) Checking if we have a zip executable available
+58168.413 (8) Creation of backups of directories: already finished
+58168.418 (8) Saving backup status to database (elements: 8)
+58168.428 (8) Database dump (WordPress DB): Creation was completed already
+58168.433 (8) SQL compatibility mode is: NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER
+58168.443 (8) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+58168.446 (8) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+58168.449 (8) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+58168.452 (8) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip: others: This file has already been successfully uploaded
+58168.455 (8) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db.gz: db: This file has already been successfully uploaded
+58168.458 (8) Saving backup history. Total backup size: Unknown
+58168.466 (8) Requesting upload of the files that have not yet been successfully uploaded (3)
+58168.476 (8) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+58168.480 (8) Beginning dispatch of backup to remote (googledrive) (instance identifier s-0b09d5947c6b8f5cf10eff995603f047)
+58170.467 (8) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+58170.472 (8) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+58170.776 (8) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: upload already began; attempting to resume from byte 4194303
+58230.792 (8) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+58230.795 (8) An error condition has occurred for the first time during this job
+58231.389 (8) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+58231.393 (8) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+58292.148 (8) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+58292.731 (8) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+58292.734 (8) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+58293.057 (8) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: upload already began; attempting to resume from byte 5242879
+58353.068 (8) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+58353.076 (8) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+58353.080 (8) Number of backup sets in history: 2; groups (db): 1
+58353.082 (8) Examining (for databases) backup set with group_id=0, nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+58353.084 (8) This backup set is the backup set just made, so will not be deleted.
+58353.084 (8) Examining (for databases) backup set with group_id=0, nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+58353.085 (8) This backup set remains non-empty (f=1/d=1); will retain in history
+58353.087 (8) Number of backup sets in history: 2; groups (files): 1
+58353.089 (8) Examining (for files) backup set with nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+58353.089 (8) This backup set is the backup set just made, so will not be deleted.
+58353.091 (8) This backup set is the backup set just made, so will not be deleted.
+58353.092 (8) This backup set is the backup set just made, so will not be deleted.
+58353.092 (8) This backup set is the backup set just made, so will not be deleted.
+58353.093 (8) This backup set remains non-empty (f=1/d=1); will retain in history
+58353.095 (8) Examining (for files) backup set with nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+58353.096 (8) This backup set remains non-empty (f=1/d=1); will retain in history
+58353.096 (8) Retain: saving new backup history (sets now: 2) and finishing retain operation
+58353.104 (8) Resume backup (2ad77de19924, 8): finish run
+58353.107 (8) [Lock option (updraft_lock_2ad77de19924, wp_options) released] info
+58353.110 (8) There were errors in the uploads, so the 'resume' event is remaining scheduled
+58353.116 (8) La sauvegarde ne s'est pas terminée; une relance de la procédure est prévue
+58584.879 (9) Opened log file at time: Thu, 01 Jul 2021 07:56:16 +0000 on http://wordpress
+58584.883 (9) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.16.56 WP: 5.7.2 PHP: 7.3.21 (apache2handler, Windows NT LAPTOP-CLR0P7V8 10.0 build 19042 (Windows 10) AMD64) MySQL: 5.7.31 WPLANG: fr_FR Server: Apache/2.4.46 (Win64) PHP/7.3.21 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 33.2M | 2M) multisite: N openssl: OpenSSL 1.1.1g  21 Apr 2020 mcrypt: N LANG:  ZipArchive::addFile: Y
+58584.887 (9) Free space on disk containing Updraft's temporary directory: 10741.4 MB
+58584.891 (9) Requesting backup semaphore lock (2ad77de19924)
+58584.895 (9) [Lock (updraft_lock_2ad77de19924, wp_options) acquired] info
+58584.903 (9) Backup run: resumption=9, nonce=2ad77de19924, file_nonce=2ad77de19924 begun at=1625067591 (58585s ago), job type=backup
+58584.910 (9) The current run is resumption number 9, and there was nothing useful done on the last run (last useful run: 6) - will not schedule a further attempt until we see something useful happening this time
+58584.918 (9) Scheduling a resumption (10) after 372 seconds (1625126548); but the job will then be aborted unless something happens this time
+58584.928 (9) Creation of backups of directories: already finished
+58584.932 (9) Saving backup status to database (elements: 8)
+58584.942 (9) Database dump (WordPress DB): Creation was completed already
+58584.946 (9) SQL compatibility mode is: NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER
+58584.959 (9) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+58584.962 (9) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+58584.966 (9) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+58584.970 (9) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-others.zip: others: This file has already been successfully uploaded
+58584.973 (9) backup_2021-06-30-1739_comicsManiacs_2ad77de19924-db.gz: db: This file has already been successfully uploaded
+58584.976 (9) Saving backup history. Total backup size: Unknown
+58584.985 (9) Requesting upload of the files that have not yet been successfully uploaded (3)
+58584.993 (9) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+58584.997 (9) Beginning dispatch of backup to remote (googledrive) (instance identifier s-0b09d5947c6b8f5cf10eff995603f047)
+58587.272 (9) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+58587.276 (9) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+58587.547 (9) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-plugins.zip: upload already began; attempting to resume from byte 5242879
+58647.560 (9) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+58647.562 (9) An error condition has occurred for the first time during this job
+58648.428 (9) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+58648.430 (9) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-themes.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+58709.417 (9) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+58710.519 (9) Google Drive: quota usage: used=8074.5 MB, total=15360 MB, available=7285.5 MB
+58710.522 (9) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: Attempting to upload to Google Drive (into folder id: 1ETLxxES8EkOPVVAZGjGL_Rh9adQAZR2m)
+58711.038 (9) Google Drive: backup_2021-06-30-1739_comicsManiacs_2ad77de19924-uploads.zip: upload already began; attempting to resume from byte 6029311
+58771.049 (9) Google Drive: Upload error: Operation timed out after 60000 milliseconds with 0 bytes received (line: 117, file: C:\wamp64\www\wordpress\wp-content\plugins\updraftplus\includes\Google\IO\Curl.php)
+58771.056 (9) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+58771.059 (9) Number of backup sets in history: 2; groups (db): 1
+58771.062 (9) Examining (for databases) backup set with group_id=0, nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+58771.064 (9) This backup set is the backup set just made, so will not be deleted.
+58771.064 (9) Examining (for databases) backup set with group_id=0, nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+58771.064 (9) This backup set remains non-empty (f=1/d=1); will retain in history
+58771.066 (9) Number of backup sets in history: 2; groups (files): 1
+58771.068 (9) Examining (for files) backup set with nonce=2ad77de19924, datestamp=1625067591 (Jun 30 2021 15:39:51)
+58771.068 (9) This backup set is the backup set just made, so will not be deleted.
+58771.069 (9) This backup set is the backup set just made, so will not be deleted.
+58771.070 (9) This backup set is the backup set just made, so will not be deleted.
+58771.070 (9) This backup set is the backup set just made, so will not be deleted.
+58771.071 (9) This backup set remains non-empty (f=1/d=1); will retain in history
+58771.073 (9) Examining (for files) backup set with nonce=56a068fa064d, datestamp=1624976168 (Jun 29 2021 14:16:08)
+58771.073 (9) This backup set remains non-empty (f=1/d=1); will retain in history
+58771.073 (9) Retain: saving new backup history (sets now: 2) and finishing retain operation
+58771.079 (9) Resume backup (2ad77de19924, 9): finish run
+58771.081 (9) [Lock option (updraft_lock_2ad77de19924, wp_options) released] info
+58771.084 (9) The resumption is being cancelled, as it was only scheduled to enable error reporting, which can be performed now
+58771.091 (9) Fetching RSS news feed
+58771.855 (9) Fetched RSS news feed; result is a: SimplePie
+58771.881 (9) Sending email ('Fichiers et base de données (Sauvegarde complète)') report (attachments: 1, size: 145.9 KB) to: tony_...
+58771.938 (9) La tentative de sauvegarde est terminée, apparemment sans succès
