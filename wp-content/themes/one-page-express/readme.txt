@@ -2,8 +2,8 @@
 
 Contributors: horearadu
 Tags:   one-column, right-sidebar, custom-header, custom-menu, custom-logo, full-width-template, theme-options, translation-ready, blog, featured-images, threaded-comments
-Requires at least:      5.3
-Tested up to:           5.6
+Requires at least:      5.5
+Tested up to:           5.8
 
 == Description ==
 

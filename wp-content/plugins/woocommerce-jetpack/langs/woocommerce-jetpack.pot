@@ -324,7 +324,7 @@ msgid "Product Info"
 msgstr ""
 
 #: includes/admin/class-wc-settings-jetpack.php:764
-#: includes/admin/wcj-welcome-screen-content.php:72
+#: includes/admin/wcj-welcome-screen-content.php:80
 #: includes/class-wcj-product-input-fields.php:24
 #: includes/input-fields/class-wcj-product-input-fields-core.php:185
 msgid "Product Input Fields"
@@ -431,8 +431,8 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: includes/admin/class-wcj-welcome.php:60
-#: includes/admin/class-wcj-welcome.php:61
+#: includes/admin/class-wcj-welcome.php:43
+#: includes/admin/class-wcj-welcome.php:44
 msgid "Welcome to Booster"
 msgstr ""
 
@@ -490,7 +490,7 @@ msgid ""
 msgstr ""
 
 #: includes/admin/wcj-modules-cats.php:116
-#: includes/admin/wcj-welcome-screen-content.php:99
+#: includes/admin/wcj-welcome-screen-content.php:107
 #: includes/settings/wcj-settings-payment-gateways-by-country.php:55
 #: includes/settings/wcj-settings-payment-gateways-by-currency.php:14
 #: includes/settings/wcj-settings-payment-gateways-by-shipping.php:37
@@ -533,178 +533,175 @@ msgstr ""
 msgid "Emails, Reports, Export, Admin Tools, General Options and more."
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:9
+#: includes/admin/wcj-welcome-screen-content.php:17
 msgid "Welcome to booster."
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:10
+#: includes/admin/wcj-welcome-screen-content.php:18
 msgid ""
 "Thank you for choosing Booster - Supercharge your WooCommerce site with these "
 "awesome powerful features. More than 100 modules. All in one WooCommerce "
 "plugin."
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:11
+#: includes/admin/wcj-welcome-screen-content.php:19
 msgid "Launch Booster Settings"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:17
+#: includes/admin/wcj-welcome-screen-content.php:25
 msgid "Get Booster Plus Now."
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:23
+#: includes/admin/wcj-welcome-screen-content.php:31
 msgid "30-Day Risk Free"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:23
+#: includes/admin/wcj-welcome-screen-content.php:31
 msgid "Money Back Guarantee"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:29
+#: includes/admin/wcj-welcome-screen-content.php:37
 msgid "400+ 5-Star"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:29
+#: includes/admin/wcj-welcome-screen-content.php:37
 msgid "Reviews"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:35
+#: includes/admin/wcj-welcome-screen-content.php:43
 msgid "Trusted by"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:35
+#: includes/admin/wcj-welcome-screen-content.php:43
 msgid "100,000+"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:35
+#: includes/admin/wcj-welcome-screen-content.php:43
 msgid "Websites"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:42
+#: includes/admin/wcj-welcome-screen-content.php:50
 msgid "Tons of Customizations and Zero Coding."
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:44
+#: includes/admin/wcj-welcome-screen-content.php:52
 msgid ""
 "Access more than one hundred easy-to-use modules to quickly add customized "
 "functionality to your WooCommerce business"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:45
+#: includes/admin/wcj-welcome-screen-content.php:53
 msgid "- Without writing a line of code."
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:54
+#: includes/admin/wcj-welcome-screen-content.php:62
 msgid "PDF Invoicing and Packing Slips"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:55
+#: includes/admin/wcj-welcome-screen-content.php:63
 msgid ""
 "Streamline your WooCommerce orders and paperwork, and deliver a seamless "
 "customer experience with the PDF Invoicing and Packing Slips module."
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:63
+#: includes/admin/wcj-welcome-screen-content.php:71
 #: includes/class-wcj-product-addons.php:30
 msgid "Product Addons"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:64
+#: includes/admin/wcj-welcome-screen-content.php:72
 msgid ""
 "Create addons for your WooCommerce products like support service or special "
 "offers with the Product Addons Module."
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:73
+#: includes/admin/wcj-welcome-screen-content.php:81
 msgid ""
 "Allow your customers to provide more details about their order with the "
 "Product Input Fields module. Super handy when selling customized products."
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:81
+#: includes/admin/wcj-welcome-screen-content.php:89
 msgid "Button and Price Labels"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:82
+#: includes/admin/wcj-welcome-screen-content.php:90
 msgid ""
 "Add custom buttons and price labels to your products with this popular "
 "module. Set automatic price for products with an empty price field."
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:90
+#: includes/admin/wcj-welcome-screen-content.php:98
 msgid "Prices and Currencies"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:91
+#: includes/admin/wcj-welcome-screen-content.php:99
 msgid ""
 "Make it easy for customers around the globe to make purchases on your site by "
 "displaying their currency with the Prices and Currencies by Country module."
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:100
+#: includes/admin/wcj-welcome-screen-content.php:108
 msgid ""
 "Set up multiple payment gateways based on currency, shipping method, country, "
 "or state."
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:108
+#: includes/admin/wcj-welcome-screen-content.php:116
 msgid "Cart and Checkout"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:109
+#: includes/admin/wcj-welcome-screen-content.php:117
 msgid ""
 "Customize the shopping cart and checkout experience. Add coupons, additional "
 "fees, custom fields, and buttons with the Cart and Checkout modules."
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:117
+#: includes/admin/wcj-welcome-screen-content.php:125
 msgid "Emails & Additional Tools"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:118
+#: includes/admin/wcj-welcome-screen-content.php:126
 msgid ""
 "Add custom emails, additional recipients, and verification for increased "
 "security. Explore miscellaneous reporting and customization tools for "
 "increased functionality."
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:122
+#: includes/admin/wcj-welcome-screen-content.php:130
 msgid "See All Features"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:126
+#: includes/admin/wcj-welcome-screen-content.php:134
 msgid "Don't miss updates from us!"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:133
-msgid "Thank you for subscribing your email"
+#: includes/admin/wcj-welcome-screen-content.php:150
+#, php-format
+msgid "%s"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:136
-msgid "You have already subscribed your email"
-msgstr ""
-
-#: includes/admin/wcj-welcome-screen-content.php:141
+#: includes/admin/wcj-welcome-screen-content.php:155
 msgid "Contact Us"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:143
+#: includes/admin/wcj-welcome-screen-content.php:157
 msgid ""
 "Booster Plus customers get access to Premium Support and we respond within 24 "
 "business hours."
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:144
+#: includes/admin/wcj-welcome-screen-content.php:158
 msgid "Booster Plus Premium Support"
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:147
+#: includes/admin/wcj-welcome-screen-content.php:161
 msgid ""
 "Free users post on WordPress Plugin Support forum here. We check these "
 "threads twice every week Mon and Frid to respond."
 msgstr ""
 
-#: includes/admin/wcj-welcome-screen-content.php:148
+#: includes/admin/wcj-welcome-screen-content.php:162
 msgid "Booster Free Plugin Support"
 msgstr ""
 
@@ -1069,7 +1066,8 @@ msgid "Trash"
 msgstr ""
 
 #: includes/class-wcj-admin-orders-list.php:327
-#: includes/class-wcj-product-by-country.php:198
+#: includes/class-wcj-product-by-country.php:181
+#: includes/class-wcj-product-by-country.php:215
 msgid "All countries"
 msgstr ""
 
@@ -1820,7 +1818,7 @@ msgid ""
 msgstr ""
 
 #: includes/class-wcj-custom-php.php:32
-#: includes/settings/wcj-settings-multicurrency.php:250
+#: includes/settings/wcj-settings-multicurrency.php:259
 #: includes/settings/wcj-settings-offer-price.php:84
 #, php-format
 msgid "E.g.: %s"
@@ -2032,7 +2030,7 @@ msgid "Booster: Send Email: %s"
 msgstr ""
 
 #: includes/class-wcj-empty-cart-button.php:25
-#: includes/shortcodes/class-wcj-shortcodes-general.php:517
+#: includes/shortcodes/class-wcj-shortcodes-general.php:547
 msgid "Empty Cart Button"
 msgstr ""
 
@@ -2115,7 +2113,11 @@ msgstr ""
 msgid "Validation failed. Please try again."
 msgstr ""
 
-#: includes/class-wcj-eu-vat-number.php:539
+#: includes/class-wcj-eu-vat-number.php:532
+msgid "<strong>Billing EU VAT Number</strong>is a required field."
+msgstr ""
+
+#: includes/class-wcj-eu-vat-number.php:547
 #: includes/settings/wcj-settings-eu-vat-number.php:83
 msgid "<strong>EU VAT Number</strong> is not valid."
 msgstr ""
@@ -2669,8 +2671,8 @@ msgstr ""
 #: includes/settings/wcj-settings-coupon-by-user-role.php:60
 #: includes/settings/wcj-settings-currency-per-product.php:41
 #: includes/settings/wcj-settings-currency-per-product.php:48
-#: includes/settings/wcj-settings-order-quantities.php:231
-#: includes/settings/wcj-settings-order-quantities.php:258
+#: includes/settings/wcj-settings-order-quantities.php:248
+#: includes/settings/wcj-settings-order-quantities.php:275
 #: includes/settings/wcj-settings-product-by-time.php:69
 msgid "Message"
 msgstr ""
@@ -2984,43 +2986,43 @@ msgid ""
 "decimal quantities etc."
 msgstr ""
 
-#: includes/class-wcj-order-quantities.php:260
-#: includes/settings/wcj-settings-order-quantities.php:260
+#: includes/class-wcj-order-quantities.php:266
+#: includes/settings/wcj-settings-order-quantities.php:277
 msgid ""
 "Only one item can be added to the cart. Clear the cart or finish the order, "
 "before adding another item to the cart."
 msgstr ""
 
-#: includes/class-wcj-order-quantities.php:429
-#: includes/settings/wcj-settings-order-quantities.php:160
+#: includes/class-wcj-order-quantities.php:438
+#: includes/settings/wcj-settings-order-quantities.php:168
 msgid ""
 "Maximum allowed order quantity is %max_cart_total_quantity%. Your current "
 "order quantity is %cart_total_quantity%."
 msgstr ""
 
-#: includes/class-wcj-order-quantities.php:437
+#: includes/class-wcj-order-quantities.php:446
 #: includes/settings/wcj-settings-order-quantities.php:102
 msgid ""
 "Minimum allowed order quantity is %min_cart_total_quantity%. Your current "
 "order quantity is %cart_total_quantity%."
 msgstr ""
 
-#: includes/class-wcj-order-quantities.php:447
-#: includes/settings/wcj-settings-order-quantities.php:186
+#: includes/class-wcj-order-quantities.php:456
+#: includes/settings/wcj-settings-order-quantities.php:203
 msgid ""
 "Maximum allowed quantity for %product_title% is %max_per_item_quantity%. Your "
 "current item quantity is %item_quantity%."
 msgstr ""
 
-#: includes/class-wcj-order-quantities.php:457
-#: includes/settings/wcj-settings-order-quantities.php:128
+#: includes/class-wcj-order-quantities.php:469
+#: includes/settings/wcj-settings-order-quantities.php:136
 msgid ""
 "Minimum allowed quantity for %product_title% is %min_per_item_quantity%. Your "
 "current item quantity is %item_quantity%."
 msgstr ""
 
-#: includes/class-wcj-order-quantities.php:467
-#: includes/settings/wcj-settings-order-quantities.php:234
+#: includes/class-wcj-order-quantities.php:479
+#: includes/settings/wcj-settings-order-quantities.php:251
 msgid ""
 "Required step for %product_title% is %required_step%. Your current item "
 "quantity is %item_quantity%."
@@ -3382,10 +3384,10 @@ msgid "After the price"
 msgstr ""
 
 #: includes/class-wcj-price-labels.php:41
-#: includes/class-wcj-product-by-country.php:173
+#: includes/class-wcj-product-by-country.php:190
 #: includes/class-wcj-product-by-user-role.php:55
 #: includes/class-wcj-product-info.php:235
-#: includes/class-wcj-product-price-by-formula.php:71
+#: includes/class-wcj-product-price-by-formula.php:152
 #: includes/class-wcj-shipping-by-products.php:196
 #: includes/class-wcj-shipping-options.php:171
 #: includes/classes/class-wcj-module.php:159
@@ -3483,9 +3485,10 @@ msgstr ""
 #: includes/settings/wcj-settings-multicurrency.php:205
 #: includes/settings/wcj-settings-multicurrency.php:214
 #: includes/settings/wcj-settings-multicurrency.php:223
-#: includes/settings/wcj-settings-multicurrency.php:265
+#: includes/settings/wcj-settings-multicurrency.php:232
 #: includes/settings/wcj-settings-multicurrency.php:274
-#: includes/settings/wcj-settings-multicurrency.php:366
+#: includes/settings/wcj-settings-multicurrency.php:283
+#: includes/settings/wcj-settings-multicurrency.php:375
 #: includes/settings/wcj-settings-my-account.php:29
 #: includes/settings/wcj-settings-my-account.php:87
 #: includes/settings/wcj-settings-my-account.php:104
@@ -3504,9 +3507,11 @@ msgstr ""
 #: includes/settings/wcj-settings-order-quantities.php:42
 #: includes/settings/wcj-settings-order-quantities.php:49
 #: includes/settings/wcj-settings-order-quantities.php:117
-#: includes/settings/wcj-settings-order-quantities.php:175
-#: includes/settings/wcj-settings-order-quantities.php:216
-#: includes/settings/wcj-settings-order-quantities.php:225
+#: includes/settings/wcj-settings-order-quantities.php:125
+#: includes/settings/wcj-settings-order-quantities.php:183
+#: includes/settings/wcj-settings-order-quantities.php:192
+#: includes/settings/wcj-settings-order-quantities.php:233
+#: includes/settings/wcj-settings-order-quantities.php:242
 #: includes/settings/wcj-settings-orders.php:32
 #: includes/settings/wcj-settings-orders.php:60
 #: includes/settings/wcj-settings-orders.php:80
@@ -3593,7 +3598,8 @@ msgstr ""
 #: includes/settings/wcj-settings-product-open-pricing.php:110
 #: includes/settings/wcj-settings-product-open-pricing.php:141
 #: includes/settings/wcj-settings-product-price-by-formula.php:30
-#: includes/settings/wcj-settings-product-price-by-formula.php:119
+#: includes/settings/wcj-settings-product-price-by-formula.php:93
+#: includes/settings/wcj-settings-product-price-by-formula.php:136
 #: includes/settings/wcj-settings-product-tabs.php:43
 #: includes/settings/wcj-settings-product-tabs.php:233
 #: includes/settings/wcj-settings-product-tabs.php:241
@@ -3641,6 +3647,7 @@ msgstr ""
 #: includes/settings/wcj-settings-wholesale-price.php:36
 #: includes/settings/wcj-settings-wholesale-price.php:54
 #: includes/settings/wcj-settings-wholesale-price.php:63
+#: includes/settings/wcj-settings-wholesale-price.php:73
 #: includes/settings/wcj-settings-wpml.php:28
 #: includes/settings/wcj-settings-wpml.php:35
 #: includes/settings/wcj-settings-wpml.php:44
@@ -3891,7 +3898,7 @@ msgstr ""
 #: includes/settings/meta-box/wcj-settings-meta-box-add-to-cart-button-visibility.php:38
 #: includes/settings/wcj-settings-price-by-user-role.php:69
 #: includes/settings/wcj-settings-product-msrp.php:31
-#: includes/settings/wcj-settings-wholesale-price.php:70
+#: includes/settings/wcj-settings-wholesale-price.php:80
 msgid "Show"
 msgstr ""
 
@@ -4117,28 +4124,19 @@ msgid "Manually"
 msgstr ""
 
 #: includes/class-wcj-product-by-country.php:171
-msgid "Overwrite by Billing Country"
-msgstr ""
-
-#: includes/class-wcj-product-by-country.php:172
-msgid "Tries to overwrite Country by User Billing Country on Checkout Page."
-msgstr ""
-
-#: includes/class-wcj-product-by-country.php:183
-msgid "Admin Country List Options"
-msgstr ""
-
-#: includes/class-wcj-product-by-country.php:188
+#: includes/class-wcj-product-by-country.php:205
 msgid "Country List"
 msgstr ""
 
-#: includes/class-wcj-product-by-country.php:189
+#: includes/class-wcj-product-by-country.php:172
 msgid ""
-"This option sets which countries will be added to list in product's edit "
-"page. Possible values: \"All countries\" or \"WooCommerce selling locations\"."
+"This option sets which countries will be added to the list in [wcj_selector "
+"selector_type=\"country\"] shortcode. Possible values: \"All countries\" or "
+"\"WooCommerce selling locations\"."
 msgstr ""
 
-#: includes/class-wcj-product-by-country.php:191
+#: includes/class-wcj-product-by-country.php:174
+#: includes/class-wcj-product-by-country.php:208
 #, php-format
 msgid ""
 "If \"WooCommerce selling locations\" option is selected, country list will be "
@@ -4146,8 +4144,27 @@ msgid ""
 "a>."
 msgstr ""
 
-#: includes/class-wcj-product-by-country.php:199
+#: includes/class-wcj-product-by-country.php:182
+#: includes/class-wcj-product-by-country.php:216
 msgid "WooCommerce selling locations"
+msgstr ""
+
+#: includes/class-wcj-product-by-country.php:188
+msgid "Overwrite by Billing Country"
+msgstr ""
+
+#: includes/class-wcj-product-by-country.php:189
+msgid "Tries to overwrite Country by User Billing Country on Checkout Page."
+msgstr ""
+
+#: includes/class-wcj-product-by-country.php:200
+msgid "Admin Country List Options"
+msgstr ""
+
+#: includes/class-wcj-product-by-country.php:206
+msgid ""
+"This option sets which countries will be added to list in product's edit "
+"page. Possible values: \"All countries\" or \"WooCommerce selling locations\"."
 msgstr ""
 
 #: includes/class-wcj-product-by-date.php:29
@@ -4638,27 +4655,37 @@ msgstr ""
 msgid "Set formula for automatic product price calculation."
 msgstr ""
 
-#: includes/class-wcj-product-price-by-formula.php:70
+#: includes/class-wcj-product-price-by-formula.php:108
+#: includes/class-wcj-product-price-by-formula.php:327
+msgid "Error in formula"
+msgstr ""
+
+#: includes/class-wcj-product-price-by-formula.php:119
+msgid "Booking cost"
+msgstr ""
+
+#: includes/class-wcj-product-price-by-formula.php:131
+#, php-format
+msgid "From: %s"
+msgstr ""
+
+#: includes/class-wcj-product-price-by-formula.php:151
 msgid "Reset products"
 msgstr ""
 
-#: includes/class-wcj-product-price-by-formula.php:76
+#: includes/class-wcj-product-price-by-formula.php:157
 msgid ""
 "If enabled will also reset formula related settings on products when "
 "<code>Reset Settings</code> button is pressed."
 msgstr ""
 
-#: includes/class-wcj-product-price-by-formula.php:76
+#: includes/class-wcj-product-price-by-formula.php:157
 msgid ""
 "It's necessary to <code>Save changes</code> first with the option enabled so "
 "the <code>Reset settings</code> can be pressed."
 msgstr ""
 
-#: includes/class-wcj-product-price-by-formula.php:246
-msgid "Error in formula"
-msgstr ""
-
-#: includes/class-wcj-product-price-by-formula.php:339
+#: includes/class-wcj-product-price-by-formula.php:420
 msgid ""
 "Booster: Free plugin's version is limited to only one price by formula "
 "product enabled at a time. You will need to get <a href=\"https://booster.io/"
@@ -4666,7 +4693,7 @@ msgid ""
 "by formula products."
 msgstr ""
 
-#: includes/class-wcj-product-price-by-formula.php:373
+#: includes/class-wcj-product-price-by-formula.php:454
 msgid "Final Price Preview"
 msgstr ""
 
@@ -5297,7 +5324,7 @@ msgid ""
 msgstr ""
 
 #: includes/class-wcj-shipping-by-user-role.php:34
-#: includes/settings/wcj-settings-multicurrency.php:379
+#: includes/settings/wcj-settings-multicurrency.php:388
 #: includes/settings/wcj-settings-order-min-amount.php:131
 #: includes/settings/wcj-settings-price-by-user-role.php:151
 #, php-format
@@ -5792,14 +5819,14 @@ msgstr ""
 msgid "Company Name"
 msgstr ""
 
-#: includes/classes/class-wcj-pdf-invoice.php:259
+#: includes/classes/class-wcj-pdf-invoice.php:262
 #: includes/functions/wcj-functions-general.php:145
 #: includes/pdf-invoices/class-wcj-pdf-invoicing-report-tool.php:245
 msgid "Unexpected error"
 msgstr ""
 
 #: includes/classes/class-wcj-shortcodes.php:135
-#: includes/shortcodes/class-wcj-shortcodes-general.php:517
+#: includes/shortcodes/class-wcj-shortcodes-general.php:547
 #, php-format
 msgid "\"%s\" module is not enabled!"
 msgstr ""
@@ -8471,7 +8498,7 @@ msgstr ""
 #: includes/settings/wcj-settings-add-to-cart-button-visibility.php:36
 #: includes/settings/wcj-settings-add-to-cart-button-visibility.php:62
 #: includes/settings/wcj-settings-multicurrency-base-price.php:63
-#: includes/settings/wcj-settings-multicurrency.php:243
+#: includes/settings/wcj-settings-multicurrency.php:252
 #: includes/settings/wcj-settings-order-min-amount.php:77
 #: includes/settings/wcj-settings-price-by-country.php:232
 #: includes/settings/wcj-settings-price-by-user-role.php:106
@@ -9135,12 +9162,12 @@ msgid "Set 0 to use global settings. Set -1 to disable."
 msgstr ""
 
 #: includes/settings/meta-box/wcj-settings-meta-box-order-quantities.php:52
-#: includes/settings/wcj-settings-order-quantities.php:142
+#: includes/settings/wcj-settings-order-quantities.php:150
 msgid "Maximum Quantity"
 msgstr ""
 
 #: includes/settings/meta-box/wcj-settings-meta-box-order-quantities.php:68
-#: includes/settings/wcj-settings-order-quantities.php:200
+#: includes/settings/wcj-settings-order-quantities.php:217
 msgid "Quantity Step"
 msgstr ""
 
@@ -9473,7 +9500,7 @@ msgstr ""
 #: includes/settings/wcj-settings-global-discount.php:69
 #: includes/settings/wcj-settings-payment-gateways-fees.php:57
 #: includes/settings/wcj-settings-purchase-data.php:89
-#: includes/settings/wcj-settings-wholesale-price.php:89
+#: includes/settings/wcj-settings-wholesale-price.php:99
 msgid "Percent"
 msgstr ""
 
@@ -9483,7 +9510,7 @@ msgstr ""
 #: includes/settings/wcj-settings-payment-gateways-fees.php:56
 #: includes/settings/wcj-settings-price-by-user-role.php:31
 #: includes/settings/wcj-settings-purchase-data.php:88
-#: includes/settings/wcj-settings-wholesale-price.php:90
+#: includes/settings/wcj-settings-wholesale-price.php:100
 msgid "Fixed"
 msgstr ""
 
@@ -9496,7 +9523,7 @@ msgid "Enable per Product Levels"
 msgstr ""
 
 #: includes/settings/meta-box/wcj-settings-meta-box-wholesale-price.php:41
-#: includes/settings/wcj-settings-wholesale-price.php:84
+#: includes/settings/wcj-settings-wholesale-price.php:94
 msgid "Discount Type"
 msgstr ""
 
@@ -9526,10 +9553,10 @@ msgstr ""
 
 #: includes/settings/meta-box/wcj-settings-meta-box-wholesale-price.php:72
 #: includes/settings/meta-box/wcj-settings-meta-box-wholesale-price.php:108
-#: includes/settings/wcj-settings-wholesale-price.php:215
-#: includes/settings/wcj-settings-wholesale-price.php:216
-#: includes/settings/wcj-settings-wholesale-price.php:272
-#: includes/settings/wcj-settings-wholesale-price.php:273
+#: includes/settings/wcj-settings-wholesale-price.php:225
+#: includes/settings/wcj-settings-wholesale-price.php:226
+#: includes/settings/wcj-settings-wholesale-price.php:282
+#: includes/settings/wcj-settings-wholesale-price.php:283
 msgid "Discount"
 msgstr ""
 
@@ -9557,9 +9584,9 @@ msgstr ""
 #: includes/settings/wcj-settings-my-account.php:194
 #: includes/settings/wcj-settings-my-account.php:235
 #: includes/settings/wcj-settings-order-quantities.php:85
-#: includes/settings/wcj-settings-order-quantities.php:143
-#: includes/settings/wcj-settings-order-quantities.php:201
-#: includes/settings/wcj-settings-order-quantities.php:249
+#: includes/settings/wcj-settings-order-quantities.php:151
+#: includes/settings/wcj-settings-order-quantities.php:218
+#: includes/settings/wcj-settings-order-quantities.php:266
 #: includes/settings/wcj-settings-orders.php:150
 #: includes/settings/wcj-settings-price-formats.php:37
 #: includes/settings/wcj-settings-product-add-to-cart.php:273
@@ -9633,7 +9660,7 @@ msgstr ""
 #: includes/settings/wcj-settings-add-to-cart-button-visibility.php:90
 #: includes/settings/wcj-settings-max-products-per-user.php:37
 #: includes/settings/wcj-settings-max-products-per-user.php:42
-#: includes/settings/wcj-settings-order-quantities.php:215
+#: includes/settings/wcj-settings-order-quantities.php:232
 #: includes/settings/wcj-settings-price-labels.php:22
 #: includes/settings/wcj-settings-product-add-to-cart.php:39
 #: includes/settings/wcj-settings-product-by-date.php:52
@@ -10153,7 +10180,7 @@ msgstr ""
 #: includes/settings/wcj-settings-admin-tools.php:108
 #: includes/settings/wcj-settings-checkout-custom-fields.php:240
 #: includes/settings/wcj-settings-checkout-custom-fields.php:249
-#: includes/settings/wcj-settings-order-quantities.php:208
+#: includes/settings/wcj-settings-order-quantities.php:225
 msgid "Ignored if set to zero."
 msgstr ""
 
@@ -11892,8 +11919,8 @@ msgstr ""
 #: includes/settings/wcj-settings-currency-external-products.php:20
 #: includes/settings/wcj-settings-currency-per-product.php:180
 #: includes/settings/wcj-settings-multicurrency-base-price.php:142
-#: includes/settings/wcj-settings-multicurrency.php:315
-#: includes/settings/wcj-settings-multicurrency.php:353
+#: includes/settings/wcj-settings-multicurrency.php:324
+#: includes/settings/wcj-settings-multicurrency.php:362
 #: includes/settings/wcj-settings-price-by-country.php:365
 #: includes/settings/wcj-settings-price-formats.php:59
 msgid "Currency"
@@ -11997,7 +12024,7 @@ msgstr ""
 
 #: includes/settings/wcj-settings-currency-per-product.php:138
 #: includes/settings/wcj-settings-multicurrency-base-price.php:113
-#: includes/settings/wcj-settings-multicurrency.php:284
+#: includes/settings/wcj-settings-multicurrency.php:293
 msgid "Currencies Options"
 msgstr ""
 
@@ -12010,7 +12037,7 @@ msgstr ""
 
 #: includes/settings/wcj-settings-currency-per-product.php:144
 #: includes/settings/wcj-settings-multicurrency-base-price.php:118
-#: includes/settings/wcj-settings-multicurrency.php:290
+#: includes/settings/wcj-settings-multicurrency.php:299
 msgid "Total Currencies"
 msgstr ""
 
@@ -12098,9 +12125,9 @@ msgid ""
 msgstr ""
 
 #: includes/settings/wcj-settings-custom-css.php:48
-#: includes/settings/wcj-settings-order-quantities.php:118
-#: includes/settings/wcj-settings-order-quantities.php:176
-#: includes/settings/wcj-settings-order-quantities.php:217
+#: includes/settings/wcj-settings-order-quantities.php:126
+#: includes/settings/wcj-settings-order-quantities.php:193
+#: includes/settings/wcj-settings-order-quantities.php:234
 #: includes/settings/wcj-settings-sale-flash.php:66
 msgid "This will add meta box to each product's edit page."
 msgstr ""
@@ -13073,7 +13100,7 @@ msgid ""
 msgstr ""
 
 #: includes/settings/wcj-settings-global-discount.php:180
-#: includes/settings/wcj-settings-product-price-by-formula.php:105
+#: includes/settings/wcj-settings-product-price-by-formula.php:122
 msgid "Advanced Settings"
 msgstr ""
 
@@ -13099,22 +13126,22 @@ msgstr ""
 
 #: includes/settings/wcj-settings-global-discount.php:201
 #: includes/settings/wcj-settings-multicurrency-base-price.php:76
-#: includes/settings/wcj-settings-multicurrency.php:257
+#: includes/settings/wcj-settings-multicurrency.php:266
 #: includes/settings/wcj-settings-price-by-country.php:237
 #: includes/settings/wcj-settings-price-by-user-role.php:111
 #: includes/settings/wcj-settings-product-addons.php:258
-#: includes/settings/wcj-settings-product-price-by-formula.php:110
+#: includes/settings/wcj-settings-product-price-by-formula.php:127
 msgid "Price Filters Priority"
 msgstr ""
 
 #: includes/settings/wcj-settings-global-discount.php:202
 #: includes/settings/wcj-settings-multicurrency-base-price.php:77
-#: includes/settings/wcj-settings-multicurrency.php:258
+#: includes/settings/wcj-settings-multicurrency.php:267
 #: includes/settings/wcj-settings-price-by-country.php:238
 #: includes/settings/wcj-settings-price-by-user-role.php:112
 #: includes/settings/wcj-settings-product-addons.php:259
-#: includes/settings/wcj-settings-product-price-by-formula.php:111
-#: includes/settings/wcj-settings-wholesale-price.php:133
+#: includes/settings/wcj-settings-product-price-by-formula.php:128
+#: includes/settings/wcj-settings-wholesale-price.php:143
 msgid ""
 "Priority for all module's price filters. If you face pricing issues while "
 "using another plugin or booster module, You can change the Priority, Greater "
@@ -13336,9 +13363,9 @@ msgid "Convert Product Prices in Admin Products List"
 msgstr ""
 
 #: includes/settings/wcj-settings-multicurrency-base-price.php:68
-#: includes/settings/wcj-settings-multicurrency.php:272
+#: includes/settings/wcj-settings-multicurrency.php:281
 #: includes/settings/wcj-settings-price-by-country.php:265
-#: includes/settings/wcj-settings-product-price-by-formula.php:117
+#: includes/settings/wcj-settings-product-price-by-formula.php:134
 msgid "Save Calculated Products Prices"
 msgstr ""
 
@@ -13616,87 +13643,97 @@ msgid ""
 "disabled."
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:248
+#: includes/settings/wcj-settings-multicurrency.php:230
+msgid "WooCommerce Attribute Swatches by Iconic Plugin"
+msgstr ""
+
+#: includes/settings/wcj-settings-multicurrency.php:233
+msgid ""
+"Fixes cart item price issue if the <code>WooCommerce Attribute Swatches by "
+"Iconic</code> Plugin is activated"
+msgstr ""
+
+#: includes/settings/wcj-settings-multicurrency.php:257
 msgid "Additional Price Filters"
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:249
+#: includes/settings/wcj-settings-multicurrency.php:258
 msgid ""
 "Add additional price filters here. One per line. Leave blank if not sure."
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:264
+#: includes/settings/wcj-settings-multicurrency.php:273
 msgid "Save Prices on Exchange Update"
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:266
+#: includes/settings/wcj-settings-multicurrency.php:275
 msgid ""
 "Save min and max prices on exchange rate update, via background processing."
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:266
+#: includes/settings/wcj-settings-multicurrency.php:275
 msgid ""
 "All products with \"per product\" options registered related to the currency "
 "will be affected."
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:273
+#: includes/settings/wcj-settings-multicurrency.php:282
 #: includes/settings/wcj-settings-price-by-country.php:266
-#: includes/settings/wcj-settings-product-price-by-formula.php:118
+#: includes/settings/wcj-settings-product-price-by-formula.php:135
 msgid ""
 "This may help if you are experiencing compatibility issues with other plugins."
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:286
+#: includes/settings/wcj-settings-multicurrency.php:295
 msgid ""
 "One currency probably should be set to current (original) shop currency with "
 "an exchange rate of 1."
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:291
+#: includes/settings/wcj-settings-multicurrency.php:300
 msgid ""
 "Press Save changes after setting this option, so new settings fields will be "
 "added."
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:347
+#: includes/settings/wcj-settings-multicurrency.php:356
 msgid "Default Currency"
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:349
+#: includes/settings/wcj-settings-multicurrency.php:358
 msgid "The default currency displayed on frontend."
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:359
+#: includes/settings/wcj-settings-multicurrency.php:368
 msgid ""
 "The default currency will only be set if the current user hasn't selected it "
 "yet."
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:362
+#: includes/settings/wcj-settings-multicurrency.php:371
 msgid "Force"
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:367
+#: includes/settings/wcj-settings-multicurrency.php:376
 msgid ""
 "If enabled, the default currency will be fixed and users won't be able to "
 "change it."
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:377
+#: includes/settings/wcj-settings-multicurrency.php:386
 msgid "Role Defaults"
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:384
+#: includes/settings/wcj-settings-multicurrency.php:393
 msgid "Roles"
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:385
-#: includes/settings/wcj-settings-wholesale-price.php:237
+#: includes/settings/wcj-settings-multicurrency.php:394
+#: includes/settings/wcj-settings-wholesale-price.php:247
 msgid "Save settings after you change this option. Leave blank to disable."
 msgstr ""
 
-#: includes/settings/wcj-settings-multicurrency.php:408
+#: includes/settings/wcj-settings-multicurrency.php:417
 msgid "No default currency"
 msgstr ""
 
@@ -14649,63 +14686,83 @@ msgid "Minimum Quantity Options"
 msgstr ""
 
 #: includes/settings/wcj-settings-order-quantities.php:91
-#: includes/settings/wcj-settings-order-quantities.php:149
+#: includes/settings/wcj-settings-order-quantities.php:157
 msgid "Cart Total Quantity"
 msgstr ""
 
 #: includes/settings/wcj-settings-order-quantities.php:92
 #: includes/settings/wcj-settings-order-quantities.php:108
-#: includes/settings/wcj-settings-order-quantities.php:150
-#: includes/settings/wcj-settings-order-quantities.php:166
+#: includes/settings/wcj-settings-order-quantities.php:158
+#: includes/settings/wcj-settings-order-quantities.php:174
 #: includes/settings/wcj-settings-shipping-by-order-qty.php:35
 msgid "Set to zero to disable."
 msgstr ""
 
 #: includes/settings/wcj-settings-order-quantities.php:99
-#: includes/settings/wcj-settings-order-quantities.php:157
+#: includes/settings/wcj-settings-order-quantities.php:165
 msgid "Message - Cart Total Quantity"
 msgstr ""
 
 #: includes/settings/wcj-settings-order-quantities.php:107
-#: includes/settings/wcj-settings-order-quantities.php:165
+#: includes/settings/wcj-settings-order-quantities.php:173
 msgid "Per Item Quantity"
 msgstr ""
 
 #: includes/settings/wcj-settings-order-quantities.php:116
-#: includes/settings/wcj-settings-order-quantities.php:174
+msgid "Add all quantities if quantity lower than the minimum quantity"
+msgstr ""
+
+#: includes/settings/wcj-settings-order-quantities.php:118
+msgid ""
+"If you want allow product add to cart with remain quantities if product "
+"quantities less than minimum quantities"
+msgstr ""
+
+#: includes/settings/wcj-settings-order-quantities.php:124
+#: includes/settings/wcj-settings-order-quantities.php:191
 msgid "Per Item Quantity on Per Product Basis"
 msgstr ""
 
-#: includes/settings/wcj-settings-order-quantities.php:125
-#: includes/settings/wcj-settings-order-quantities.php:183
+#: includes/settings/wcj-settings-order-quantities.php:133
+#: includes/settings/wcj-settings-order-quantities.php:200
 msgid "Message - Per Item Quantity"
 msgstr ""
 
-#: includes/settings/wcj-settings-order-quantities.php:137
+#: includes/settings/wcj-settings-order-quantities.php:145
 msgid "Maximum Quantity Options"
 msgstr ""
 
-#: includes/settings/wcj-settings-order-quantities.php:195
+#: includes/settings/wcj-settings-order-quantities.php:182
+msgid "Check Product Quantity Forcefully"
+msgstr ""
+
+#: includes/settings/wcj-settings-order-quantities.php:184
+msgid ""
+"Enable this option if you want to not allow user to product add to cart if "
+"user already reached the Max Quantity limit"
+msgstr ""
+
+#: includes/settings/wcj-settings-order-quantities.php:212
 msgid "Quantity Step Options"
 msgstr ""
 
-#: includes/settings/wcj-settings-order-quantities.php:207
+#: includes/settings/wcj-settings-order-quantities.php:224
 msgid "Step"
 msgstr ""
 
-#: includes/settings/wcj-settings-order-quantities.php:224
+#: includes/settings/wcj-settings-order-quantities.php:241
 msgid "Additional Validation"
 msgstr ""
 
-#: includes/settings/wcj-settings-order-quantities.php:243
+#: includes/settings/wcj-settings-order-quantities.php:260
 msgid "\"Single Item Cart\" Options"
 msgstr ""
 
-#: includes/settings/wcj-settings-order-quantities.php:248
+#: includes/settings/wcj-settings-order-quantities.php:265
 msgid "Enable \"Single Item Cart\" Mode"
 msgstr ""
 
-#: includes/settings/wcj-settings-order-quantities.php:250
+#: includes/settings/wcj-settings-order-quantities.php:267
 msgid ""
 "When enabled, only one item will be allowed to be added to the cart (quantity "
 "is not checked)."
@@ -15999,12 +16056,12 @@ msgid "Disable Price by Country for Bots"
 msgstr ""
 
 #: includes/settings/wcj-settings-price-by-country.php:174
-#: includes/settings/wcj-settings-product-price-by-formula.php:91
+#: includes/settings/wcj-settings-product-price-by-formula.php:108
 msgid "Disable Quick Edit Product For Admin Scope"
 msgstr ""
 
 #: includes/settings/wcj-settings-price-by-country.php:175
-#: includes/settings/wcj-settings-product-price-by-formula.php:92
+#: includes/settings/wcj-settings-product-price-by-formula.php:109
 msgid "Disable For Admin Quick Edit Scope."
 msgstr ""
 
@@ -16013,7 +16070,7 @@ msgid "Disable module on Edit Product For Admin scope."
 msgstr ""
 
 #: includes/settings/wcj-settings-price-by-country.php:176
-#: includes/settings/wcj-settings-product-price-by-formula.php:93
+#: includes/settings/wcj-settings-product-price-by-formula.php:110
 msgid ""
 "For example if you use Quick Edit Product  and donot want change the deafult "
 "price then the  box ticked"
@@ -16225,7 +16282,7 @@ msgstr ""
 
 #: includes/settings/wcj-settings-price-by-user-role.php:120
 #: includes/settings/wcj-settings-product-open-pricing.php:150
-#: includes/settings/wcj-settings-wholesale-price.php:126
+#: includes/settings/wcj-settings-wholesale-price.php:136
 msgid ""
 "Try enabling this checkbox, if you are having compatibility issues with other "
 "plugins."
@@ -17259,7 +17316,7 @@ msgid "Inside product title"
 msgstr ""
 
 #: includes/settings/wcj-settings-product-custom-info.php:130
-#: includes/settings/wcj-settings-wholesale-price.php:107
+#: includes/settings/wcj-settings-wholesale-price.php:117
 msgid "Product Categories to Include"
 msgstr ""
 
@@ -17273,7 +17330,7 @@ msgid "Leave blank to disable the option."
 msgstr ""
 
 #: includes/settings/wcj-settings-product-custom-info.php:138
-#: includes/settings/wcj-settings-wholesale-price.php:116
+#: includes/settings/wcj-settings-wholesale-price.php:126
 msgid "Product Categories to Exclude"
 msgstr ""
 
@@ -17287,13 +17344,13 @@ msgstr ""
 
 #: includes/settings/wcj-settings-product-custom-info.php:162
 #: includes/settings/wcj-settings-products-xml.php:147
-#: includes/settings/wcj-settings-wholesale-price.php:94
+#: includes/settings/wcj-settings-wholesale-price.php:104
 msgid "Products to Include"
 msgstr ""
 
 #: includes/settings/wcj-settings-product-custom-info.php:170
 #: includes/settings/wcj-settings-products-xml.php:157
-#: includes/settings/wcj-settings-wholesale-price.php:101
+#: includes/settings/wcj-settings-wholesale-price.php:111
 msgid "Products to Exclude"
 msgstr ""
 
@@ -17538,8 +17595,8 @@ msgstr ""
 #: includes/settings/wcj-settings-product-input-fields.php:148
 #: includes/settings/wcj-settings-product-input-fields.php:160
 #: includes/settings/wcj-settings-product-input-fields.php:172
-#: includes/settings/wcj-settings-wholesale-price.php:95
-#: includes/settings/wcj-settings-wholesale-price.php:108
+#: includes/settings/wcj-settings-wholesale-price.php:105
+#: includes/settings/wcj-settings-wholesale-price.php:118
 msgid "Leave blank to include all products."
 msgstr ""
 
@@ -17980,7 +18037,7 @@ msgid "Allow price entering in switched currency"
 msgstr ""
 
 #: includes/settings/wcj-settings-product-open-pricing.php:148
-#: includes/settings/wcj-settings-wholesale-price.php:124
+#: includes/settings/wcj-settings-wholesale-price.php:134
 msgid "Advanced: Price Changes"
 msgstr ""
 
@@ -18060,25 +18117,49 @@ msgid "No rounding (disabled)"
 msgstr ""
 
 #: includes/settings/wcj-settings-product-price-by-formula.php:83
-msgid "Disable Admin Scope"
+msgid "Compatible With Woococommerce Booking Plugin"
 msgstr ""
 
 #: includes/settings/wcj-settings-product-price-by-formula.php:84
-msgid "Disable module on Admin scope."
+msgid "Enable on Woocommerce Booking Module"
 msgstr ""
 
 #: includes/settings/wcj-settings-product-price-by-formula.php:85
 msgid ""
+"If you are facing pricing issue after enable Woocommerce Booking plugin "
+"please enable  the section"
+msgstr ""
+
+#: includes/settings/wcj-settings-product-price-by-formula.php:92
+msgid "Promotional pricing issue"
+msgstr ""
+
+#: includes/settings/wcj-settings-product-price-by-formula.php:94
+msgid ""
+"If you are facing promotional  pricing issue in booking product then enable "
+"the section"
+msgstr ""
+
+#: includes/settings/wcj-settings-product-price-by-formula.php:100
+msgid "Disable Admin Scope"
+msgstr ""
+
+#: includes/settings/wcj-settings-product-price-by-formula.php:101
+msgid "Disable module on Admin scope."
+msgstr ""
+
+#: includes/settings/wcj-settings-product-price-by-formula.php:102
+msgid ""
 "Disable if you want to use ‘Product Price by Formula’ module only on Frontend."
 msgstr ""
 
-#: includes/settings/wcj-settings-product-price-by-formula.php:85
+#: includes/settings/wcj-settings-product-price-by-formula.php:102
 msgid ""
 "For example if you use ‘Cost of Goods’ module the profit will be correctly "
 "calculated if you leave the box unticked"
 msgstr ""
 
-#: includes/settings/wcj-settings-product-price-by-formula.php:93
+#: includes/settings/wcj-settings-product-price-by-formula.php:110
 msgid ""
 "Disable if you are facing any compatibility issue in product quick/bulk edit. "
 msgstr ""
@@ -20089,105 +20170,115 @@ msgstr ""
 msgid "Apply wholesale discount only if no other cart discounts were applied."
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:61
+#: includes/settings/wcj-settings-wholesale-price.php:62
+msgid "Convert Price by Country Module Use Only"
+msgstr ""
+
+#: includes/settings/wcj-settings-wholesale-price.php:64
+msgid ""
+"Apply price directly method use in wholesale discount on cart page when you "
+"are using Price by Country Module "
+msgstr ""
+
+#: includes/settings/wcj-settings-wholesale-price.php:71
 msgid "Round Single Product Price"
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:62
+#: includes/settings/wcj-settings-wholesale-price.php:72
 msgid ""
 "If enabled will round single product price with precision set in WooCommerce "
 "> Settings > General > Number of decimals."
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:69
+#: includes/settings/wcj-settings-wholesale-price.php:79
 msgid "Discount Info on Cart Page"
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:76
+#: includes/settings/wcj-settings-wholesale-price.php:86
 msgid "If show discount info on cart page is enabled, set format here."
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:125
+#: includes/settings/wcj-settings-wholesale-price.php:135
 msgid "Disable wholesale pricing for products with \"Price Changes\""
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:132
+#: includes/settings/wcj-settings-wholesale-price.php:142
 msgid "Advanced: Price Filters Priority"
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:145
+#: includes/settings/wcj-settings-wholesale-price.php:155
 msgid "Template Variables"
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:147
+#: includes/settings/wcj-settings-wholesale-price.php:157
 msgid "Options regarding template variables"
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:151
+#: includes/settings/wcj-settings-wholesale-price.php:161
 msgid "Discount Value - Fixed Discount Totals"
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:155
+#: includes/settings/wcj-settings-wholesale-price.php:165
 msgid ""
 "Defines how the <code>%discount_value%</code> will calculate the totals when "
 "the fixed discount is in use."
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:159
-#: includes/settings/wcj-settings-wholesale-price.php:172
+#: includes/settings/wcj-settings-wholesale-price.php:169
+#: includes/settings/wcj-settings-wholesale-price.php:182
 msgid "Do not consider quantity"
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:160
-#: includes/settings/wcj-settings-wholesale-price.php:173
+#: includes/settings/wcj-settings-wholesale-price.php:170
+#: includes/settings/wcj-settings-wholesale-price.php:183
 msgid "Consider quantity"
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:164
+#: includes/settings/wcj-settings-wholesale-price.php:174
 msgid "Discount Value - Price Directly Totals"
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:168
+#: includes/settings/wcj-settings-wholesale-price.php:178
 msgid ""
 "Defines how the <code>%discount_value%</code> will calculate the totals when "
 "the price directly is in use."
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:181
+#: includes/settings/wcj-settings-wholesale-price.php:191
 msgid "Wholesale Levels Options"
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:186
-#: includes/settings/wcj-settings-wholesale-price.php:250
+#: includes/settings/wcj-settings-wholesale-price.php:196
+#: includes/settings/wcj-settings-wholesale-price.php:260
 msgid "Number of Levels"
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:197
+#: includes/settings/wcj-settings-wholesale-price.php:207
 msgid "Default Max Qty Level"
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:207
-#: includes/settings/wcj-settings-wholesale-price.php:264
+#: includes/settings/wcj-settings-wholesale-price.php:217
+#: includes/settings/wcj-settings-wholesale-price.php:274
 msgid "Min Quantity"
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:208
-#: includes/settings/wcj-settings-wholesale-price.php:265
+#: includes/settings/wcj-settings-wholesale-price.php:218
+#: includes/settings/wcj-settings-wholesale-price.php:275
 msgid "Minimum quantity to apply discount"
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:230
+#: includes/settings/wcj-settings-wholesale-price.php:240
 msgid "Additional User Roles Options"
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:232
+#: includes/settings/wcj-settings-wholesale-price.php:242
 msgid ""
 "If you want to set different wholesale pricing options for different user "
 "roles, fill this section. Please note that you can also use Booster's \"Price "
 "based on User Role\" module without filling this section."
 msgstr ""
 
-#: includes/settings/wcj-settings-wholesale-price.php:236
+#: includes/settings/wcj-settings-wholesale-price.php:246
 msgid "User Roles Settings"
 msgstr ""
 
@@ -20376,11 +20467,11 @@ msgstr ""
 msgid "Enable Custom Shipping"
 msgstr ""
 
-#: includes/shortcodes/class-wcj-shortcodes-general.php:95
+#: includes/shortcodes/class-wcj-shortcodes-general.php:96
 msgid "Tax toggle (incl.)"
 msgstr ""
 
-#: includes/shortcodes/class-wcj-shortcodes-general.php:96
+#: includes/shortcodes/class-wcj-shortcodes-general.php:97
 msgid "Tax toggle (excl.)"
 msgstr ""
 

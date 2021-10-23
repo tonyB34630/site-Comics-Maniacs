@@ -114,6 +114,11 @@
         });
     }
 
+    $(document).on('mousedown', "#accordion-section-page_content > h3", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        $(this).off();
+    });
 
     popoverTriggerSelector = ['.cp-add-section'];
     initPopover();

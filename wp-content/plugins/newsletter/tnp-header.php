@@ -47,7 +47,7 @@ $warning |= empty($status_options['mail']);
 
 
 <div class="tnp-drowpdown" id="tnp-header">
-    <a href="?page=newsletter_main_index"><img src="<?php echo plugins_url('newsletter'); ?>/images/header/tnp-logo-red-header.png" class="tnp-header-logo" style="vertical-align: bottom;"></a>
+    <a href="?page=newsletter_main_index"><img src="<?php echo plugins_url('newsletter'); ?>/admin/images/logo-red.png" class="tnp-header-logo" style="vertical-align: bottom;"></a>
     <ul>
         <li><a href="#"><i class="fas fa-users"></i> <?php _e('Subscribers', 'newsletter') ?> <i class="fas fa-chevron-down"></i></a>
             <ul>
@@ -126,12 +126,12 @@ $warning |= empty($status_options['mail']);
                     <a href="?page=newsletter_emails_composer"><i class="fas fa-plus"></i> <?php _e('Create newsletter', 'newsletter') ?>
                         <small><?php _e('Start your new campaign', 'newsletter') ?></small></a>
                 </li>
-                
+
                 <li>
                     <a href="?page=newsletter_emails_index"><i class="fas fa-newspaper"></i> <?php _e('Newsletters', 'newsletter') ?>
                         <small><?php _e('The classic "write & send" newsletters', 'newsletter') ?></small></a>
                 </li>
-                
+
                 <li>
                     <a href="<?php echo NewsletterStatistics::instance()->get_index_url() ?>"><i class="fas fa-chart-bar"></i> <?php _e('Statistics', 'newsletter') ?>
                         <small><?php _e('Tracking configuration and basic data', 'newsletter') ?></small></a>
@@ -163,7 +163,7 @@ $warning |= empty($status_options['mail']);
                     <a href="?page=newsletter_main_info"><i class="fas fa-info"></i> <?php _e('Company Info', 'newsletter') ?>
                         <small><?php _e('Social, address, logo and general info', 'newsletter') ?></small></a>
                 </li>
-                
+
                 <li>
                     <a href="?page=newsletter_subscription_template"><i class="fas fa-file-alt"></i> <?php _e('Messages Template', 'newsletter') ?>
                         <small><?php _e('Change the look of your service emails', 'newsletter') ?></small></a>
@@ -184,7 +184,7 @@ $warning |= empty($status_options['mail']);
                 </a>
                 <ul>
                     <li>
-                        <a href="<?php echo admin_url('site-health.php')?> "><i class="fas fa-file"></i> <?php _e('Site health') ?>
+                        <a href="<?php echo admin_url('site-health.php') ?> "><i class="fas fa-file"></i> <?php _e('Site health') ?>
                             <small><?php _e('WP native site health checks', 'newsletter') ?></small></a>
                     </li>
                     <li>
@@ -192,10 +192,14 @@ $warning |= empty($status_options['mail']);
                             <small><?php _e('Delivery analysis and test', 'newsletter') ?></small></a>
                     </li>
                     <li>
+                        <a href="?page=newsletter_main_scheduler"><i class="fas fa-robot"></i> <?php _e('Scheduler', 'newsletter') ?>
+                            <small><?php _e('', 'newsletter') ?></small></a>
+                    </li>
+                    <li>
                         <a href="?page=newsletter_main_status"><i class="fas fa-file"></i> <?php _e('Status', 'newsletter') ?>
                             <small><?php _e('Checks and parameters', 'newsletter') ?></small></a>
                     </li>
-                    
+
                     <li>
                         <a href="?page=newsletter_main_logs"><i class="fas fa-file"></i> <?php _e('Logs', 'newsletter') ?>
                             <small><?php _e('Plugin and addons logs', 'newsletter') ?></small></a>
@@ -300,36 +304,26 @@ $warning |= empty($status_options['mail']);
 
 <?php
 if (!defined('NEWSLETTER_CRON_WARNINGS') || NEWSLETTER_CRON_WARNINGS) {
-    $x = wp_next_scheduled('newsletter');
-    if ($x === false) {
-        echo '<div class="tnpc-warning">The Newsletter delivery engine is off (it should never be off). Deactivate and reactivate the Newsletter plugin.</div>';
-    } else if (time() - $x > 900) {
-        echo '<div class="tnpc-warning">The WP scheduler doesn\'t seem to be running correctly for Newsletter. <a href="https://www.thenewsletterplugin.com/documentation/?p=6128" target="_blank"><strong>Read this page to solve the problem</strong></a>.</div>';
-    } else {
-//            if (empty($this->options['disable_cron_notice'])) {
-//                $cron_data = get_option('newsletter_diagnostic_cron_data');
-//                if ($cron_data && $cron_data['mean'] > 500) {
-//                    echo '<div class="notice notice-error"><p>The WP scheduler doesn\'t seem to be triggered enough often for Newsletter. <a href="https://www.thenewsletterplugin.com/documentation/newsletter-delivery-engine#cron" target="_blank"><strong>Read this page to solve the problem</strong></a> or disable this notice on <a href="admin.php?page=newsletter_main_main"><strong>main settings</strong></a>.</p></div>';
-//                }
-//            }
-            }
-        }
- ?>
+    $x = NewsletterSystem::instance()->get_job_status();
+    if ($x !== NewsletterSystem::JOB_OK) {
+        echo '<div class="tnpc-warning">The are issues with the delivery engine. Please <a href="?page=newsletter_main_scheduler">check them here</a>.</div>';
+    } 
+}
+?>
 
 <?php
-if ( $_GET['page'] !== 'newsletter_emails_edit' ) {
+if ($_GET['page'] !== 'newsletter_emails_edit') {
 
-	$last_failed_newsletters = Newsletter::instance()->get_emails_by_field( 'status', TNP_Email::STATUS_ERROR );
+    $last_failed_newsletters = Newsletter::instance()->get_emails_by_field('status', TNP_Email::STATUS_ERROR);
 
-	foreach ( $last_failed_newsletters as $newsletter ) {
-		echo '<div class="tnpc-error">';
-		printf(__('Newsletter "%s" stopped by fatal error.', 'newsletter'), esc_html( $newsletter->subject ));
-                echo '&nbsp;';
-                $c = new NewsletterControls();
-                $c->btn_link('?page=newsletter_emails_edit&id=' . $newsletter->id, __('Check', 'newsletter'));
-		echo '</div>';
-	}
-
+    foreach ($last_failed_newsletters as $newsletter) {
+        echo '<div class="tnpc-error">';
+        printf(__('Newsletter "%s" stopped by fatal error.', 'newsletter'), esc_html($newsletter->subject));
+        echo '&nbsp;';
+        $c = new NewsletterControls();
+        $c->btn_link('?page=newsletter_emails_edit&id=' . $newsletter->id, __('Check', 'newsletter'));
+        echo '</div>';
+    }
 }
 ?>
 

@@ -3,7 +3,8 @@
 use TNP\Mailer\PHPMailerLoader;
 
 /**
- *
+ * A basic class able to send one or more TNP_Mailer_Message objects using a 
+ * delivery method (wp-mail(), SMTP, API, ...).
  */
 class NewsletterMailer {
 

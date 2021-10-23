@@ -23,12 +23,21 @@ class TNP_Composer {
 
     static function register_block($dir) {
         // Checks
+        $dir = realpath($dir);
+        if (!$dir) {
+            $error = new WP_Error('1', 'Seems not a valid path: ' . $dir);
+            NewsletterEmails::instance()->logger->error($error);
+            return $error;
+        }
+
+        $dir = wp_normalize_path($dir);
 
         if (!file_exists($dir . '/block.php')) {
             $error = new WP_Error('1', 'block.php missing on folder ' . $dir);
             NewsletterEmails::instance()->logger->error($error);
             return $error;
         }
+
         self::$block_dirs[] = $dir;
         return true;
     }
@@ -84,7 +93,7 @@ class TNP_Composer {
     /**
      * Sources:
      * - https://webdesign.tutsplus.com/tutorials/creating-a-future-proof-responsive-email-without-media-queries--cms-23919
-     * 
+     *
      * @param type $email
      * @return type
      */
@@ -234,6 +243,10 @@ class TNP_Composer {
             }
         }
 
+        //if (isset($controls->data['preheader'])) {
+        //    $email->options['preheader'] = $controls->data['preheader'];
+        //}
+
         $email->editor = NewsletterEmails::EDITOR_COMPOSER;
 
         $email->message = self::get_html_open($email) . self::get_main_wrapper_open($email) .
@@ -254,9 +267,7 @@ class TNP_Composer {
         if (!empty($email)) {
 
             foreach ($email->options as $name => $value) {
-                //if (strpos($name, 'composer_') === 0) {
                 $controls->data['options_' . $name] = $value;
-                //}
             }
 
             $controls->data['message'] = TNP_Composer::unwrap_email($email->message);
@@ -339,10 +350,12 @@ class TNP_Composer {
      */
     static function button($options, $prefix = 'button') {
 
+        if (empty($options[$prefix . '_label'])) {
+            return;
+        }
         $defaults = [
             $prefix . '_url' => '#',
             $prefix . '_font_family' => 'Helvetica, Arial, sans-serif',
-            $prefix . '_label' => 'Click Here',
             $prefix . '_font_color' => '#ffffff',
             $prefix . '_font_weight' => 'bold',
             $prefix . '_font_size' => 20,
@@ -382,7 +395,7 @@ class TNP_Composer {
 
         $default_attrs = [
             'style' => 'max-width: 100%; height: auto; display: inline-block',
-            'class' => null,
+            'class' => '',
             'link-style' => 'text-decoration: none; display: inline-block',
             'link-class' => null,
         ];
@@ -391,10 +404,14 @@ class TNP_Composer {
 
         //Class and style attribute are mutually exclusive.
         //Class take priority to style because classes will transform to inline style inside block rendering operation
-        if (!empty($attr['class'])) {
-            $styling = ' inline-class="' . esc_attr($attr['class']) . '" ';
+        if (!empty($attr['inline-class'])) {
+            $styling = ' inline-class="' . esc_attr($attr['inline-class']) . '" ';
         } else {
             $styling = ' style="' . esc_attr($attr['style']) . '" ';
+        }
+
+        if (!empty($attr['class'])) {
+            $styling .= ' class="' . esc_attr($attr['class']) . '" ';
         }
 
         //Class and style attribute are mutually exclusive.
@@ -408,8 +425,10 @@ class TNP_Composer {
         $b = '';
         if ($media->link) {
             $b .= '<a href="' . esc_attr($media->link) . '" target="_blank" rel="noopener nofollow" style="display: inline-block; font-size: 0; text-decoration: none; line-height: normal!important">';
+        } else {
+            // The span grants images are not upscaled when fluid (two columns posts block)
+            $b .= '<span style="display: inline-block; font-size: 0; text-decoration: none; line-height: normal!important">';
         }
-
         if ($media) {
             $b .= '<img src="' . esc_attr($media->url) . '" width="' . esc_attr($media->width) . '"';
             if ($media->height) {
@@ -418,12 +437,14 @@ class TNP_Composer {
             $b .= ' alt="' . esc_attr($media->alt) . '"'
                     . ' border="0"'
                     . ' style="display: inline-block; max-width: 100%!important; padding: 0; border: 0;"'
-                    . ' class="" '
+                    . ' class="' . esc_attr($attr['class']) . '" '
                     . '>';
         }
 
         if ($media->link) {
             $b .= '</a>';
+        } else {
+            $b .= '</span>';
         }
 
         return $b;
@@ -433,7 +454,7 @@ class TNP_Composer {
      * Returns a WP media ID for the specified post (or false if nothing can be found)
      * looking for the featured image or, if missing, taking the first media in the gallery and
      * if again missing, searching the first reference to a media in the post content.
-     * 
+     *
      * The media ID is not checked for real existance of the associated attachment.
      *
      * @param int $post_id
@@ -468,10 +489,10 @@ class TNP_Composer {
     }
 
     /**
-     * Builds a TNP_Media object to be used in newsletters from a WP media/attachement ID. The returned 
+     * Builds a TNP_Media object to be used in newsletters from a WP media/attachement ID. The returned
      * media has a size which best match the one requested (this is the standard WP behavior, plugins
      * could change it).
-     * 
+     *
      * @param int $media_id
      * @param array $size
      * @return \TNP_Media
@@ -576,13 +597,26 @@ class TNP_Composer {
         }
         return $e;
     }
-    
-    static function get_style($options, $prefix, $composer, $type = 'text') {
+
+    static function get_text_style($options, $prefix, $composer, $attrs = []) {
+        return self::get_style($options, $prefix, $composer, 'text', $attrs);
+    }
+
+    static function get_title_style($options, $prefix, $composer, $attrs = []) {
+        return self::get_style($options, $prefix, $composer, 'title', $attrs);
+    }
+
+    static function get_style($options, $prefix, $composer, $type = 'text', $attrs = []) {
         $style = new TNP_Style();
-        if (!empty($prefix)) $prefix .= '_';
-        
+        $scale = 1.0;
+        if (!empty($attrs['scale'])) {
+            $scale = (float) $attrs['scale'];
+        }
+        if (!empty($prefix))
+            $prefix .= '_';
+
         $style->font_family = empty($options[$prefix . 'font_family']) ? $composer[$type . '_font_family'] : $options[$prefix . 'font_family'];
-        $style->font_size = empty($options[$prefix . 'font_size']) ? $composer[$type . '_font_size'] : $options[$prefix . 'font_size'];
+        $style->font_size = empty($options[$prefix . 'font_size']) ? round($composer[$type . '_font_size'] * $scale) : $options[$prefix . 'font_size'];
         $style->font_color = empty($options[$prefix . 'font_color']) ? $composer[$type . '_font_color'] : $options[$prefix . 'font_color'];
         $style->font_weight = empty($options[$prefix . 'font_weight']) ? $composer[$type . '_font_weight'] : $options[$prefix . 'font_weight'];
         if ($type === 'button') {
@@ -594,11 +628,20 @@ class TNP_Composer {
 }
 
 class TNP_Style {
+
     var $font_family;
     var $font_size;
     var $font_weight;
     var $font_color;
     var $background;
+
+    function echo_css($scale = 1.0) {
+        echo 'font-size: ', round($this->font_size * $scale), 'px;';
+        echo 'font-family: ', $this->font_family, ';';
+        echo 'font-weight: ', $this->font_weight, ';';
+        echo 'color: ', $this->font_color, ';';
+    }
+
 }
 
 /**

@@ -44,7 +44,7 @@ class NewsletterStatistics extends NewsletterModule {
             // The remaining elements are the url splitted when it contains
             $url = implode(';', $parts);
 
-            if (empty($user_id) || empty($url)) {
+            if (empty($url)) {
                 $this->dienow('Invalid link', 'The tracking link contains invalid data (missing subscriber or original URL)', 404);
             }
 
@@ -56,15 +56,17 @@ class NewsletterStatistics extends NewsletterModule {
                 $this->dienow('Invalid link', 'The link signature (which grants a valid redirection and protects from redirect attacks) is not valid.', 404);
             }
 
-            $user = Newsletter::instance()->get_user($user_id);
-            if (!$user) {
-                $this->dienow(__('Subscriber not found', 'newsletter'), 'This tracking link contains a reference to a subscriber no more present', 404);
-            }
-
-            // Test emails
-            if (empty($email_id)) {
+            // Test emails, anyway the link was signed
+            if (empty($email_id) || empty($user_id)) {
                 header('Location: ' . esc_url_raw($url));
                 die();
+            }
+
+            if ($user_id) {
+                $user = Newsletter::instance()->get_user($user_id);
+                if (!$user) {
+                    $this->dienow(__('Subscriber not found', 'newsletter'), 'This tracking link contains a reference to a subscriber no more present', 404);
+                }
             }
 
             $email = $this->get_email($email_id);
@@ -89,7 +91,6 @@ class NewsletterStatistics extends NewsletterModule {
                 $this->update_open_value(self::SENT_READ, $user_id, $email_id, $ip);
             }
             $this->reset_stats_time($email_id);
-
 
             $this->update_user_ip($user, $ip);
             $this->update_user_last_activity($user);
@@ -157,8 +158,8 @@ class NewsletterStatistics extends NewsletterModule {
         global $wpdb, $charset_collate;
 
         parent::upgrade();
-        
-                $sql = "CREATE TABLE `" . $wpdb->prefix . "newsletter_stats` (
+
+        $sql = "CREATE TABLE `" . $wpdb->prefix . "newsletter_stats` (
           `id` int(11) NOT NULL AUTO_INCREMENT,
           `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
           `url` varchar(255) NOT NULL DEFAULT '',
@@ -170,7 +171,7 @@ class NewsletterStatistics extends NewsletterModule {
           KEY `user_id` (`user_id`)
         ) $charset_collate;";
 
-                dbDelta($sql);
+        dbDelta($sql);
 
         if (empty($this->options['key'])) {
             $this->options['key'] = md5($_SERVER['REMOTE_ADDR'] . rand(100000, 999999) . time());
@@ -251,17 +252,16 @@ class NewsletterStatistics extends NewsletterModule {
         $page = apply_filters('newsletter_statistics_view', 'newsletter_statistics_view');
         return 'admin.php?page=' . $page . '&amp;id=' . $email_id;
     }
-    
+
     function echo_statistics_button($email_id) {
         echo '<a class="button-primary" href="', $this->get_statistics_url($email_id), '"><i class="fas fa-chart-bar"></i></a>';
-                
     }
 
     function get_index_url() {
         $page = apply_filters('newsletter_statistics_index', 'newsletter_statistics_index');
         return 'admin.php?page=' . $page;
     }
-    
+
     /**
      * @deprecated
      * 
@@ -272,7 +272,7 @@ class NewsletterStatistics extends NewsletterModule {
         $report = $this->get_statistics($email_id);
         return $report->total;
     }
-    
+
     /**
      * @deprecated
      * 
@@ -283,7 +283,7 @@ class NewsletterStatistics extends NewsletterModule {
         $report = $this->get_statistics($email_id);
         return $report->open_count;
     }
-    
+
     /**
      * @deprecated
      * 
@@ -292,8 +292,8 @@ class NewsletterStatistics extends NewsletterModule {
      */
     function get_error_count($email_id) {
         return 0;
-    }    
-    
+    }
+
     /**
      * @deprecated
      * 
@@ -303,7 +303,7 @@ class NewsletterStatistics extends NewsletterModule {
     function get_click_count($email_id) {
         $report = $this->get_statistics($email_id);
         return $report->click_count;
-    }    
+    }
 
     /**
      * @deprecated 
@@ -399,7 +399,7 @@ class NewsletterStatistics extends NewsletterModule {
         }
 
         $report = new TNP_Statistics();
-                
+
         $report->email_id = $email->id;
 
         if ($email->status != 'new') {

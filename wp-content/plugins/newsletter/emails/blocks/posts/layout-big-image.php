@@ -1,34 +1,27 @@
 <?php
 $size = ['width' => 600, 'height' => 0];
+$content_width = 600 - $options['block_padding_left'] - $options['block_padding_right'];
+$title_style = TNP_Composer::get_title_style($options, 'title', $composer);
+$text_style = TNP_Composer::get_style($options, '', $composer, 'text');
 ?>
 <style>
     .title {
-        font-family: <?php echo $title_font_family ?>;
-        font-size: <?php echo $title_font_size ?>px;
-        font-weight: <?php echo $title_font_weight ?>;
-        color: <?php echo $title_font_color ?>;
-        line-height: normal;
+        <?php echo $title_style->echo_css() ?>
+        line-height: normal!important;
         padding: 0 0 5px 0;
     }
 
     .excerpt {
-        font-family: <?php echo $text_font_family ?>;
-        font-size: <?php echo $text_font_size ?>px;
-        font-weight: <?php echo $text_font_weight ?>;
-        color: <?php echo $text_font_color ?>;
-        line-height: 1.5em;
+        <?php echo $text_style->echo_css() ?>
+        line-height: 1.5em!important;
         padding: 10px 0 15px 0;
     }
 
     .meta {
-        font-family: <?php echo $text_font_family ?>;
-        color: <?php echo $text_font_color ?>;
-        font-size: <?php echo round($text_font_size * 0.8) ?>px;
-        font-weight: normal;
+        <?php echo $text_style->echo_css(0.9) ?>
+        line-height: normal!important;
         padding: 0 0 5px 0;
-    }
-    .button {
-        padding-bottom: 20px;
+        font-style: italic;
     }
 </style>
 
@@ -44,6 +37,7 @@ $size = ['width' => 600, 'height' => 0];
         $media = tnp_composer_block_posts_get_media($post, $size);
 
         if ($media) {
+            $media->set_width($content_width);
             $media->link = $url;
         }
     }
@@ -77,16 +71,9 @@ $size = ['width' => 600, 'height' => 0];
         <tr>
             <td>
 
-                <!-- ARTICLE -->
                 <table border="0" cellspacing="0" cellpadding="0" width="100%">
-                    <?php if ($meta) { ?>
-                        <tr>
-                            <td align="<?php echo $align_left ?>" inline-class="meta">
-                                <?php echo esc_html(implode(' - ', $meta)) ?>
-                            </td>
-                        </tr>
-                    <?php } ?>
-                        
+
+
                     <tr>
                         <td align="<?php echo $align_left ?>" inline-class="title" class="tnpc-row-edit tnpc-inline-editable"
                             data-type="title" data-id="<?php echo $post->ID ?>" dir="<?php echo $dir ?>">
@@ -97,18 +84,27 @@ $size = ['width' => 600, 'height' => 0];
                                 ?>
                         </td>
                     </tr>
-                    <tr>
-                        <td align="<?php echo $align_left ?>"
-                            inline-class="excerpt"
-                            class="tnpc-row-edit tnpc-inline-editable"
-                            data-type="text" data-id="<?php echo $post->ID ?>" dir="<?php echo $dir ?>">
+
+                    <?php if ($meta) { ?>
+                        <tr>
+                            <td align="<?php echo $align_left ?>" inline-class="meta">
+                                <?php echo esc_html(implode(' - ', $meta)) ?>
+                            </td>
+                        </tr>
+                    <?php } ?>
+
+                    <?php if ($excerpt_length) { ?>
+                        <tr>
+                            <td align="<?php echo $align_left ?>" inline-class="excerpt" class="tnpc-row-edit tnpc-inline-editable" data-type="text" data-id="<?php echo $post->ID ?>" dir="<?php echo $dir ?>">
                                 <?php
                                 echo TNP_Composer::is_post_field_edited_inline($options['inline_edits'], 'text', $post->ID) ?
                                         TNP_Composer::get_edited_inline_post_field($options['inline_edits'], 'text', $post->ID) :
                                         tnp_post_excerpt($post, $excerpt_length)
                                 ?>
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
+                    <?php } ?>
+
                     <?php if ($show_read_more_button) { ?>
                         <tr>
                             <td align="<?php echo $align_left ?>" inline-class="button">
@@ -116,6 +112,9 @@ $size = ['width' => 600, 'height' => 0];
                             </td>
                         </tr>
                     <?php } ?>
+                    <tr>
+                        <td style="padding: 10px">&nbsp;</td>
+                    </tr>
                 </table>
 
             </td>

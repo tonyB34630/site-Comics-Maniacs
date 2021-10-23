@@ -200,7 +200,7 @@ const MissingRequirements = ({ plugins, theme, settings, requiredCss, templateKi
                   </li>
                 )
               })}
-              {theme ? (
+              {theme && theme.name ? (
                 <li className={styles.requirement}>
                   <div className={styles.checkbox}>
                     <span className='dashicons dashicons-warning' />

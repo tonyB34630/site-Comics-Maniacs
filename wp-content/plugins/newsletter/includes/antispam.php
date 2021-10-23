@@ -142,6 +142,9 @@ class NewsletterAntispam {
         if (stripos($text, 'www.') !== false) {
             return true;
         }
+        if (preg_match('|[^\s\.]+\.[^\s\.]+\.[^\s\.]{2,}|', $text)) {
+            return true;
+        }
 
         return false;
     }

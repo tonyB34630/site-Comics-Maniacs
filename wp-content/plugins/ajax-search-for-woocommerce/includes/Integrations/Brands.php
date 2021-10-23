@@ -21,6 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * 4. Martfury Addons since v2.2.2 by drfuri.com
  * 5. Brands for WooCommerce since v3.5.2 by BeRocket
  * 6. WP Bingo by wpbingo
+ * 7. Premmerce Brands for WooCommerce since v1.2.11 by premmerce
  */
 class Brands {
 	/**
@@ -48,13 +49,16 @@ class Brands {
 	}
 
 	public function init() {
-		$this->setPluginInfo();
-		$this->setBrandTaxonomy();
-		$this->addSettings();
+		// Init brand stuff after theme is ready (to allow apply filters)
+		add_action( 'init', function () {
+			$this->setPluginInfo();
+			$this->setBrandTaxonomy();
+			$this->addSettings();
+		}, 100 );
 
 		add_filter( 'dgwt/wcas/suggestion_details/taxonomy/headline', array( $this, 'rebuildDetailsHeader' ), 10, 4 );
-		add_filter( 'dgwt/wcas/taxonomies_with_images', array( $this, 'taxonomiesWithImages' ) );
 		add_filter( 'dgwt/wcas/term/thumbnail_src', array( $this, 'termThumbnailSrc' ), 10, 4 );
+		add_filter( 'dgwt/wcas/indexer/taxonomies', array( $this, 'addBrandToCollectionOfTaxonomies' ), 5 );
 	}
 
 	/**
@@ -84,10 +88,16 @@ class Brands {
 	 * @return void
 	 */
 	private function setBrandTaxonomy() {
-		$brandTaxonomy = 'product_brand';
+		$brandTaxonomy = '';
 
-		if ( $this->hasBrands() ) {
+		if ( ! empty( $this->pluginSlug ) ) {
 			switch ( $this->pluginSlug ) {
+				case 'woocommerce-brands/woocommerce-brands.php':
+				case 'martfury-addons/martfury-addons.php':
+				case 'wpbingo/wpbingo.php':
+				case 'premmerce-woocommerce-brands/premmerce-brands.php':
+					$brandTaxonomy = 'product_brand';
+					break;
 				case 'yith-woocommerce-brands-add-on-premium/init.php':
 				case 'yith-woocommerce-brands-add-on/init.php':
 					$brandTaxonomy = 'yith_product_brand';
@@ -99,15 +109,14 @@ class Brands {
 				case 'brands-for-woocommerce/woocommerce-brand.php':
 					$brandTaxonomy = 'berocket_brand';
 					break;
-				case 'wpbingo/wpbingo.php':
-					$brandTaxonomy = 'product_brand';
-					break;
 			}
 		}
 
 		$brandTaxonomy = apply_filters( 'dgwt/wcas/brands/taxonomy', $brandTaxonomy );
 
-		$this->brandTaxonomy = $brandTaxonomy;
+		if ( ! empty( $brandTaxonomy ) && taxonomy_exists( $brandTaxonomy ) ) {
+			$this->brandTaxonomy = $brandTaxonomy;
+		}
 	}
 
 	/**
@@ -125,6 +134,7 @@ class Brands {
 			'martfury-addons/martfury-addons.php',
 			'brands-for-woocommerce/woocommerce-brand.php',
 			'wpbingo/wpbingo.php',
+			'premmerce-woocommerce-brands/premmerce-brands.php',
 		);
 	}
 
@@ -134,7 +144,7 @@ class Brands {
 	 * @return bool
 	 */
 	public function hasBrands() {
-		return apply_filters( 'dgwt/wcas/brands/has_brands', ! empty( $this->pluginInfo ) );
+		return ! empty( $this->brandTaxonomy );
 	}
 
 	/**
@@ -183,7 +193,7 @@ class Brands {
 				}
 
 				$settingsScope[220] = array(
-					'name'    => 'search_in_brands',
+					'name'    => 'search_in_product_tax_' . $this->getBrandTaxonomy(),
 					'label'   => __( 'Search in brands', 'ajax-search-for-woocommerce' ) . $label,
 					'class'   => 'dgwt-wcas-premium-only',
 					'type'    => 'checkbox',
@@ -205,22 +215,24 @@ class Brands {
 				}
 
 				$settingsScope[1260] = array(
-					'name'    => 'show_matching_brands',
-					'label'   => __( 'Show brands', 'ajax-search-for-woocommerce' ) . $label,
-					'class'   => 'dgwt-wcas-premium-only js-dgwt-wcas-options-toggle-sibling',
-					'type'    => 'checkbox',
-					'default' => 'off',
+					'name'       => 'show_product_tax_' . $this->getBrandTaxonomy(),
+					'label'      => __( 'Show brands', 'ajax-search-for-woocommerce' ) . $label,
+					'class'      => 'dgwt-wcas-premium-only js-dgwt-wcas-options-toggle-sibling',
+					'type'       => 'checkbox',
+					'default'    => 'off',
+					'input_data' => 'data-option-trigger="show_matching_brands"',
 				);
 
 				if ( $this->doesPluginSupportImages() ) {
 					$settingsScope[1270] = array(
-						'name'      => 'show_brands_images',
-						'label'     => __( 'show images', 'ajax-search-for-woocommerce' ),
-						'class'     => 'dgwt-wcas-premium-only',
-						'type'      => 'checkbox',
-						'default'   => 'off',
-						'desc'      => __( 'show images', 'ajax-search-for-woocommerce' ),
-						'move_dest' => 'show_matching_brands',
+						'name'       => 'show_product_tax_' . $this->getBrandTaxonomy() . '_images',
+						'label'      => __( 'show images', 'ajax-search-for-woocommerce' ),
+						'class'      => 'dgwt-wcas-premium-only',
+						'type'       => 'checkbox',
+						'default'    => 'off',
+						'desc'       => __( 'show images', 'ajax-search-for-woocommerce' ),
+						'move_dest'  => 'show_product_tax_' . $this->getBrandTaxonomy(),
+						'input_data' => 'data-option-trigger="show_brands_images"',
 					);
 				}
 
@@ -245,7 +257,7 @@ class Brands {
 
 			$title = '<span class="dgwt-wcas-datails-title">';
 			$title .= '<span class="dgwt-wcas-details-title-tax">';
-			$title .= Helpers::getLabel( 'brand' ) . ': ';
+			$title .= Helpers::getLabel( 'tax_' . $this->getBrandTaxonomy() ) . ': ';
 			$title .= '</span>';
 			$title .= $termName;
 			$title .= '</span>';
@@ -256,25 +268,10 @@ class Brands {
 	}
 
 	/**
-	 * Add brand to the list of image supporting taxonomies
-	 *
-	 * @param array $taxonomies
-	 *
-	 * @return array
-	 */
-	public function taxonomiesWithImages( $taxonomies ) {
-		if ( $this->hasBrands() && $this->doesPluginSupportImages() ) {
-			$taxonomies[] = $this->getBrandTaxonomy();
-		}
-
-		return $taxonomies;
-	}
-
-	/**
 	 * @param string $src
-	 * @param int $termID
+	 * @param int    $termID
 	 * @param string $size
-	 * @param Term $term
+	 * @param Term   $term
 	 */
 	public function termThumbnailSrc( $src, $termID, $size, $term ) {
 		/**
@@ -306,28 +303,49 @@ class Brands {
 	}
 
 	/**
+	 * Add brand to collection of supported taxonomies
+	 *
+	 * @param array $taxonomies Supported taxonomies
+	 *
+	 * @return array
+	 */
+	public function addBrandToCollectionOfTaxonomies( $taxonomies ) {
+		if ( ! $this->hasBrands() ) {
+			return $taxonomies;
+		}
+
+		$taxonomies = is_array( $taxonomies ) ? $taxonomies : array();
+
+		$taxonomies[] = array(
+			'taxonomy'      => $this->getBrandTaxonomy(),
+			'labels'        => array(
+				'name'          => __( 'Brands', 'ajax-search-for-woocommerce' ),
+				'singular_name' => __( 'Brand', 'ajax-search-for-woocommerce' ),
+			),
+			'image_support' => $this->doesPluginSupportImages(),
+		);
+
+		return $taxonomies;
+	}
+
+	/**
 	 * Check if a current brand plugin does support images
+	 *
 	 * @return bool
 	 */
 	private function doesPluginSupportImages() {
-		$result = false;
-
-		switch ( $this->pluginSlug ) {
-			case 'woocommerce-brands/woocommerce-brands.php':
-				$result = true;
-				break;
-			case 'yith-woocommerce-brands-add-on-premium/init.php':
-			case 'yith-woocommerce-brands-add-on/init.php':
-				$result = true;
-				break;
-			case 'perfect-woocommerce-brands/main.php':
-			case 'perfect-woocommerce-brands/perfect-woocommerce-brands.php':
-				$result = true;
-				break;
-			case 'brands-for-woocommerce/woocommerce-brand.php':
-				$result = true;
-				break;
-		}
+		$result = in_array(
+			$this->pluginSlug,
+			array(
+				'yith-woocommerce-brands-add-on-premium/init.php',
+				'yith-woocommerce-brands-add-on/init.php',
+				'woocommerce-brands/woocommerce-brands.php',
+				'perfect-woocommerce-brands/main.php',
+				'perfect-woocommerce-brands/perfect-woocommerce-brands.php',
+				'brands-for-woocommerce/woocommerce-brand.php',
+				'premmerce-woocommerce-brands/premmerce-brands.php',
+			)
+		);
 
 		return apply_filters( 'dgwt/wcas/brands/image_support', $result );
 	}

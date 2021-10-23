@@ -147,19 +147,19 @@ function mesmerize_get_sidebar( $name = null ) {
 
 function mesmerize_print_skip_link() {
 	?>
-    <style>
-        .screen-reader-text[href="#page-content"]:focus {
-            background-color: #f1f1f1;
-            border-radius: 3px;
-            box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-            clip: auto !important;
-            clip-path: none;
-            color: #21759b;
+<style>
+.screen-reader-text[href="#page-content"]:focus {
+   background-color: #f1f1f1;
+   border-radius: 3px;
+   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+   clip: auto !important;
+   clip-path: none;
+   color: #21759b;
 
-        }
-    </style>
-    <a class="skip-link screen-reader-text" href="#page-content"><?php _e( 'Skip to content', 'mesmerize' ); ?></a>
-	<?php
+}
+</style>
+<a class="skip-link screen-reader-text" href="#page-content"><?php _e( 'Skip to content', 'mesmerize' ); ?></a>
+<?php
 }
 
 function mesmerize_get_navigation( $navigation = null ) {
@@ -182,11 +182,12 @@ function mesmerize_header_main_class() {
 		$classes[] = "boxed";
 	}
 
-
 	$transparent_nav = get_theme_mod( $prefix . '_nav_transparent',
 		mesmerize_mod_default( "{$prefix}_nav_transparent" ) );
-
-	if ( ! $transparent_nav ) {
+	
+	$use_front_page_style = get_theme_mod($prefix . '_nav_use_front_page', false);
+	
+	if ( ! $transparent_nav && ! $use_front_page_style) {
 		$classes[] = "coloured-nav";
 	}
 
@@ -297,21 +298,21 @@ function mesmerize_print_hero( $inner = false ) {
 		do_action( "mesmerize_print_hero_content_{$content}" );
 	} else {
 		?>
-        <div class="header-wrapper">
-            <div <?php echo mesmerize_header_background_atts() ?>>
-				<?php do_action( 'mesmerize_before_header_background' ); ?>
-				<?php mesmerize_print_video_container(); ?>
-				<?php mesmerize_print_front_page_header_content(); ?>
+<div class="header-wrapper">
+   <div <?php echo mesmerize_header_background_atts() ?>>
+      <?php do_action( 'mesmerize_before_header_background' ); ?>
+      <?php mesmerize_print_video_container(); ?>
+      <?php mesmerize_print_front_page_header_content(); ?>
 
-				<?php
+      <?php
 				mesmerize_print_header_separator( 'header' );
 				?>
-				<?php
+      <?php
 				do_action( 'mesmerize_after_header_content' );
 				?>
-            </div>
-        </div>
-		<?php
+   </div>
+</div>
+<?php
 	}
 }
 
@@ -445,9 +446,9 @@ function mesmerize_print_post_thumb( $classes = "" ) {
 		return;
 	}
 	?>
-    <div class="post-thumbnail">
-        <a href="<?php the_permalink(); ?>" class="post-list-item-thumb <?php echo esc_attr( $classes ); ?>">
-			<?php
+<div class="post-thumbnail">
+   <a href="<?php the_permalink(); ?>" class="post-list-item-thumb <?php echo esc_attr( $classes ); ?>">
+      <?php
 			if ( has_post_thumbnail() ) {
 				the_post_thumbnail();
 			} else {
@@ -458,20 +459,18 @@ function mesmerize_print_post_thumb( $classes = "" ) {
 				$placeholder_color = maybe_hash_hex_color( $placeholder_color );
 				?>
 
-				<?php if ( $preview_image ): ?>
-                    <img src="<?php echo esc_attr( $preview_image ); ?>"
-                         class="mesmerize-post-list-item-thumb-placeholder">
-				<?php else: ?>
-                    <svg class="mesmerize-post-list-item-thumb-placeholder" width="890" height="580"
-                         viewBox="0 0 890 580" preserveAspectRatio="none">
-                        <rect width="890" height="580"
-                              style="fill:<?php echo esc_attr( $placeholder_color ); ?>;"></rect>
-                    </svg>
-				<?php endif; ?>
-			<?php } ?>
-        </a>
-    </div>
-	<?php
+      <?php if ( $preview_image ): ?>
+      <img src="<?php echo esc_attr( $preview_image ); ?>" class="mesmerize-post-list-item-thumb-placeholder">
+      <?php else: ?>
+      <svg class="mesmerize-post-list-item-thumb-placeholder" width="890" height="580" viewBox="0 0 890 580"
+         preserveAspectRatio="none">
+         <rect width="890" height="580" style="fill:<?php echo esc_attr( $placeholder_color ); ?>;"></rect>
+      </svg>
+      <?php endif; ?>
+      <?php } ?>
+   </a>
+</div>
+<?php
 }
 
 function mesmerize_is_customize_preview() {

@@ -7,9 +7,13 @@
 
 $default_options = array(
     'view' => 'View online',
-    'profile' => 'Modify your subscription',
+    'view_enabled' => 1,
+    'profile' => 'Manage your subscription',
+    'profile_enabled' => 1,
+    'unsubscribe' => 'Unsubscribe',
+    'unsubscribe_enabled' => 1,
     'font_family' => '',
-    'font_size' => 14,
+    'font_size' => '',
     'font_color' => '',
     'font_weight' => '',
     'block_padding_left' => 15,
@@ -19,25 +23,41 @@ $default_options = array(
     'block_background' => '',
     'url' => 'profile'
 );
+
+// Migration code
+if (!isset($options['profile_enabled']) && isset($options['url'])) {
+    if ($options['url'] === 'profile') {
+        $options['profile_enabled'] = 1;
+        $options['unsubscribe_enabled'] = 0;
+    } else {
+        $options['profile_enabled'] = 1;
+        $options['unsubscribe_enabled'] = 0;
+    }
+}
+
 $options = array_merge($default_options, $options);
 
-$text_style = TNP_Composer::get_style($options, '', $composer, 'text');
+$text_style = TNP_Composer::get_text_style($options, '', $composer, ['scale'=>0.8]);
+
+$links = [];
+if ($options['unsubscribe_enabled']) {
+    $links[] = '<a inline-class="text" href="{unsubscription_url}" target="_blank">' . esc_html($options['unsubscribe']) . '</a>';
+}
+if ($options['profile_enabled']) {
+    $links[] = '<a inline-class="text" href="{profile_url}" target="_blank">' . esc_html($options['profile']) . '</a>';
+}
+if ($options['view_enabled']) {
+    $links[] = '<a inline-class="text" href="{email_url}" target="_blank">' . esc_html($options['view']) . '</a>';
+}
 
 ?>
 <style>
     .text {
-        font-family: <?php echo $text_style->font_family ?>;
-        font-size: <?php echo round($text_style->font_size*0.9) ?>px;
-        font-weight: <?php echo $text_style->font_weight ?>;
-        color: <?php echo $text_style->font_color ?>;
+        <?php $text_style->echo_css()?>
         text-decoration: none;
         line-height: normal;
     }
 </style>
 
-<a inline-class="text" href="<?php if ($options['url'] == 'unsubscription') echo '{unsubscription_url}'; else echo '{profile_url}' ?>" target="_blank"><?php echo esc_html($options['profile']) ?></a>
-
-<span inline-class="text">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
-
-<a inline-class="text" href="{email_url}" target="_blank"><?php echo esc_html($options['view']) ?></a>
+<?php echo implode('<span inline-class="text">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>', $links) ?>
 

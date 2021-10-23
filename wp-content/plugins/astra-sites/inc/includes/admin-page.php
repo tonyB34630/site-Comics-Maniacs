@@ -241,7 +241,7 @@ $site_import_options = apply_filters(
 			</div>
 			<# if ( site_type && 'free' !== site_type ) { #>
 				<?php /* translators: %s are white label strings. */ ?>
-				<div class="agency-ribbons" title="<?php printf( esc_attr__( 'This premium template is accessible with %1$s "Premium" Package.', 'astra-sites' ), Astra_Sites_White_Label::get_instance()->get_white_label_name() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>"><?php esc_html_e( 'Premium', 'astra-sites' ); ?></div>
+				<div class="agency-ribbons" title="<?php printf( esc_attr__( 'This premium template is accessible with %1$s "Premium" Package.', 'astra-sites' ), Astra_Sites_White_Label::get_instance()->get_white_label_name() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>"><img class="premium-crown-icon" src="<?php echo esc_url( ASTRA_SITES_URI . 'inc/assets/images/premium-crown.svg' ); ?>" alt="premium-crown"><?php esc_html_e( 'Premium', 'astra-sites' ); ?></div>
 			<# } #>
 		</div>
 	</div>
@@ -409,14 +409,13 @@ $site_import_options = apply_filters(
 <script type="text/template" id="tmpl-astra-sites-pro-site-description">
 	<p>
 		<?php
-			/* translators: %s is pricing page link */
-			printf( __( 'This is a premium template available with Essential Bundle and Growth Bundle. You can purchase one of the bundles from <a href="%s" target="_blank">here</a> to get access to this premium template.', 'astra-sites' ), 'https://wpastra.com/pricing/' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			_e( '<span class="highlighted-note">This is a premium template available with Essential and Growth Bundle.</span><br /> <a href="{{AstraSitesAdmin.premium_popup_cta_link}}" target="_blank">Get access</a> to this premium template.', 'astra-sites' ); // phpcs:ignore WordPress.Security.EscapeOutput.UnsafePrintingFunction
 		?>
 	</p>
 	<p>
 		<?php
 			/* translators: %s is article link */
-			printf( __( 'If you already own Essential Bundle or Growth Bundle, read an article to know how you can <a href="%s" target="_blank">import a premium website demo</a>.', 'astra-sites' ), esc_url( 'https://wpastra.com/docs/starter-templates-complete-site/' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			printf( __( 'Already own an Essential or Growth Bundle? <a href="%s" target="_blank">Know how</a> to import premium templates.', 'astra-sites' ), esc_url( 'https://wpastra.com/docs/starter-templates-complete-site/' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		?>
 	</p>
 </script>
@@ -564,15 +563,14 @@ $site_import_options = apply_filters(
 			<div class="single-site-footer">
 				<div class="site-action-buttons-wrap">
 					<?php $white_label_class = ( Astra_Sites_White_Label::get_instance()->get_white_label_name() !== ASTRA_SITES_NAME ) ? 'ast-white-label-flag' : ''; ?>
-					<a href="{{data['astra-site-url']}}/" class="button button-hero site-preview-button <?php echo esc_html( $white_label_class ); ?>" target="_blank">Preview "{{{data['title']}}}" Site <i class="dashicons dashicons-external"></i></a>
+					<a href="{{data['astra-site-url']}}/" class="button button-hero site-preview-button <?php echo esc_html( $white_label_class ); ?>" target="_blank">Preview Site <i class="dashicons dashicons-external"></i></a>
 					<div class="site-action-buttons-right">
 						<# if( 'free' !== data['astra-sites-type'] && '' !== astraSitesVars.license_page_builder && data['astra-site-page-builder'] !== astraSitesVars.license_page_builder && ( 'brizy' !== data['astra-site-page-builder'] && 'gutenberg' !== data['astra-site-page-builder']  ) ) { #>
 							<a class="button button-hero button-primary disabled astra-sites-invalid-mini-agency-license-button"><?php esc_html_e( 'Not Valid License', 'astra-sites' ); ?></a>
 							<span class="dashicons dashicons-editor-help astra-sites-invalid-mini-agency-license-button"></span>
 						<# } else if( 'free' !== data['astra-sites-type'] && ! astraSitesVars.license_status ) { #>
 							<# if( ! astraSitesVars.isPro ) { #>
-								<a class="button button-hero button-primary " href="{{astraSitesVars.getProURL}}" target="_blank">{{astraSitesVars.getProText}}<i class="dashicons dashicons-external"></i></a>
-								<span class="dashicons dashicons-editor-help astra-sites-get-agency-bundle-button"></span>
+								<a class="button button-hero button-primary astra-sites-get-agency-bundle-button" target="_blank">{{astraSitesVars.getProText}}<i class="dashicons dashicons-external"></i></a>
 							<# } else { #>
 								<span class="button button-hero button-primary astra-sites-activate-license-button">{{astraSitesVars.getProText}}</span>
 							<# } #>
@@ -648,51 +646,57 @@ $site_import_options = apply_filters(
  */
 ?>
 <script type="text/template" id="tmpl-astra-sites-request-failed-user">
-	<p>{{{ data.primary }}}</p>
+
+	<# if ( data.primary ) { #>
+		<p>{{{ data.primary }}}</p>
+	<# } #>
+
 	<# if ( 'Cloudflare' === data.error.code ) { #>
 		<div class="current-importing-status">{{{ data.error.message + ' (' + data.error.code + ')' }}}</div>
 	<# } else { #>
 		<div class="current-importing-status">{{{ data.error.code }}} - {{{ data.error.message }}}</div>
 	<# } #>
-	<# if ( 'WP_Error' === data.error.code ) { #>
-	<p>
-		<?php
-		/* translators: %s doc link. */
-		printf( __( 'We have listed the <a href="%s" target="_blank">possible solutions here</a> to help you resolve this.', 'astra-sites' ), 'https://wpastra.com/docs/fix-starter-template-importing-issues/' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		?>
-	</p>
-	<# } else if ( 'Cloudflare' === data.error.code ) { #>
-	<p>
-		<# if ( '522' == data.error.response_code ) { #>
-			<?php
-			/* translators: %s doc link. */
-			printf( __( 'Please <a class="ast-try-again" href="">click here and try again</a>. If this still does not work after few attempts, please report it <a href="%s" target="_blank">here</a>.', 'astra-sites' ), 'https://wpastra.com/support/open-a-ticket/' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			?>
-		<# } else { #>
-			<?php
-			/* translators: %s doc link. */
-			printf( __( 'Please report this error <a href="%s" target="_blank">here</a> so we can fix it.', 'astra-sites' ), 'https://wpastra.com/support/open-a-ticket/' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			?>
-		<# } #>
-	</p>
-	<# } else { #>
-	<p>
-		<?php
-		$ip       = Astra_Sites_Helper::get_client_ip();
-		$url_text = __( 'Please report this error <a href="#LINK" target="_blank">here</a> so we can fix it.', 'astra-sites' );
-		$url      = 'https://wpastra.com/starter-templates-support/?ip=' . $ip;
-		?>
-		<#
-		var url = '<?php echo $url; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>';
-		url += '&template-id=' + data.id;
-		url += '&subject=' + data.error.code + ' - ' + data.error.message;
 
-		var url_text = '<?php echo $url_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>';
-		url_text = url_text.replace( "#LINK", url );
-		#>
-		{{{url_text}}}
-	</p>
+	<# if ( 'WP_Error' === data.error.code ) { #>
+		<p>
+			<?php
+			/* translators: %s doc link. */
+			printf( __( 'We have listed the <a href="%s" target="_blank">possible solutions here</a> to help you resolve this.', 'astra-sites' ), 'https://wpastra.com/docs/fix-starter-template-importing-issues/' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			?>
+		</p>
+	<# } else if ( 'Cloudflare' === data.error.code ) { #>
+		<p>
+			<# if ( data.error.response_code && '522' == data.error.response_code ) { #>
+				<?php
+				/* translators: %s doc link. */
+				printf( __( 'Please <a class="ast-try-again" href="">click here and try again</a>. If this still does not work after few attempts, please report it <a href="%s" target="_blank">here</a>.', 'astra-sites' ), 'https://wpastra.com/support/open-a-ticket/' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				?>
+			<# } else { #>
+				<?php
+				/* translators: %s doc link. */
+				printf( __( 'Please report this error %1$shere%2$s, so we can fix it.', 'astra-sites' ), '<a class="ast-try-again" href="https://wpastra.com/support/open-a-ticket/">', '</a>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				?>
+			<# } #>
+		</p>
+	<# } else { #>
+		<p>
+			<?php
+			$ip       = Astra_Sites_Helper::get_client_ip();
+			$url_text = __( 'Please report this error <a href="#LINK" target="_blank">here</a> so we can fix it.', 'astra-sites' );
+			$url      = 'https://wpastra.com/starter-templates-support/?ip=' . $ip;
+			?>
+			<#
+			var url = '<?php echo $url; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>';
+			url += '&template-id=' + data.id;
+			url += '&subject=' + data.error.code + ' - ' + data.error.message;
+
+			var url_text = '<?php echo $url_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>';
+			url_text = url_text.replace( "#LINK", url );
+			#>
+			{{{url_text}}}
+		</p>
 	<# } #>
+
 </script>
 
 <?php

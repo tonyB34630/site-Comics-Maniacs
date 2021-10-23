@@ -284,7 +284,7 @@
     }
 
     function _transformResult(response) {
-        return typeof response === 'string' ? $.parseJSON(response) : response;
+        return typeof response === 'string' ? JSON.parse(response) : response;
     }
 
     function _formatResult(suggestionValue, currentValue, highlight, options) {
@@ -309,7 +309,8 @@
             .replace(/&lt;sup/g, '<sup')
             .replace(/&lt;\/sup/g, '</sup')
             .replace(/sup&gt;/g, 'sup>')
-            .replace(/&lt;(\/?(strong|b|br))&gt;/g, '<$1>');
+            .replace(/&lt;(\/?(strong|b|br|span))&gt;/g, '<$1>')
+            .replace(/&lt;(strong|span)\s+class\s*=\s*&quot;([^&]+)&quot;&gt;/g, '<$1 class="$2">');
 
     }
 
@@ -461,6 +462,10 @@
 					});
 
 				}
+
+				// Clean before submit
+				that.disableOverlayMobile();
+
 			});
 
 			// Position preloader
@@ -530,33 +535,41 @@
 
             var alreadyClicked = false;
             // Redirect to the new URL after click a suggestions
-            $(document).on('click.autocomplete', suggestionSelector, function () {
-            	if(!alreadyClicked) {
+			$(document).on('click.autocomplete', suggestionSelector, function (e) {
+				if (!alreadyClicked) {
 					var that = utils.getActiveInstance();
 					that.actionTriggerSource = 'click';
 
 					alreadyClicked = true;
-					setTimeout(function(){
+					setTimeout(function () {
 						alreadyClicked = false;
 					}, 500);
 
-					that.select($(this).data('index'));
-				}
-            });
-            // Support for touchpads
-			$(document).on('mousedown.autocomplete', suggestionSelector, function (e) {
-				if(typeof e.which === 'number' && e.which === 1) {
-					$(e.target)[0].click();
+					if (typeof e.ctrlKey === 'undefined' || e.ctrlKey === false) {
+						that.select($(this).data('index'));
+						e.preventDefault();
+					}
+				} else {
+					e.preventDefault();
 				}
 			});
 
-			// Use that.select(i) method instead of default browser events on <a> element
-			$(document).on('click.autocomplete', suggestionSelector, function (e) {
-				e.preventDefault();
+			// FIX issue with touchpads for some laptops (marginal cases)
+			$(document).on('mousedown.autocomplete', suggestionSelector, function (e) {
+				var _this = this;
+				if (e.button === 0) {
+					setTimeout(function () {
+						if (!alreadyClicked) {
+							var that = utils.getActiveInstance();
+							that.select($(_this).data('index'));
+						}
+					}, 250);
+				}
 			});
 
 			// Mark cursor position for onBlur event
 			$('.' + that.options.containerClass).on('mousedown.autocomplete', function (e) {
+				var that = utils.getActiveInstance();
 				that.isMouseDownOnSearchElements = true;
 			});
 
@@ -577,6 +590,7 @@
 
 			// Mark cursor position for onBlur event
 			$('.' + that.options.containerDetailsClass).on('mousedown.autocomplete', function (e) {
+				var that = utils.getActiveInstance();
 				that.isMouseDownOnSearchElements = true;
 			});
 
@@ -696,7 +710,15 @@
                 var $el = $formWrapper.find('.js-dgwt-wcas-enable-mobile-form');
 
                 $el.on('click.autocomplete', function (e) {
-                    that.enableOverlayMobile();
+
+                    if (that.options.mobileOverlayDelay > 0) {
+                        setTimeout(function () {
+                            that.enableOverlayMobile();
+                        }, that.options.mobileOverlayDelay);
+                    } else {
+                        that.enableOverlayMobile();
+                    }
+
                 });
 
             }
@@ -1115,6 +1137,9 @@
 				case keys.RETURN:
 
 					if (that.selectedIndex === -1) {
+						if (that.options.disableSubmit) {
+							return false;
+						}
 						that.hide();
 						return;
 					}
@@ -1425,7 +1450,7 @@
                     url: dgwt_wcas.ajax_details_endpoint,
                     success: function (response) {
 
-                        var result = typeof response === 'string' ? jQuery.parseJSON(response) : response;
+                        var result = typeof response === 'string' ? JSON.parse(response) : response;
 
                         if (typeof result.items != 'undefined') {
                             for (var i = 0; i < result.items.length; i++) {
@@ -1436,13 +1461,6 @@
 								if (typeof result.items[i]['price'] != 'undefined' && result.items[i]['price'].length > 0) {
 									that.cachedPrices[cacheKey] = result.items[i]['price'];
 								}
-
-                                // Preload images
-                                if (typeof result.items[i]['imageSrc'] != 'undefined' && result.items[i]['imageSrc'].length > 0) {
-                                    var tempImg = new Image();
-                                    tempImg.src = result.items[i]['imageSrc'];
-                                }
-
                             }
                         }
 
@@ -1897,7 +1915,7 @@
                     if (suggestion.taxonomy === 'product_cat') {
                         classes += ' dgwt-wcas-suggestion-tax dgwt-wcas-suggestion-cat';
                         if (!options.showHeadings) {
-                            prepend += '<span class="dgwt-wcas-st--direct-headline">' + dgwt_wcas.labels.category + '</span>';
+                            prepend += '<span class="dgwt-wcas-st--direct-headline">' + dgwt_wcas.labels['tax_' + suggestion.taxonomy] + '</span>';
                         }
                         if (typeof suggestion.breadcrumbs != 'undefined' && suggestion.breadcrumbs) {
                             title = suggestion.breadcrumbs + ' &gt; ' + suggestion.value;
@@ -1908,12 +1926,17 @@
                     } else if (suggestion.taxonomy === 'product_tag') {
                         classes += ' dgwt-wcas-suggestion-tax dgwt-wcas-suggestion-tag';
                         if (!options.showHeadings) {
-                            prepend += '<span class="dgwt-wcas-st--direct-headline">' + dgwt_wcas.labels.tag + '</span>';
+                            prepend += '<span class="dgwt-wcas-st--direct-headline">' + dgwt_wcas.labels['tax_' + suggestion.taxonomy] + '</span>';
                         }
                     } else if (options.isPremium && suggestion.taxonomy === options.taxonomyBrands) {
                         classes += ' dgwt-wcas-suggestion-tax dgwt-wcas-suggestion-brand';
                         if (!options.showHeadings) {
-                            prepend += '<span class="dgwt-wcas-st--direct-headline">' + dgwt_wcas.labels.brand + '</span>';
+                            prepend += '<span class="dgwt-wcas-st--direct-headline">' + dgwt_wcas.labels['tax_' + suggestion.taxonomy] + '</span>';
+                        }
+                    } else if (options.isPremium && suggestion.type === 'taxonomy') {
+                        classes += ' dgwt-wcas-suggestion-tax dgwt-wcas-suggestion-tax-' + suggestion.taxonomy;
+                        if (!options.showHeadings) {
+                            prepend += '<span class="dgwt-wcas-st--direct-headline">' + dgwt_wcas.labels['tax_' + suggestion.taxonomy] + '</span>';
                         }
                     } else if (options.isPremium && suggestion.type === 'vendor') {
 						classes += ' dgwt-wcas-suggestion-vendor dgwt-wcas-suggestion-vendor';
@@ -2011,9 +2034,21 @@
                     html += is_img ? '<div class="dgwt-wcas-content-wrapp">' : '';
 
 
+                    // Open Title wrapper
+                    html += '<div class="dgwt-wcas-st">';
+
+                    // Custom content before title (3rd party)
+                    if (typeof suggestion.title_before != 'undefined' && suggestion.title_before) {
+                        html += suggestion.title_before;
+                    }
+
                     // Title
-                    html += '<span class="dgwt-wcas-st">';
                     html += '<span class="dgwt-wcas-st-title">' + formatResult(suggestion.value, value, true, options) + parent + '</span>';
+
+                    // Custom content after title (3rd party)
+                    if (typeof suggestion.title_after != 'undefined' && suggestion.title_after) {
+                        html += suggestion.title_after;
+                    }
 
                     // SKU
                     if (options.showSKU === true && typeof suggestion.sku != 'undefined' && suggestion.sku.length > 0) {
@@ -2038,26 +2073,44 @@
 
 					}
 
-                    html += '</span>';
+                    // Custom content after description (3rd party)
+                    if (typeof suggestion.content_after != 'undefined' && suggestion.content_after) {
+                        html += suggestion.content_after;
+                    }
+
+                    // Close title wrapper
+                    html += '</div>';
+
+
+                    var showPrice = options.showPrice === true && typeof suggestion.price != 'undefined',
+                        showMetaBefore = typeof suggestion.meta_before != 'undefined',
+                        showMetaAfter = typeof suggestion.meta_after != 'undefined',
+                        showMeta = showPrice || showMetaBefore || showMetaAfter;
+                    // @todo show sale and featured badges
+
+                    // Meta
+                    html += showMeta ? '<div class="dgwt-wcas-meta">' : '';
+
+                    // Custom content before meta (3rd party)
+                    if (showMetaBefore) {
+                        html += suggestion.meta_before;
+                    }
 
                     // Price
-                    if (options.showPrice === true && typeof suggestion.price != 'undefined') {
+                    if (showPrice) {
                         html += '<span class="dgwt-wcas-sp">' + suggestion.price + '</span>';
                     }
 
-                    // On sale product badge
-                    if (options.showFeaturedBadge === true && suggestion.on_sale === true) {
-                        html += '<span class="dgwt-wcas-badge dgwt-wcas-badge-os">' + options.saleBadgeText + '</span>';
+                    // Custom content after meta (3rd party)
+                    if (showMetaAfter) {
+                        html += suggestion.meta_after;
                     }
 
-                    // Featured product badge
-                    if (options.showFeaturedBadge === true && suggestion.featured === true) {
-                        html += '<span class="dgwt-wcas-badge dgwt-wcas-badge-f">' + options.featuredBadgeText + '</span>';
-                    }
-
+                    // Close Meta
+                    html += showMeta ? '</div>' : '';
 
                     html += is_img ? '</div>' : '';
-                    html += '</div>';
+                    html += '</a>';
 
                 }
             });
@@ -2359,6 +2412,7 @@
             	return;
 			}
 
+			that.disableOverlayMobile();
             that.hide();
             that.onSelect(i);
         },
@@ -2462,7 +2516,7 @@
             that.currentValue = that.getValue(suggestion.value);
 
             if (that.currentValue !== that.el.val() && !that.options.preserveInput) {
-                that.el.val(that.currentValue);
+				that.el.val(that.currentValue.replace(/(<([^>]+)>)/gi, ' ').replace(/\s\s+/g, ' '));
             }
 
             if (suggestion.url.length > 0) {
@@ -2577,6 +2631,10 @@
         },
         disableOverlayMobile: function ($overlayWrap) {
             var that = this;
+
+			if (!$('html').hasClass('dgwt-wcas-overlay-mobile-on')) {
+				return;
+			}
 
             var $suggestionsWrapp = that.getSuggestionsContainer();
 
@@ -2790,6 +2848,7 @@
                 taxonomyBrands: dgwt_wcas.taxonomy_brands,
                 mobileBreakpoint: mobileBreakpoint,
                 mobileOverlayWrapper: dgwt_wcas.mobile_overlay_wrapper,
+                mobileOverlayDelay: dgwt_wcas.mobile_overlay_delay,
                 debounceWaitMs: dgwt_wcas.debounce_wait_ms,
                 sendGAEvents: dgwt_wcas.send_ga_events,
                 convertHtml: dgwt_wcas.convert_html,

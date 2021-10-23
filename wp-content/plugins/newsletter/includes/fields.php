@@ -126,6 +126,41 @@ class NewsletterFields {
         $this->input($name, $label, $attrs);
     }
 
+    public function text_on_off($name, $label = '', $attrs = []) {
+        $attrs = $this->_merge_attrs($attrs, ['placeholder' => '', 'size' => 0, 'label_after' => '', 'type' => 'text']);
+        $this->_open();
+        $this->_label($label);
+        $value = $this->controls->get_value($name);
+
+        echo '<input type="hidden" name="tnp_fields[' . esc_attr($name . '_enabled') . ']" value="checkbox">';
+        echo '<input id="', $this->_id($name . '_enabled'), '" name="', $this->_name($name . '_enabled'), '" type="checkbox" value="1"';
+        if (!empty($this->controls->get_value($name . '_enabled'))) {
+            echo ' checked';
+        }
+        echo '>&nbsp;';
+        
+        echo '<input id="', $this->_id($name), '" placeholder="', esc_attr($attrs['placeholder']), '" name="', $this->_name($name), '" type="text"';
+
+        echo ' style="width: 90%;"';
+
+        if (isset($attrs['min'])) {
+            echo ' min="' . (int) $attrs['min'] . '"';
+        }
+
+        if (isset($attrs['max'])) {
+            echo ' max="' . (int) $attrs['max'] . '"';
+        }
+
+        echo ' value="', esc_attr($value), '">';
+
+        if (!empty($attrs['label_after'])) {
+            echo $attrs['label_after'];
+        }
+
+        $this->_description($attrs);
+        $this->_close();
+    }
+
     public function number($name, $label = '', $attrs = []) {
         $attrs = array_merge(['type' => 'number'], $attrs);
         $this->input($name, $label, $attrs);
@@ -264,7 +299,7 @@ class NewsletterFields {
         $this->_close();
     }
 
-    public function select_number($name, $label = '', $min, $max, $attrs = []) {
+    public function select_number($name, $label = '', $min = 0, $max = 10, $attrs = []) {
         $attrs = $this->_merge_attrs($attrs);
         $this->_open();
         $this->_label($label);
@@ -322,7 +357,7 @@ class NewsletterFields {
                     'family_default' => false,
                     'size_default' => false,
                     'weight_default' => false,
-                ]);
+        ]);
 
         $this->_open('tnpf-button');
         $this->_label($label);
@@ -338,8 +373,12 @@ class NewsletterFields {
         if ($attrs['url']) {
             $value = $this->controls->get_value($name . '_url');
             echo '<div class="tnp-field-col-2">';
+            $width = isset($attrs['media']) ? '90%' : '100%';
             echo '<input id="', $this->_id($name . '_url'), '" placeholder="', esc_attr($attrs['url_placeholder']), '" name="options[',
-            $name_esc, '_url]" type="url" style="width: 100%" value="', esc_attr($value), '">';
+            $name_esc, '_url]" type="url" style="width: ', $width, '" value="', esc_attr($value), '">';
+            if (isset($attrs['media'])) {
+                echo '&nbsp;<i class="far fa-folder-open" data-field="', $this->_id($name . '_url'), '" onclick="tnp_fields_url_select(this)"></i>';
+            }
             echo '</div>';
         }
         echo '<div style="clear: both"></div>';
@@ -375,6 +414,9 @@ class NewsletterFields {
         $this->_open('tnp-url');
         $this->_label($label);
         $this->controls->text_url($name);
+        if (isset($attrs['media'])) {
+            echo '<i class="far fa-folder-open" onclick="tnp_fields_url_select(\'options_', $name, '\')"></i>';
+        }
         $this->_description($attrs);
         $this->_close();
     }

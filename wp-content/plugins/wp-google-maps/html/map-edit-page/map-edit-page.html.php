@@ -1866,6 +1866,42 @@
 						</label>
 					</fieldset>
 
+					<fieldset class="wpgmza-pro-feature">
+						<legend>
+							<?php
+							_e("Override zoom level on listing click", "wp-google-maps");
+							?>
+						</legend>
+						
+						<div>
+							<div class='switch'>
+								<input type='checkbox' 
+									id='zoom_level_on_marker_listing_override' 
+									name='zoom_level_on_marker_listing_override' 
+									class='postform cmn-toggle cmn-toggle-round-flat wpgmza-pro-feature'>
+								<label for='zoom_level_on_marker_listing_override' 
+									data-on='<?php _e("Yes", "wp-google-maps"); ?>'
+									data-off='<?php _e("No", "wp-google-maps"); ?>'>
+								</label>
+							</div>
+						</div>
+					</fieldset>
+
+					<fieldset 
+						class="wpgmza-zoom-on-marker-listing-click-zoom-level wpgmza-no-flex" 
+						id="zoom_level_on_marker_listing_click_level" 
+						style="display: none;">
+						<legend>
+							<?php
+							_e("Zoom Level", "wp-google-maps");
+							?>
+						</legend>
+
+						<input name="zoom_level_on_marker_listing_click" style="display: none;" type="text" id="zoom_level_on_marker_listing_click">
+						
+						 <div id="zoom-on-marker-listing-click-slider"></div> 
+					</fieldset>
+
 					
 
 					<h3>

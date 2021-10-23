@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Name: Header
  * Section: header
@@ -20,10 +21,10 @@ $default_options = array(
 );
 $options = array_merge($default_options, $options);
 
-$text_font_family = empty( $options['font_family'] ) ? $global_text_font_family : $options['font_family'];
-$text_font_size   = empty( $options['font_size'] ) ? $global_text_font_size : $options['font_size'];
-$text_font_color  = empty( $options['font_color'] ) ? $global_text_font_color : $options['font_color'];
-$text_font_weight = empty( $options['font_weight'] ) ? $global_text_font_weight : $options['font_weight'];
+$text_font_family = empty($options['font_family']) ? $global_text_font_family : $options['font_family'];
+$text_font_size = empty($options['font_size']) ? $global_text_font_size : $options['font_size'];
+$text_font_color = empty($options['font_color']) ? $global_text_font_color : $options['font_color'];
+$text_font_weight = empty($options['font_weight']) ? $global_text_font_weight : $options['font_weight'];
 
 if (empty($info['header_logo']['id'])) {
     $media = false;
@@ -42,6 +43,9 @@ if ($empty) {
     echo '<p>Please, set your company info.</p>';
 } elseif ($options['layout'] === 'logo') {
     include __DIR__ . '/layout-logo.php';
+    return;
+} elseif ($options['layout'] === 'titlemotto') {
+    include __DIR__ . '/layout-titlemotto.php';
     return;
 } else {
     include __DIR__ . '/layout-default.php';

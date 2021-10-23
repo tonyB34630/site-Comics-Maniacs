@@ -70,7 +70,7 @@ class Apollo13Framework
         define('A13FRAMEWORK_THEME_ID_NUMBER', '66');
         define('A13FRAMEWORK_OPTIONS_NAME', 'apollo13_option_rife');
         define('A13FRAMEWORK_CACHE', 'apollo13_rife_cache');
-        define('A13FRAMEWORK_THEME_VERSION', '2.4.12');
+        define('A13FRAMEWORK_THEME_VERSION', '2.4.13');
         define('A13FRAMEWORK_THEME_VER', A13FRAMEWORK_THEME_VERSION ); //legacy - do not use
         define('A13FRAMEWORK_MIN_COMPANION_VERSION', '1.8.8');
         define('A13FRAMEWORK_MIN_PHP_VERSION', '5.3');
@@ -446,6 +446,9 @@ class Apollo13Framework
 
         //Header Footer Elementor Plugin support
         add_theme_support( 'header-footer-elementor' );
+
+        //no support for block based widgets WordPress 5.8 and above
+        remove_theme_support( 'widgets-block-editor' );
 
         // Register custom menu positions
         register_nav_menus(array(

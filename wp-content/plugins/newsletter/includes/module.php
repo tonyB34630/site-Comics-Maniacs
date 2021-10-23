@@ -21,6 +21,7 @@ class TNP_Media {
 
     /** Sets the width recalculating the height */
     public function set_width($width) {
+        if ($this->width < $width) return;
         $this->height = floor(($width / $this->width) * $this->height);
         $this->width = $width;
     }
@@ -286,7 +287,7 @@ class TNP_Subscription {
     const EXISTING_MERGE = 0;
 
     /**
-     * Subscriber data following the syntax of the TNP_User
+     * Subscriber's data following the syntax of the TNP_User
      * @var TNP_Subscription_Data
      */
     var $data;
@@ -370,6 +371,11 @@ class NewsletterModule {
     var $logger;
 
     /**
+     * @var NewsletterLogger
+     */
+    var $admin_logger;
+
+    /**
      * @var NewsletterStore
      */
     var $store;
@@ -413,12 +419,14 @@ class NewsletterModule {
         $this->components = $components;
 
         $this->logger = new NewsletterLogger($module);
+
         $this->options = $this->get_options();
         $this->store = NewsletterStore::singleton();
 
         //$this->logger->debug($module . ' constructed');
         // Version check
         if (is_admin()) {
+            $this->admin_logger = new NewsletterLogger($module . '-admin');
             $this->old_version = get_option($this->prefix . '_version', '0.0.0');
 
             if ($this->old_version == '0.0.0') {
@@ -1676,7 +1684,7 @@ class NewsletterModule {
      * @return TNP_User[]
      */
     function get_test_users() {
-        return $this->store->get_all(NEWSLETTER_USERS_TABLE, "where test=1");
+        return $this->store->get_all(NEWSLETTER_USERS_TABLE, "where test=1 and status in ('C', 'S')");
     }
 
     /**
@@ -2295,11 +2303,21 @@ class NewsletterModule {
         if (empty($ip)) {
             return '';
         }
-        return preg_replace('/[^0-9a-fA-F:., ]/', '', $ip);
+        return preg_replace('/[^0-9a-fA-F:., ]/', '', trim($ip));
     }
 
     static function get_remote_ip() {
-        return self::sanitize_ip($_SERVER['REMOTE_ADDR']);
+        $ip = '';
+        if (!empty($_SERVER['HTTP_X_REAL_IP'])) {
+            $ip = $_SERVER['HTTP_X_REAL_IP'];
+        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            // Sometimes this is a list of IPs representing the chain of proxies
+            $ip = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'], 1);
+            $ip = $ip[0];
+        } elseif (isset($_SERVER['REMOTE_ADDR'])) {
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        return self::sanitize_ip($ip);
     }
 
     static function get_signature($text) {

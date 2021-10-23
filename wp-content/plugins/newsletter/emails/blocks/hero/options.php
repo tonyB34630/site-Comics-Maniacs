@@ -23,8 +23,6 @@ $fields->controls->data['schema'] = '';
 
 <?php $fields->media('image', __('Image', 'newsletter'), array('alt' => true)) ?>
 
-
-
 <?php $fields->textarea('text', __('Text', 'newsletter')) ?>
 <?php $fields->font( 'font', '', [ 'family_default' => true, 'size_default' => true, 'weight_default' => true ] ) ?>
 

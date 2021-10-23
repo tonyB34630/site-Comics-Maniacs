@@ -6,7 +6,27 @@ Thanks!
 
 
 ----------------
-= 2.4.12(31.03.2020) =
+= 2.4.13(02.09.2021) =
+
+Tested with WordPress 5.8
+!!Tested with WooCommerce 5.1.X
+
+Added:
+-support for closing mobile menu when anchor in the submenu is clicked
+
+Improved:
+-support for classic widgets since WordPress 5.8
+
+Fixed:
+-password protected pages throwing notices in some rare cases
+-not always showing footer made in the Elementor Header & Footer Builder plugin
+-products grid from Elementor 3.2.x
+-PHP 8 Notice
+
+
+----------------
+
+= 2.4.12(31.03.2021) =
 
 Tested with WordPress 5.7
 Tested with WooCommerce 5.1.X
@@ -24,6 +44,7 @@ Fixed:
 -situation when album is used as frontpage with using WPML
 
 ----------------
+
 = 2.4.11(01.12.2020) =
 
 Tested with WordPress 5.6

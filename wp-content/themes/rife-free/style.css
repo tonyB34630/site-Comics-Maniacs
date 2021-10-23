@@ -7,11 +7,11 @@ Theme URI: https://apollo13themes.com/rife/free/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires at least: 4.7
-Tested up to: 5.7
+Tested up to: 5.8
 Requires PHP: 5.3.0
 Tags: e-commerce, portfolio, photography, two-columns, three-columns, left-sidebar, right-sidebar, grid-layout, translation-ready, sticky-post, post-formats, custom-colors, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, rtl-language-support
 Text Domain: rife-free
-Version: 2.4.12
+Version: 2.4.13
 */
 
 /* ==========================================================================
@@ -813,14 +813,21 @@ a.to-top:hover::after {
 html.elementor-html #mid:hover{
 	z-index: 20;
 }
+#masthead,
 .container-elementor-header{
 	position: relative;
 	z-index: 11;
 }
+#colophon,
 .container-elementor-footer{
 	position: relative;
 	z-index: 10;
 }
+/* Elementor 3.x fix */
+.elementor-element.elementor-products-grid ul.products .grid-master {
+	display: none;
+}
+
 /* lightGallery ligthbox */
 .lg-sub-html{
 	background-color: transparent;

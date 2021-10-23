@@ -2,9 +2,9 @@
 Contributors: anbinder, karzin, pluggabl
 Tags: woocommerce customization, woocommerce bundle, woocommerce product addon, woocommerce integration, ecommerce plugin
 Requires at least: 4.4
-Tested up to: 5.7.2
+Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 5.4.2
+Stable tag: 5.4.7
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -228,6 +228,13 @@ To unlock all Booster for WooCommerce features, please install additional [Boost
 **PDF Invoicing & Packing Slips**
 
 * *PDF Invoicing* - Invoices, Proforma Invoices (Plus), Credit Notes (Plus), Paid Stamp (Plus) and Packing Slips (Plus).
+* *Paid Stamp (Plus)*
+* *Display product image on pdf (Plus)*
+* *Display product addons on pdf (Plus)*
+* *Display product input fields on pdf (Plus)*
+* *Display checkout custom fields on pdf (Plus)*
+* *Display WooCommerce order’s meta on pdf (Plus)*
+* *Display WooCommerce subscription order details on pdf (Plus)*
 
 **Emails & Misc.**
 
@@ -257,6 +264,46 @@ To unlock all Booster for WooCommerce features, please install additional [Boost
 * For support please visit the [Plugin Support Forum](https://wordpress.org/support/plugin/woocommerce-jetpack/).
 
 == Changelog ==
+
+= 5.4.7 29/09/2021 =
+
+* Feature - PRICES & CURRENCIES - Product Price by Formula - Added Compatibility with WoocommerceBooking plugin.
+* Fix - CART & CHECKOUT - Checkout Custom Fields - Fixed PHP warning array_key() expects parameter 1.
+* Fix - CART & CHECKOUT - Checkout Core Fields - Fixed Error Uncaught TypeError: Cannot read property '0' of undefined.
+* WooCommerce 5.7.1 tested
+* WordPress 5.8.1 tested
+
+= 5.4.6 27/08/2021 =
+
+* Fix - SHIPPING & ORDERS - Order Numbers - Fixed order number sequential bug for a new order for different PHP versions.
+
+= 5.4.5 25/08/2021 =
+* Fix - PDF INVOICING & PACKING SLIPS - Fixed table border is not being shown when we use a background image.
+* Fix - PDF INVOICING & PACKING SLIPS - Fixed page break not working when extra header css is being added.
+* Fix - PDF INVOICING & PACKING SLIPS - Fixed refund extra fee and shipping value not being shown on item table.
+* Fix - CART & CHECKOUT - Checkout Custom Fields - Fixed Category rules of checkout were not being reflected on email.
+* Fix - CART & CHECKOUT - EU VAT Number - Fixed EU vat number required notice when the field is empty.
+* Fix - SHIPPING & ORDERS - Order Numbers - Fixed order number sequential bug for a new order.
+* Fix - PRICES & CURRENCIES - Prices and Currencies by Country - Fixed closure error when widgets are being used on shop page.
+* Fix - PRICES & CURRENCIES - Wholesale Price - Fixed per product price issue with the multicurrency switcher.
+* WooCommerce 5.6.0 tested
+* WordPress 5.8 tested
+
+= 5.4.4 11/08/2021 =
+* Fix - Emails & Misc.- Email Verification - Fixed security issue for Authentication link.
+
+= 5.4.3 28/07/2021 =
+* Fix - SHIPPING & ORDERS- Order Quantities - Fixed Steps issue on product detail page.
+* Fix - PRODUCTS - Product Addons - Fixed issue when "Enable AJAX on Single Product Page" option, Prices of Related products are also change while changing varition of variable product.
+* Fix - CART & CHECKOUT - Checkout Custom Fields - Fixed meta key issue for input type select.
+* Fix - PRICES & CURRENCIES - Multicurrency (Currency Switcher) - Fixed Compatibility issue with WooCommerce Attribute Swatches by Iconic Plugin
+* Fix - Fixed error WP_Scripts::localize was called incorrectly. The $l10n parameter must be an array
+* Feature - SHIPPING & ORDERS - Order Quantities - Show notice while add to cart, if the Maximum order quantity limit reached.
+* Feature - SHIPPING & ORDERS - Order Quantities - Allow any quantity if the product is lower than the minimum quantity.
+* Feature - PRODUCTS - Product Visibility by Country - Added options to choose All countries or WooCommerce Selling Locations for For [wcj_selector selector_type="country"]
+* WooCommerce 5.5.2 tested
+* Wordpress 5.8 tested
+
 = 5.4.2 24/06/2021 =
 * Fix - CART & CHECKOUT - Checkout Custom Fields - Fixed duplicate meta key issue.
 * Fix - SHIPPING & ORDERS - Order Numbers - Fixed hashid dependency issue.

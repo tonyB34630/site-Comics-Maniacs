@@ -15,7 +15,7 @@
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
-    max-width: 1280px;
+    max-width: 1380px;
     margin: 0 auto;
 }
 
@@ -23,7 +23,7 @@
 #newsletter-builder-area {
     display: flex;
     flex-flow: column;
-
+    flex-shrink: 0;
     background-color: #fff;
     width: 800px;
     box-sizing: border-box;
@@ -38,20 +38,24 @@
 #newsletter-builder-sidebar {
     display: flex;
     flex-flow: column;
-    width: 450px;
+    /*    flex-grow: 1;*/
+    max-width: 510px;
+    min-width: 410px;
     background-color: #ECF0F1;
     margin-left: 20px;
     overflow-y: scroll;
     /* Needed for block options form */
     position: relative;
     border-radius: 3px;
+    overflow: hidden;
 }
 
 #tnpc-subject-wrap {
     border-bottom: 1px solid #ccc;
     padding-bottom: 20px;
     padding-top: 20px;
-    padding-left: 20px
+    padding-left: 20px;
+    position:relative;
 }
 
 #tnpc-subject-wrap th {
@@ -74,14 +78,85 @@
     vertical-align: middle;
 }
 
-#tnpc-subject {
+#tnpc-subject-wrap th[dir=rtl] {
+    text-align: left;
+}
+#tnpc-subject-wrap td[dir=rtl] {
+    text-align: right;
+}
+#tnpc-subject-wrap td[dir=rtl] #options-title {
+    margin-right: 0;
 }
 
-#tnpc-subject input[type=text]{
-    width: 550px;
-    font-size: 16px;
+#tnpc-subject-wrap .composer-actions {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+#tnpc-subject-wrap .composer-view-mode {
+    display: flex;
+}
+
+#tnpc-subject-wrap .composer-view-mode .composer-view-mode__item {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: content-box;
+    text-align: center;
+    margin-left: 3px;
+    border-radius: 3px;
+    border: solid 1px #3c434a;
+    background-color: #FFF;
+    color: #3c434a;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#tnpc-subject-wrap .composer-view-mode .composer-view-mode__item--active {
+    background-color: #2b2f3a;
+    border-color: #2b2f3a;
+    color: #FFF;
+}
+
+#tnpc-subject-wrap .composer-view-mode .composer-view-mode__item:hover{
+    background-color: #3c434a;
+    border-color: #3c434a;
+    color: #FFF;
+}
+
+.composer-actions .button-primary {
+    background-color: #2b2f3a;
+}
+
+.composer-actions .button-primary:hover {
+    background-color: #3c434a;
+}
+
+#test-newsletter-button {
+    background-color: #2b2f3a;
+}
+
+#test-newsletter-button:hover {
+    background-color: #3c434a;
+}
+
+#tnpc-subject #options-subject-subject,
+#options-preheader
+{
+    width: 600px;
     margin-right: 15px;
     border: 1px solid #ddd;
+    font-size: 14px;
+    font-family: monospace !important;
+}
+
+#options-preheader + .tnp-description
+{
+    margin-top: 0;
 }
 
 #tnpc-subject i {
@@ -197,13 +272,37 @@
     /*float: left;*/
     /*width: 730px;*/
     /*background-color: rgba(153,153,153,1);*/
-    min-height: 50px;
+    min-height: 300px!important;
     padding-bottom: 75px;
     /*background-color: #ECF0F1;*/
     padding-top: 30px;
     /*border: 1px dashed #eee;*/
     overflow-y: scroll;
     /*max-height: 600px;*/
+}
+
+/* https://www.codegrepper.com/code-examples/css/how+ot+hide+scroll+bar+buy+allow+mouse+scrolling+css */
+#newsletter-builder-area-center-frame-content.tnp-view-mobile {
+    margin: 20px auto 0px auto;
+    width: 350px;
+    height: 500px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#newsletter-builder-area-center-frame-content.tnp-view-mobile::-webkit-scrollbar {
+    display: none;
+}
+
+#newsletter-builder-area-center-frame-content p {
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    color: inherit;
 }
 
 #newsletter-mobile-preview-area {
@@ -679,11 +778,10 @@ iframe#tnpc-mobile-preview {
     background-color: #fff;
     padding: 15px;
     margin-top: 0;
-}
-
-#tnpc-block-options-form {
     color: #444;
     background-color: #ECF0F1 !important;
+    flex: 1 1 auto;
+    overflow-y: auto;
 }
 
 
@@ -729,9 +827,6 @@ iframe#tnpc-mobile-preview {
     padding-top: 0;
 }
 
-
-
-
 /* Style the tab */
 .tnpc-tabs {
     /*overflow: hidden;*/
@@ -767,6 +862,8 @@ iframe#tnpc-mobile-preview {
     display: none;
     padding: 6px 12px;
     border-top: none;
+    flex: 1 1 auto;
+    overflow-y: auto;
 }
 
 /* Style Reset, Save, Save & Preview footer */
@@ -1002,9 +1099,75 @@ iframe#tnpc-mobile-preview {
     display: none;
 }
 
-#newsletter-builder-area-center-frame-content p {
-    font-size: inherit;
-    font-weight: inherit;
-    font-family: inherit;
-    color: inherit;
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #3c434a;
+}
+
+.separator:not(:empty)::before {
+    margin-right: 1em;
+}
+
+.separator:not(:empty)::after {
+    margin-left: 1em;
+}
+
+#test-newsletter-modal .test-subscribers p {
+    margin: 0;
+}
+
+#test-newsletter-modal h4 {
+    margin: 0 0 0.5rem 0;
+}
+
+#test-newsletter-modal .separator {
+    padding: 1.25rem 0;
+}
+
+
+.tnp-suggest-subject {
+    cursor: pointer;
+}
+
+/* Drag and drop placeholder */
+.placeholder {
+    border: 1px dashed #bbb!important;
+    background-color: #fafafa!important;
+    height: 75px;
+    margin: 0 auto;
+    max-width: 600px;
+    box-sizing: border-box!important;
+}
+
+#draggable-helper {
+    width: 600px;
+    border: 1px dashed #ddd;
+    opacity: 80%!important;
+    background-color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #666 !important;
+    padding: 20px;
+}
+
+#sortable-helper {
+    width: 700px;
+    height: 75px;
+    border: 3px dashed #ddd;
+    opacity: .7;
+    background-color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px; color: #aaa;
+    padding: 20px;
 }

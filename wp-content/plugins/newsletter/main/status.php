@@ -4,28 +4,12 @@
 
 defined('ABSPATH') || exit;
 
+wp_enqueue_script('tnp-chart');
+
 include_once NEWSLETTER_INCLUDES_DIR . '/controls.php';
 $controls = new NewsletterControls();
 
-$wp_cron_calls = get_option('newsletter_diagnostic_cron_calls', array());
-$total = 0;
-$wp_cron_calls_max = 0;
-$wp_cron_calls_min = 0;
-$wp_cron_calls_avg = 0;
-if (count($wp_cron_calls) > 20) {
-
-    for ($i = 1; $i < count($wp_cron_calls); $i++) {
-        $diff = $wp_cron_calls[$i] - $wp_cron_calls[$i - 1];
-        $total += $diff;
-        if ($wp_cron_calls_min == 0 || $wp_cron_calls_min > $diff) {
-            $wp_cron_calls_min = $diff;
-        }
-        if ($wp_cron_calls_max < $diff) {
-            $wp_cron_calls_max = $diff;
-        }
-    }
-    $wp_cron_calls_avg = (int) ($total / (count($wp_cron_calls) - 1));
-}
+$system = NewsletterSystem::instance();
 
 if ($controls->is_action('delete_logs')) {
     $files = glob(WP_CONTENT_DIR . '/logs/newsletter/*.txt');
@@ -38,16 +22,7 @@ if ($controls->is_action('delete_logs')) {
     $controls->messages = 'Logs deleted';
 }
 
-if ($controls->is_action('reschedule')) {
-    wp_clear_scheduled_hook('newsletter');
-    wp_schedule_event(time() + 30, 'newsletter', 'newsletter');
-    $controls->add_message_done();
-}
 
-if ($controls->is_action('trigger')) {
-    Newsletter::instance()->hook_newsletter();
-    $controls->messages = 'Triggered';
-}
 
 if ($controls->is_action('conversion')) {
     $this->logger->info('Maybe convert to utf8mb4');
@@ -67,12 +42,10 @@ if ($controls->is_action('conversion')) {
     } else {
         $controls->errors = 'Table conversion function not available';
     }
-    Newsletter::instance()->hook_newsletter();
-    $controls->messages = 'Triggered';
 }
 
 if ($controls->is_action('reset_send_stats')) {
-    update_option('newsletter_diagnostic_send_calls', [], false);
+    $system->reset_send_stats();
     $controls->add_message_done();
 }
 
@@ -158,9 +131,11 @@ function tnp_status_print_flag($condition) {
 }
 
 class TNP_WPDB extends wpdb {
+
     public function get_table_charset($table) {
         return parent::get_table_charset($table);
     }
+
 }
 
 $tnp_wpdb = new TNP_WPDB(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
@@ -203,7 +178,7 @@ $tnp_wpdb = new TNP_WPDB(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
 
                     <tr>
                         <td>Delivering</td>
-                        <td>
+                        <td class="status">
                             &nbsp;
                         </td>
                         <td>
@@ -239,60 +214,68 @@ $tnp_wpdb = new TNP_WPDB(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
                         </td>
                     </tr>
                     <?php
-                    // Send calls stats
-                    $send_calls = get_option('newsletter_diagnostic_send_calls', array());
-                    if (count($send_calls)) {
-                        $send_max = 0;
-                        $send_min = PHP_INT_MAX;
-                        $send_total_time = 0;
-                        $send_total_emails = 0;
-                        $send_completed = 0;
-                        for ($i = 0; $i < count($send_calls); $i++) {
-                            if (empty($send_calls[$i][2]))
-                                continue;
+                    $stats = $system->get_send_stats();
 
-                            $delta = $send_calls[$i][1] - $send_calls[$i][0];
-                            $send_total_time += $delta;
-                            $send_total_emails += $send_calls[$i][2];
-                            $send_mean = $delta / $send_calls[$i][2];
-                            if ($send_min > $send_mean) {
-                                $send_min = $send_mean;
-                            }
-                            if ($send_max < $send_mean) {
-                                $send_max = $send_mean;
-                            }
-                            if (isset($send_calls[$i][3]) && $send_calls[$i][3]) {
-                                $send_completed++;
-                            }
-                        }
-                        $send_mean = $send_total_time / $send_total_emails;
+                    if ($stats) {
+                        $condition = $stats->mean > 2 ? 2 : 1;
                         ?>
                         <tr>
-                            <td>
+                            <td id="tnp-speed">
                                 Send details
                             </td>
-                            <td>
-                                <?php if ($send_mean > 1) { ?>
-                                    <span class="tnp-ko">KO</span>
-                                <?php } else { ?>
-                                    <span class="tnp-ok">OK</span>
-                                <?php } ?>
+                            <td class="status">
+                                <?php tnp_status_print_flag($condition) ?>
+
                             </td>
                             <td>
-                                <?php if ($send_mean > 1) { ?>
+                                <?php if ($condition) { ?>
                                     <strong>Sending an email is taking more than 1 second, rather slow.</strong>
                                     <a href="https://www.thenewsletterplugin.com/documentation/status-panel#status-performance" target="_blank">Read more</a>.
+                                    <br>
                                 <?php } ?>
-                                Average time to send an email: <?php echo sprintf("%.2f", $send_mean) ?> seconds<br>
-                                <?php if ($send_mean > 0) { ?>
-                                    Max speed: <?php echo sprintf("%.2f", 1.0 / $send_mean * 3600) ?> emails per hour<br>
+                                Average time to send an email: <?php echo $stats->mean ?> seconds<br>
+                                <?php if ($stats->mean > 0) { ?>
+                                    Max speed: <?php echo sprintf("%.2f", 1.0 / $stats->mean * 3600) ?> emails per hour<br>
                                 <?php } ?>
 
-                                Max mean time measured: <?php echo sprintf("%.2f", $send_max) ?> seconds<br>
-                                Min mean time measured: <?php echo sprintf("%.2f", $send_min) ?> seconds<br>
-                                Total email in the sample: <?php echo $send_total_emails ?><br>
-                                Runs in the sample: <?php echo count($send_calls); ?><br>
-                                Runs prematurely interrupted: <?php echo sprintf("%.2f", (count($send_calls) - $send_completed) * 100.0 / count($send_calls)) ?>%<br>
+                                Max mean time measured: <?php echo $stats->max ?> seconds<br>
+                                Min mean time measured: <?php echo $stats->min ?> seconds<br>
+                                Total emails in the sample: <?php echo $stats->total_emails ?><br>
+                                Total sending time: <?php echo $stats->total_time ?> seconds<br>
+                                Runs in the sample: <?php echo $stats->total_runs ?><br>
+                                Runs prematurely interrupted: <?php echo $stats->interrupted ?><br>
+
+
+                                <canvas id="tnp-send-chart" style="width: 550px; height: 150px"></canvas>
+                                <script>
+                                    jQuery(function () {
+                                        var sendChartData = {
+                                            labels: <?php echo json_encode(range(1, count($stats->means))) ?>,
+                                            datasets: [
+                                                {
+                                                    label: "Batch Average Time",
+                                                    data: <?php echo json_encode($stats->means) ?>,
+                                                    borderColor: '#2980b9',
+                                                    fill: false
+                                                }/*,
+                                                 {
+                                                 label: "Batch Average Time",
+                                                 data: <?php echo json_encode($stats->sizes) ?>,
+                                                 borderColor: '#b98028',
+                                                 fill: false      
+                                                 }*/]
+                                        };
+                                        var sendChartConfig = {
+                                            type: "line",
+                                            data: sendChartData,
+                                            options: {
+                                                responsive: false,
+                                                maintainAspectRatio: false
+                                            }
+                                        };
+                                        new Chart('tnp-send-chart', sendChartConfig);
+                                    });
+                                </script>
                                 <br>
                                 <?php $controls->button_reset('reset_send_stats') ?>
                             </td>
@@ -300,49 +283,16 @@ $tnp_wpdb = new TNP_WPDB(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
                     <?php } else { ?>
                         <tr>
                             <td>
-                                Send details
+                                Sending statistics
                             </td>
                             <td>
-                                <span class="tnp-maybe">MAYBE</span>
+                                &nbsp;
                             </td>
                             <td>
-                                No data avaiable. Send a newsletter to collect some sending statistics.
+                                Not enough data available.
                             </td>
                         </tr>
                     <?php } ?>
-
-                    <tr>
-                        <?php
-                        $time = wp_next_scheduled('newsletter');
-                        $res = true;
-                        $condition = 1;
-                        if ($time === false) {
-                            $res = false;
-                            $condition = 0;
-                        }
-                        $delta = $time - time();
-                        if ($delta <= -600) {
-                            $res = false;
-                            $condition = 0;
-                        }
-                        ?>
-                        <td>Newsletter delivery engine job</td>
-                        <td>
-                            <?php tnp_status_print_flag($condition) ?>
-                        </td>
-                        <td>
-                            <?php if ($time === false) { ?>
-                                No next execution is planned.
-                                <?php $controls->button('reschedule', 'Reset') ?>
-                            <?php } else if ($delta <= -600) { ?>
-                                The scheduler is very late: <?php echo $delta ?> seconds (<a href="https://www.thenewsletterplugin.com/plugins/newsletter/newsletter-delivery-engine" target="_blank">read more</a>)
-                                <?php $controls->button('trigger', 'Trigger') ?>
-                            <?php } else { ?>
-                                Next execution is planned in <?php echo $delta ?> seconds (negative values are ok).
-                            <?php } ?>
-                        </td>
-                    </tr>
-
                 </tbody>
             </table>
 
@@ -455,10 +405,6 @@ $tnp_wpdb = new TNP_WPDB(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
                     </tr>
 
 
-
-
-
-
                     <?php
                     $return_path = $this->options['return_path'];
                     if (!empty($return_path)) {
@@ -517,66 +463,17 @@ $tnp_wpdb = new TNP_WPDB(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
                     </tr>
 
 
-
-
-
-
-
-
-
                     <?php
-                    $schedules = wp_get_schedules();
-                    $res = false;
-                    if (!empty($schedules)) {
-                        foreach ($schedules as $key => $data) {
-                            if ($key == 'newsletter') {
-                                $res = true;
-                                break;
-                            }
-                        }
-                    }
-                    ?>
-
-                    <tr>
-                        <td>
-                            Newsletter schedule
-                        </td>
-                        <td>
-                            <?php if ($res === false) { ?>
-                                <span class="tnp-ko">KO</span>
-                            <?php } else { ?>
-                                <span class="tnp-ok">OK</span>
-                            <?php } ?>
-                        </td>
-                        <td>
-                            <?php if ($res === false) { ?>
-                                The Newsletter schedule is not present probably another plugin is interfering with the starndard WordPress schuling system.<br>
-                            <?php } else { ?>
-                            <?php } ?>
-
-                            WordPress registered schedules:<br>
-                            <?php
-                            if (!empty($schedules)) {
-                                foreach ($schedules as $key => $data) {
-                                    echo esc_html($key . ' - ' . $data['interval']) . ' seconds<br>';
-                                }
-                            }
-                            ?>
-                        </td>
-                    </tr>
-
-
-                    <?php
-                    $res = true;
+                    $res = 0;
                     $response = wp_remote_post(home_url('/') . '?na=test');
                     if (is_wp_error($response)) {
-                        $res = false;
+                        $res = 1;
                         $message = $response->get_error_message();
-                    } else {
-                        if (wp_remote_retrieve_response_code($response) != 200) {
-                            $res = false;
-                            $message = wp_remote_retrieve_response_message($response);
-                        }
+                    } else if (wp_remote_retrieve_response_code($response) != 200) {
+                        $res = 1;
+                        $message = wp_remote_retrieve_response_message($response);
+                    } else if (wp_remote_retrieve_body($response) !== 'ok') {
+                        $res = 2;
                     }
                     ?>
                     <tr>
@@ -591,11 +488,12 @@ $tnp_wpdb = new TNP_WPDB(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
                             <?php } ?>
                         </td>
                         <td>
-                            <?php if (!$res) { ?>
+                            <?php if ($res === 1) { ?>
                                 The blog is not responding to Newsletter URLs: ask the provider or your IT consultant to check this problem. Report the URL and error below<br>
                                 Error: <?php echo esc_html($message) ?><br>
-                            <?php } else { ?>
-
+                            <?php } else if ($res === 2) { ?>
+                                The response does not contain the "ok" text: probably a caching/optimization plugin or a server configuration is forcing the blog to ignore
+                                the URL's query string. Reported that to your system administrator.
                             <?php } ?>
                             Url: <?php echo esc_html(home_url('/') . '?na=test') ?><br>
                         </td>
@@ -751,125 +649,6 @@ $tnp_wpdb = new TNP_WPDB(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
                     </tr>
                 </tbody>
             </table>
-
-
-            <h3>WordPress Scheduler/Cron</h3>
-
-            <table class="widefat" id="tnp-status-table">
-                <thead>
-                    <tr>
-                        <th>Parameter</th>
-                        <th><?php _e('Status', 'newsletter') ?></th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <?php
-                        $condition = (defined('NEWSLETTER_CRON_WARNINGS') && !NEWSLETTER_CRON_WARNINGS) ? 2 : 1;
-                        ?>
-                        <td>
-                            Cron warnings<br>
-                        </td>
-                        <td>
-                            <?php tnp_status_print_flag($condition) ?>
-                        </td>
-                        <td>
-                            <?php if ($condition == 2) { ?>
-                                Scheduler warnings are disabled in your <code>wp-config.php</code> with the constant <code>NEWSLETTER_CRON_WARNINGS</code> set to true.
-                            <?php } else { ?>
-                                Scheduler warnings are enabled
-                            <?php } ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <?php
-                        $condition = (defined('DISABLE_WP_CRON') && DISABLE_WP_CRON) ? 2 : 1;
-                        ?>
-                        <td>
-                            WordPress scheduler auto trigger
-                        </td>
-                        <td>
-                            <?php tnp_status_print_flag($condition) ?>
-                        </td>
-                        <td>
-                            <?php if ($condition == 2) { ?>
-                                The constant <code>DISABLE_WP_CRON</code> is set to true (probably in <code>wp-config.php</code>). That disables the scheduler auto triggering and it's
-                                good ONLY if you setup an external trigger.
-                            <?php } ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Alternate cron
-                        </td>
-                        <td>
-                            &nbsp;
-                        </td>
-                        <td>
-                            <?php if (defined('ALTERNATE_WP_CRON') && ALTERNATE_WP_CRON) { ?>
-                                Using the alternate cron trigger.
-                            <?php } ?>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <?php
-                        $condition = ($wp_cron_calls_avg > NEWSLETTER_CRON_INTERVAL * 1.1) ? 0 : 1;
-                        ?>
-                        <td>
-                            Cron calls
-                        </td>
-                        <td>
-                            <?php tnp_status_print_flag($condition) ?>
-                        </td>
-                        <td>
-                            <?php if ($condition == 0) { ?>
-                                The blog cron system is NOT triggered enough often.
-                            <?php } ?>
-                            <br>
-                            Trigger interval: average <?php echo $wp_cron_calls_avg ?>&nbsp;s, max <?php echo $wp_cron_calls_max ?>&nbsp;s, min <?php echo $wp_cron_calls_min ?>&nbsp;s
-                            <br>
-                            <a href="https://www.thenewsletterplugin.com/documentation/delivery-and-spam/newsletter-delivery-engine/" target="_blank">Read more</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <?php
-                        $res = true;
-                        $response = wp_remote_get(site_url('/wp-cron.php') . '?' . time());
-                        if (is_wp_error($response)) {
-                            $res = false;
-                            $message = $response->get_error_message();
-                        } else {
-                            if (wp_remote_retrieve_response_code($response) != 200) {
-                                $res = false;
-                                $message = wp_remote_retrieve_response_message($response);
-                            }
-                        }
-                        $condition = !$res ? 0 : 1;
-                        ?>
-
-                        <td>
-                            WordPress scheduler auto trigger call
-                        </td>
-                        <td>
-                            <?php tnp_status_print_flag($condition) ?>
-                        </td>
-                        <td>
-                            <?php if ($condition == 0) { ?>
-                                The blog cannot auto-trigger the internal scheduler, if an external trigger is used this could not be a real problem.<br>
-                                Error: <?php echo esc_html($message) ?><br>
-                            <?php } else { ?>
-
-                            <?php } ?>
-                            Cron URL: <?php echo esc_html(site_url('/wp-cron.php')) ?><br>
-                            <br>
-                            <a href="https://www.thenewsletterplugin.com/documentation/delivery-and-spam/newsletter-delivery-engine/" target="_blank">Read more</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
 
 
             <h3>WordPress</h3>
@@ -1129,18 +908,18 @@ $tnp_wpdb = new TNP_WPDB(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
                             <?php } ?>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td>get_table_charset()</td>
                         <td>
-                          
+
                         </td>
                         <td>
-                            <?php echo esc_html(NEWSLETTER_USERS_TABLE), ': ', esc_html($tnp_wpdb->get_table_charset(NEWSLETTER_USERS_TABLE))?>
+                            <?php echo esc_html(NEWSLETTER_USERS_TABLE), ': ', esc_html($tnp_wpdb->get_table_charset(NEWSLETTER_USERS_TABLE)) ?>
                         </td>
                     </tr>
-                    
-                    
+
+
 
 
                     <?php
@@ -1276,12 +1055,7 @@ $tnp_wpdb = new TNP_WPDB(DB_USER, DB_PASSWORD, DB_NAME, DB_HOST);
                             ?>
                         </td>
                     </tr>
-                    <tr>
-                        <td>NEWSLETTER_CRON_INTERVAL</td>
-                        <td>
-                            <?php echo NEWSLETTER_CRON_INTERVAL . ' (seconds)'; ?>
-                        </td>
-                    </tr>
+
 
 
 

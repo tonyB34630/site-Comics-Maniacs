@@ -1,35 +1,30 @@
 <?php
 $size = ['width' => 600, 'height' => 0];
+$content_width = 600 - $options['block_padding_left'] - $options['block_padding_right'];
+$title_style = TNP_Composer::get_title_style($options, 'title', $composer);
+$text_style = TNP_Composer::get_text_style($options, '', $composer);
 ?>
 
 <style>
     .title {
-        font-family: <?php echo $title_font_family ?>;
-        font-size: <?php echo $title_font_size ?>px;
-        font-weight: <?php echo $title_font_weight ?>;
-        color: <?php echo $title_font_color ?>;
+        <?php $title_style->echo_css() ?>
         line-height: normal;
         margin: 0;
         padding-bottom: 20px;
     }
 
     .paragraph {
-        font-family: <?php echo $text_font_family ?>;
-        font-size: <?php echo $text_font_size ?>px;
-        font-weight: <?php echo $text_font_weight ?>;
-        color: <?php echo $text_font_color ?>;
-        line-height: 1.5em;
+        <?php $text_style->echo_css() ?>
+        line-height: 1.5em!important;
         text-align: left;
     }
 
     .meta {
-        font-family: <?php echo $text_font_family ?>;
-        font-size: <?php echo round($text_font_size * 0.9) ?>px;
-        font-weight: <?php echo $text_font_weight ?>;
-        color: <?php echo $text_font_color ?>;
-        line-height: normal;
+        <?php $text_style->echo_css(0.9) ?>
+        line-height: normal!important;
         padding-bottom: 10px;
         text-align: center;
+        font-style: italic;
     }
 
     .button {
@@ -47,6 +42,7 @@ $size = ['width' => 600, 'height' => 0];
     if ($show_image) {
         $media = tnp_composer_block_posts_get_media($post, $size);
         if ($media) {
+            $media->set_width($content_width);
             $media->link = $url;
         }
     }

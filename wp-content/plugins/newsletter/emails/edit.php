@@ -27,18 +27,21 @@ $email_id = $email['id'];
 
 /* Satus changes which require a reload */
 if ($controls->is_action('pause')) {
+    $this->admin_logger->info('Newsletter ' . $email_id . ' paused');
     $wpdb->update(NEWSLETTER_EMAILS_TABLE, array('status' => 'paused'), array('id' => $email_id));
     $email = $this->get_email($_GET['id'], ARRAY_A);
     tnp_prepare_controls($email, $controls);
 }
 
 if ($controls->is_action('continue')) {
+    $this->admin_logger->info('Newsletter ' . $email_id . ' restarted');
     $wpdb->update(NEWSLETTER_EMAILS_TABLE, array('status' => 'sending'), array('id' => $email_id));
     $email = $this->get_email($_GET['id'], ARRAY_A);
     tnp_prepare_controls($email, $controls);
 }
 
 if ($controls->is_action('abort')) {
+    $this->admin_logger->info('Newsletter ' . $email_id . ' aborted');
     $wpdb->query("update " . NEWSLETTER_EMAILS_TABLE . " set last_id=0, sent=0, status='new' where id=" . $email_id);
     $email = $this->get_email($_GET['id'], ARRAY_A);
     tnp_prepare_controls($email, $controls);
@@ -56,7 +59,7 @@ if ($controls->is_action('change-private')) {
 }
 
 
-$editor_type = $module->get_editor_type($email);
+$editor_type = $this->get_editor_type($email);
 
 // Backward compatibility: preferences conversion
 if (!$controls->is_action()) {
@@ -94,6 +97,8 @@ if (!$controls->is_action()) {
 
 if ($controls->is_action('html')) {
 
+    $this->admin_logger->info('Newsletter ' . $email_id . ' converted to HTML');
+
     $data = [];
     $data['editor'] = NewsletterEmails::EDITOR_HTML;
     $data['id'] = $email_id;
@@ -115,6 +120,14 @@ if ($controls->is_action('html')) {
 
 if ($controls->is_action('test') || $controls->is_action('save') || $controls->is_action('send') || $controls->is_action('schedule')) {
 
+    if ($controls->is_action('save')) {
+        $this->admin_logger->info('Saving newsletter: ' . $email_id);
+    } else if ($controls->is_action('send')) {
+        $this->admin_logger->info('Sending newsletter: ' . $email_id);
+    } else if ($controls->is_action('schedule')) {
+        $this->admin_logger->info('Scheduling newsletter: ' . $email_id);
+    }
+    
     $email['subject'] = $controls->data['subject'];
     $email['track'] = $controls->data['track'];
     $email['editor'] = $editor_type;
@@ -123,7 +136,10 @@ if ($controls->is_action('test') || $controls->is_action('save') || $controls->i
     if ($controls->is_action('send')) {
         $email['send_on'] = time();
     } else {
-        $email['send_on'] = $controls->data['send_on'];
+        // Patch, empty on continuation
+        if (!empty($controls->data['send_on'])) {
+            $email['send_on'] = $controls->data['send_on'];
+        }
     }
 
     // Reset and refill the options
@@ -253,8 +269,8 @@ if ($controls->is_action('send') || $controls->is_action('schedule')) {
     if ($email['subject'] == '') {
         $controls->errors = __('A subject is required to send', 'newsletter');
     } else {
-        $wpdb->update(NEWSLETTER_EMAILS_TABLE, array('status' => 'sending'), array('id' => $email_id));
-        $email['status'] = 'sending';
+        $wpdb->update(NEWSLETTER_EMAILS_TABLE, array('status' => TNP_Email::STATUS_SENDING), array('id' => $email_id));
+        $email['status'] = TNP_Email::STATUS_SENDING;
         if ($controls->is_action('send')) {
             $controls->messages = __('Now sending.', 'newsletter');
         } else {
@@ -338,10 +354,8 @@ if ($email['status'] != 'sent') {
                     </div>
 
                     <?php $controls->text('subject', null, 'Subject'); ?>
-                    <a href="#" class="tnp-suggest-button" onclick="tnp_suggest_subject(); return false;"><?php _e('Get ideas', 'newsletter') ?></a>
-                    <!--
-                    <a href="#" class="tnp-suggest-button" onclick="tnp_emoji(); return false;"><?php _e('Insert emoji', 'newsletter') ?></a>
-                    -->
+                    &nbsp;&nbsp;&nbsp;
+                    <i class="far fa-lightbulb" data-tnp-modal-target="#subject-ideas-modal" style="color: #fff; font-size: 24px"></i>
                 </div>
 
                 <div class="tnp-one-third">
@@ -486,19 +500,19 @@ if ($email['status'] != 'sent') {
                             <td>
                                 <?php $controls->text_email('options_sender_email', 40); ?>
                                 <div class="tnpc-hint">
-                                    Original: <?php echo esc_html(Newsletter::instance()->get_sender_email())?>.<br>
+                                    Original: <?php echo esc_html(Newsletter::instance()->get_sender_email()) ?>.<br>
                                     If you use a delivery service, be sure to use a validated email address.
                                 </div>
                             </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <th>
                                 <?php _e('Sender name', 'newsletter') ?>
                             </th>
                             <td>
                                 <?php $controls->text('options_sender_name', 40); ?>
-                               <div class="tnpc-hint">
-                                   Original: <?php echo esc_html(Newsletter::instance()->get_sender_name())?>
+                                <div class="tnpc-hint">
+                                    Original: <?php echo esc_html(Newsletter::instance()->get_sender_name()) ?>
                                 </div> 
                             </td>
                         </tr>

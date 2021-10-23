@@ -5,7 +5,10 @@
  */
 /* @var $fields NewsletterFields */
 ?>
-
+<p>
+    <a href="https://www.thenewsletterplugin.com/documentation/newsletters/newsletter-tags/"
+                       target="_blank">You can use tags to inject subscriber fields</a>.
+</p>
 <?php //$fields->font() ?>
 <?php $fields->wp_editor( 'html', 'Content', [
 	'text_font_family'  => $composer['text_font_family'],

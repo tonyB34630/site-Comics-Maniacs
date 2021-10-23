@@ -193,7 +193,7 @@ class NewsletterUnsubscription extends NewsletterModule {
      */
     function hook_add_unsubscribe_headers_to_email($headers, $email, $user) {
 
-        if (isset($this->options['disable_unsubscribe_headers']) && $this->options['disable_unsubscribe_headers'] == 1) {
+        if (!empty($this->options['disable_unsubscribe_headers'])) {
             return $headers;
         }
 

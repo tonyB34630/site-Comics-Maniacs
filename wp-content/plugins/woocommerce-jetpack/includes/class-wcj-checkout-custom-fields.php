@@ -2,7 +2,7 @@
 /**
  * Booster for WooCommerce - Module - Checkout Custom Fields
  *
- * @version 5.4.2
+ * @version 5.4.7
  * @author  Pluggabl LLC.
  */
 
@@ -205,7 +205,7 @@ class WCJ_Checkout_Custom_Fields extends WCJ_Module {
 	/**
 	 * update_custom_checkout_fields_order_meta.
 	 *
-	 * @version 5.4.2
+	 * @version 5.4.3
 	 */
 	function update_custom_checkout_fields_order_meta( $order_id ) {
 		for ( $i = 1; $i <= apply_filters( 'booster_option', 1, wcj_get_option( 'wcj_checkout_custom_fields_total_number', 1 ) ); $i++ ) {
@@ -231,7 +231,7 @@ class WCJ_Checkout_Custom_Fields extends WCJ_Module {
 							get_option( 'wcj_checkout_custom_field_checkbox_no_' . $i );
 						update_post_meta( $order_id, '_' . $option_name_checkbox_value, $checkbox_value );
 					} elseif ( 'radio' === $the_type || 'select' === $the_type ) {
-						// update_post_meta( $order_id, '_' . $option_name, wc_clean( urldecode( $post_value ) ) );
+						update_post_meta( $order_id, '_' . $option_name, wc_clean( urldecode( $post_value ) ) );
 						$option_name_values = $the_section . '_' . 'wcj_checkout_field_select_options_' . $i;
 						$the_values = wcj_get_option( 'wcj_checkout_custom_field_select_options_' . $i );
 						update_post_meta( $order_id, '_' . $option_name_values, $the_values );
@@ -282,7 +282,7 @@ class WCJ_Checkout_Custom_Fields extends WCJ_Module {
 	/**
 	 * add_custom_fields_to_order_display.
 	 *
-	 * @version 5.4.0
+	 * @version 5.4.7
 	 * @since   2.3.0
 	 * @todo    convert from before version 2.3.0
 	 */
@@ -337,13 +337,24 @@ class WCJ_Checkout_Custom_Fields extends WCJ_Module {
 					$value = $_value;
 				}
 				// Adding field to final output
-				if ( '' != $label || '' != $value ) {
-					$replaced_values = array(
-						'%label%' => $label,
-						'%value%' => $value,
-					);
-					$final_output .= str_replace( array_keys( $replaced_values ), $replaced_values, $templates['field'] );
+				if (  '' != $value  ) {
+					if($value != 'No'){
+						$replaced_values = array(
+							'%label%' => $label,
+							'%value%' => $value,
+						);
+						$final_output .= str_replace( array_keys( $replaced_values ), $replaced_values, $templates['field'] );
+					 }
+					
 				}
+				else if ('' == $value) {
+						$templates = array(
+							'before' => '',
+							'field'  => '',
+							'after'  => '',
+						);
+						$final_output .= str_replace( array_keys( $templates ), $templates, $templates['field'] );
+					 }
 			}
 		}
 		// Outputting

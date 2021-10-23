@@ -236,15 +236,17 @@ if (!empty($return_path)) {
                 </div>
 
                 <div id="tabs-speed">
-
+ 
                     <table class="form-table">
                         <tr>
                             <th>
                                 <?php _e('Max emails per hour', 'newsletter') ?>
-                                <?php $controls->field_help('https://www.thenewsletterplugin.com/documentation/delivery-and-spam/newsletter-delivery-engine/') ?>
+                                <?php $controls->field_help('https://www.thenewsletterplugin.com/documentation/installation/newsletter-configuration/#speed') ?>
                             </th>
                             <td>
                                 <?php $controls->text('scheduler_max', 5); ?> (min. 10)
+                                <p class="description">
+                                    <a href="?page=newsletter_main_status#tnp-speed">See the collected statistics</a>
                             </td>
                         </tr>
                     </table>

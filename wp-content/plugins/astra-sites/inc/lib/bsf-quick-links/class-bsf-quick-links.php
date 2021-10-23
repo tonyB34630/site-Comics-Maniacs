@@ -96,12 +96,14 @@ if ( ! class_exists( 'BSF_Quick_Links' ) ) {
 
 			?>
 			<div class="bsf-quick-link-wrap">
-				<label class="bsf-quick-link-title"><?php echo esc_html( $data['default_logo']['title'] ); ?></label>
 				<div class="bsf-quick-link-items-wrap hide-wrapper">
 					<?php echo $this->get_links_html( $data ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 				<a href="#" class="bsf-quick-link">
-					<img src="<?php echo esc_url( $data['default_logo']['url'] ); ?>">
+					<div class="quick-link-button-wrap">
+						<img src="<?php echo esc_url( $data['default_logo']['url'] ); ?>">
+						<span><?php esc_html_e( 'Quick Links', 'astra-sites' ); ?></span>
+					</div>
 				</a>
 			</div>
 			<?php
@@ -117,14 +119,14 @@ if ( ! class_exists( 'BSF_Quick_Links' ) ) {
 
 			foreach ( $data['links'] as $item_key => $item ) {
 				$items_html .= sprintf(
-					'<a href="%1$s" target="_blank" rel="noopener noreferrer" class="bsf-quick-link-item bsf-quick-link-item-%4$d">
+					'<a href="%1$s" target="_blank" rel="noopener noreferrer" class="bsf-quick-link-item bsf-quick-link-item-%4$s">
 						<div class="bsf-quick-link-label">%2$s</div>
 						<div class="dashicons %3$s menu-item-logo" %5$s></div>
 					</a>',
 					esc_url( $item['url'] ),
 					esc_html( $item['label'] ),
 					sanitize_html_class( $item['icon'] ),
-					(int) $item_key,
+					$item_key,
 					! empty( $item['bgcolor'] ) ? ' style="background-color: ' . esc_attr( $item['bgcolor'] ) . '"' : ''
 				);
 			}

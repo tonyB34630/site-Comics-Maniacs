@@ -92,7 +92,6 @@ function tnp_get_hook_functions($tag) {
         foreach ($wp_filter[$tag]->callbacks as $priority => $functions) {
 
             foreach ($functions as $function) {
-                //var_dump($function);
                 $b .= '[' . $priority . '] ';
                 if (is_array($function['function'])) {
                     if (is_object($function['function'][0])) {

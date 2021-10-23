@@ -27,7 +27,7 @@ add_filter('mesmerize_override_with_thumbnail_image', function ($value) {
 
     global $post;
 
-    if (isset($post) && $post->post_type === 'post') {
+    if (isset($post) && $post->post_type === 'post' && is_single()) {
         $value = get_theme_mod('blog_show_post_featured_image', true);
         $value = (intval($value) === 1);
     }

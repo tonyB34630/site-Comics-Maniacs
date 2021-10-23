@@ -27,7 +27,8 @@ unset($controls->data['width']);
 <?php $fields->button( 'button', 'Button layout', [
 	'family_default' => true,
 	'size_default'   => true,
-	'weight_default' => true
+	'weight_default' => true,
+        'media' => true
 ] ) ?>
 
 <div class="tnp-field-row">

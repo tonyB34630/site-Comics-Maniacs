@@ -519,7 +519,7 @@ function mesmerize_replace_file_extension( $filename, $old_extenstion, $new_exte
 	return preg_replace( '#\\' . $old_extenstion . '$#', $new_extension, $filename );
 }
 
-function mesmerize_enqueue( $type = 'style', $handle, $args = array() ) {
+function mesmerize_enqueue( $handle, $type = 'style', $args = array() ) {
 	$theme = wp_get_theme();
 	$ver   = $theme->get( 'Version' );
 	$data  = array_merge( array(
@@ -557,11 +557,11 @@ function mesmerize_enqueue( $type = 'style', $handle, $args = array() ) {
 }
 
 function mesmerize_enqueue_style( $handle, $args ) {
-	mesmerize_enqueue( 'style', $handle, $args );
+	mesmerize_enqueue( $handle, 'style', $args );
 }
 
 function mesmerize_enqueue_script( $handle, $args ) {
-	mesmerize_enqueue( 'script', $handle, $args );
+	mesmerize_enqueue( $handle, 'script', $args );
 }
 
 function mesmerize_associative_array_splice( $oldArray, $offset, $key, $data ) {

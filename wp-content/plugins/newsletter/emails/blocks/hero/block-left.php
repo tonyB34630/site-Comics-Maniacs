@@ -1,20 +1,14 @@
 <style>
     /* Styles which will be removed and injected in the replacing the matching "inline-class" attribute */
     .title {
-        font-family: <?php echo $title_style->font_family ?>;
-        font-size: <?php echo $title_style->font_size ?>px;
-        font-weight: <?php echo $title_style->font_weight ?>;
-        color: <?php echo $title_style->font_color ?>;
+        <?php $title_style->echo_css(0.8)?>
         margin: 0;
         text-align: center;
         line-height: normal;
         padding: 10px 0;
     }
     .text {
-        font-family: <?php echo $text_style->font_family ?>;
-        font-size: <?php echo $text_style->font_size ?>px;
-        font-weight: <?php echo $text_style->font_weight ?>;
-        color: <?php echo $text_style->font_color ?>;
+        <?php $text_style->echo_css()?>
         padding: 10px 0;
         line-height: 1.5em;
         margin: 0;

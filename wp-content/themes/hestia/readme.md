@@ -2,7 +2,7 @@
 **Contributors:** [themeisle](https://profiles.wordpress.org/themeisle)  
 **Tags:** blog, custom-logo, portfolio, e-commerce, rtl-language-support, post-formats, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, editor-style, footer-widgets, left-sidebar, right-sidebar, wide-blocks  
 **Requires at least:** 4.0  
-**Tested up to:** 5.6  
+**Tested up to:** 5.8  
 **Stable tag:** 2.0.7  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
@@ -17,6 +17,26 @@ Hestia WordPress theme, Copyright 2018 Themeisle.
 Hestia is distributed under the terms of the GNU GPLv2 or later
 
 ## Changelog ##
+
+##### [Version 3.0.19](https://github.com/Codeinwp/hestia-pro/compare/v3.0.18...v3.0.19) (2021-09-21)
+
+- [Fix] Multiple textdomains appear in Hestia's code
+
+
+
+
+##### [Version 3.0.18](https://github.com/Codeinwp/hestia-pro/compare/v3.0.17...v3.0.18) (2021-09-07)
+
+- [Fix] The Show
+
+##### [Version 3.0.17](https://github.com/Codeinwp/hestia-pro/compare/v3.0.16...v3.0.17) (2021-07-21)
+
+- Check if is a fresh site for transparent header
+- Fix customizer issue in WP 5.8
+- Fix avatars that still shows even if they are hidden from the dashboard settings
+
+
+
 
 ##### [Version 3.0.16](https://github.com/Codeinwp/hestia-pro/compare/v3.0.15...v3.0.16) (2021-04-19)
 

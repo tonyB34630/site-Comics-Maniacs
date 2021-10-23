@@ -70,7 +70,7 @@ $lists = $this->get_lists();
 ?>
 
 <style>
-    <?php include NEWSLETTER_DIR . '/css/dashboard.css' ?>
+    <?php include __DIR__ . '/css/dashboard.css' ?>
 </style>
 
 <div class="wrap" id="tnp-wrap">

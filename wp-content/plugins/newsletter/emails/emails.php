@@ -35,15 +35,16 @@ class NewsletterEmails extends NewsletterModule {
         add_action('newsletter_action', array($this, 'hook_newsletter_action'), 13, 3);
 
         if (is_admin()) {
-            add_action('wp_ajax_tnpc_render', array($this, 'tnpc_render_callback'));
-            add_action('wp_ajax_tnpc_preview', array($this, 'tnpc_preview_callback'));
-            add_action('wp_ajax_tnpc_css', array($this, 'tnpc_css_callback'));
-            add_action('wp_ajax_tnpc_options', array($this, 'hook_wp_ajax_tnpc_options'));
-            add_action('wp_ajax_tnpc_get_all_presets', array($this, 'ajax_get_all_presets'));
-            add_action('wp_ajax_tnpc_get_preset', array($this, 'ajax_get_preset'));
-            add_action('wp_ajax_tnpc_delete_preset', array($this, 'hook_wp_ajax_tnpc_delete_preset'));
-            add_action('wp_ajax_tnpc_regenerate_email', array($this, 'hook_wp_ajax_tnpc_regenerate_email'));
-
+            if (defined('DOING_AJAX') && DOING_AJAX) {
+                add_action('wp_ajax_tnpc_render', array($this, 'tnpc_render_callback'));
+                add_action('wp_ajax_tnpc_preview', array($this, 'tnpc_preview_callback'));
+                add_action('wp_ajax_tnpc_css', array($this, 'tnpc_css_callback'));
+                add_action('wp_ajax_tnpc_options', array($this, 'hook_wp_ajax_tnpc_options'));
+                add_action('wp_ajax_tnpc_get_all_presets', array($this, 'ajax_get_all_presets'));
+                add_action('wp_ajax_tnpc_get_preset', array($this, 'ajax_get_preset'));
+                add_action('wp_ajax_tnpc_delete_preset', array($this, 'hook_wp_ajax_tnpc_delete_preset'));
+                add_action('wp_ajax_tnpc_regenerate_email', array($this, 'hook_wp_ajax_tnpc_regenerate_email'));
+            }
             // Thank you to plugins which add the WP editor on other admin plugin pages...
             if (isset($_GET['page']) && $_GET['page'] == 'newsletter_emails_edit') {
                 global $wp_actions;
@@ -86,9 +87,9 @@ class NewsletterEmails extends NewsletterModule {
         global $wpdb;
 
         // TODO: Uniform to use id everywhere
-        if (!isset($_REQUEST['id'])) {
-            $_REQUEST['id'] = $_REQUEST['b'];
-        }
+//        if (!isset($_REQUEST['id'])) {
+//            $_REQUEST['id'] = $_REQUEST['b'];
+//        }
 
         $block = $this->get_block($_REQUEST['id']);
         if (!$block) {
@@ -112,13 +113,13 @@ class NewsletterEmails extends NewsletterModule {
 
         $controls->init();
         echo '<input type="hidden" name="action" value="tnpc_render">';
-        echo '<input type="hidden" name="b" value="' . esc_attr($_REQUEST['id']) . '">';
+        echo '<input type="hidden" name="id" value="' . esc_attr($_REQUEST['id']) . '">';
         echo '<input type="hidden" name="context_type" value="' . esc_attr($context['type']) . '">';
         $inline_edits = '';
         if (isset($controls->data['inline_edits'])) {
             $inline_edits = $controls->data['inline_edits'];
         }
-        echo '<input type="hidden" name="options[inline_edits]" value="' . $this->options_encode($inline_edits) . '">';
+        echo '<input type="hidden" name="options[inline_edits]" value="', esc_attr($this->options_encode($inline_edits)), '">';
 
         ob_start();
         include $block['dir'] . '/options.php';
@@ -426,7 +427,7 @@ class NewsletterEmails extends NewsletterModule {
             $x = strpos($theme, '>', $x);
             $result = substr($theme, 0, $x + 1) . $result . '</body></html>';
         } else {
-            
+
         }
 
         if (is_object($email)) {
@@ -508,7 +509,7 @@ class NewsletterEmails extends NewsletterModule {
 
         // This code filters the HTML to remove javascript and unsecure attributes and enable the
         // "display" rule for CSS which is needed in blocks to force specific "block" or "inline" or "table".
-        add_filter('safe_style_css', [$this, 'hook_safe_style_css']);
+        add_filter('safe_style_css', [$this, 'hook_safe_style_css'], 9999);
         $options = wp_kses_post_deep($options);
         remove_filter('safe_style_css', [$this, 'hook_safe_style_css']);
 
@@ -639,7 +640,7 @@ class NewsletterEmails extends NewsletterModule {
             $this->dienow('Expired request');
         }
 
-        $block_id = $_POST['b'];
+        $block_id = $_POST['id'];
         $wrapper = isset($_POST['full']);
         $options = $this->restore_options_from_request();
 
@@ -990,31 +991,29 @@ class NewsletterEmails extends NewsletterModule {
      * @return array | WP_Error
      */
     function build_block($dir) {
-        $file = basename($dir);
-        $block_id = sanitize_key($file);
+        $dir = realpath($dir);
+        $dir = wp_normalize_path($dir);
         $full_file = $dir . '/block.php';
         if (!is_file($full_file)) {
             return new WP_Error('1', 'Missing block.php file in ' . $dir);
         }
+        
+        $relative_dir = substr($dir, strlen(WP_CONTENT_DIR));
+        $file = basename($dir);
 
-        if (!is_file($dir . '/icon.png')) {
-            $relative_dir = substr($dir, strlen(WP_CONTENT_DIR));
-            $data['icon'] = content_url($relative_dir . '/icon.png');
-        }
-
-        $data = get_file_data($full_file, array('name' => 'Name', 'section' => 'Section', 'description' => 'Description', 'type' => 'Type'));
-        $defaults = array('section' => 'content', 'name' => $file, 'descritpion' => '', 'icon' => NEWSLETTER_URL . '/images/block-icon.png', 'content' => '');
+        $data = get_file_data($full_file, ['name' => 'Name', 'section' => 'Section', 'description' => 'Description', 'type' => 'Type']);
+        $defaults = ['section' => 'content', 'name' => ucfirst($file), 'descritpion' => '', 'icon' => plugins_url('newsletter') . '/admin/images/block-icon.png'];
         $data = array_merge($defaults, $data);
 
         if (is_file($dir . '/icon.png')) {
-            $relative_dir = substr($dir, strlen(WP_CONTENT_DIR));
             $data['icon'] = content_url($relative_dir . '/icon.png');
         }
 
-        $data['id'] = $block_id;
+        $data['id'] = sanitize_key($file);
 
         // Absolute path of the block files
         $data['dir'] = $dir;
+        $data['url'] = content_url($relative_dir);
 
         return $data;
     }
@@ -1025,18 +1024,15 @@ class NewsletterEmails extends NewsletterModule {
      * @return type
      */
     function scan_blocks_dir($dir) {
-
-        if (!is_dir($dir)) {
-            return array();
+        $dir = realpath($dir);
+        if (!$dir) {
+            return [];
         }
+        $dir = wp_normalize_path($dir);
 
+        $list = [];
         $handle = opendir($dir);
-        $list = array();
-        $relative_dir = substr($dir, strlen(WP_CONTENT_DIR));
         while ($file = readdir($handle)) {
-
-            if ($file == '.' || $file == '..')
-                continue;
 
             $data = $this->build_block($dir . '/' . $file);
 
@@ -1070,11 +1066,10 @@ class NewsletterEmails extends NewsletterModule {
 
         $dirs = apply_filters('newsletter_blocks_dir', array());
 
-        $this->logger->debug('Block dirs:');
-        $this->logger->debug($dirs);
+        //$this->logger->debug('Block dirs:');
+        //$this->logger->debug($dirs);
 
         foreach ($dirs as $dir) {
-            $dir = str_replace('\\', '/', $dir);
             $list = $this->scan_blocks_dir($dir);
             $this->blocks = array_merge($list, $this->blocks);
         }
@@ -1090,7 +1085,7 @@ class NewsletterEmails extends NewsletterModule {
             if (!isset($this->blocks[$block['id']])) {
                 $this->blocks[$block['id']] = $block;
             } else {
-                $this->logger->error('The block "' . $block['id'] . '" is already registered');
+                $this->logger->error('The block "' . $block['id'] . '" has already been registered');
             }
         }
 
@@ -1209,6 +1204,8 @@ class NewsletterEmails extends NewsletterModule {
 
     function get_composer_css() {
         $css = file_get_contents(__DIR__ . '/tnp-composer/css/newsletter.css');
+        $css .= "\n\n";
+        $css .= file_get_contents(__DIR__ . '/tnp-composer/css/backend.css');
         $blocks = $this->get_blocks();
         foreach ($blocks as $block) {
             if (!file_exists($block['dir'] . '/style.css')) {
@@ -1232,13 +1229,10 @@ class NewsletterEmails extends NewsletterModule {
             $controls->errors = __('Newsletter should be saved before send a test', 'newsletter');
             return;
         }
-        $original_subject = $email->subject;
 
-        if ($email->subject == '') {
-            $email->subject = '[TEST] Dummy subject, it was empty (remember to set it)';
-        } else {
-            $email->subject = $email->subject . ' (TEST)';
-        }
+        $original_subject = $email->subject;
+        $this->set_test_subject_to($email);
+
         $users = NewsletterUsers::instance()->get_test_users();
         if (count($users) == 0) {
             $controls->errors = '' . __('There are no test subscribers to send to', 'newsletter') .
@@ -1270,11 +1264,85 @@ class NewsletterEmails extends NewsletterModule {
         $email->subject = $original_subject;
     }
 
-    function restore_options_from_request() {
+	/**
+	 * Send an email to the test subscribers.
+	 *
+	 * @param TNP_Email $email Could be any object with the TNP_Email attributes
+	 * @param string $email_address
+	 *
+	 * @throws Exception
+	 */
+	function send_test_newsletter_to_email_address( $email, $email_address ) {
 
+		if ( ! $email ) {
+			throw new Exception( __( 'Newsletter should be saved before send a test', 'newsletter' ) );
+		}
+
+		$this->set_test_subject_to( $email );
+
+		$dummy_subscriber        = $this->make_dummy_subscriber();
+		$dummy_subscriber->email = $email_address;
+
+		$result = Newsletter::instance()->send( $email, [ $dummy_subscriber ], true );
+
+		$email = '<a href="admin.php?page=newsletter_users_edit&id=' . $dummy_subscriber->id . '" target="_blank">' . $dummy_subscriber->email . '</a>';
+
+		if ( is_wp_error( $result ) ) {
+			$error_message = 'Something went wrong. Check the error logs on status page.<br>';
+			$error_message .= __( 'Test subscribers:', 'newsletter' );
+			$error_message .= ' ' . $email;
+			$error_message .= '<br>';
+			$error_message .= '<strong>' . esc_html( $result->get_error_message() ) . '</strong><br>';
+			$error_message .= '<a href="https://www.thenewsletterplugin.com/documentation/email-sending-issues" target="_blank"><strong>' . __( 'Read more about delivery issues', 'newsletter' ) . '</strong></a>.';
+			throw new Exception( $error_message );
+		}
+
+		$messages = __( 'Test subscribers:', 'newsletter' );
+
+		$messages .= ' ' . $email;
+		$messages .= '.<br>';
+		$messages .= '<a href="https://www.thenewsletterplugin.com/documentation/subscribers#test" target="_blank"><strong>' .
+		             __( 'Read more about test subscribers', 'newsletter' ) . '</strong></a>.<br>';
+		$messages .= '<a href="https://www.thenewsletterplugin.com/documentation/email-sending-issues" target="_blank"><strong>' . __( 'Read more about delivery issues', 'newsletter' ) . '</strong></a>.';
+
+		return $messages;
+	}
+
+	private function set_test_subject_to($email) {
+		if ( $email->subject == '' ) {
+			$email->subject = '[TEST] Dummy subject, it was empty (remember to set it)';
+		} else {
+			$email->subject = $email->subject . ' (TEST)';
+		}
+	}
+
+	private function make_dummy_subscriber() {
+		$dummy_user           = new TNP_User();
+		$dummy_user->id       = 0;
+		$dummy_user->email    = 'john.doe@example.org';
+		$dummy_user->name     = 'John';
+		$dummy_user->surname  = 'Doe';
+		$dummy_user->sex      = 'n';
+		$dummy_user->language = '';
+		$dummy_user->ip       = '';
+
+		for ( $i = 1; $i <= NEWSLETTER_PROFILE_MAX; $i ++ ) {
+			$profile_key              = "profile_$i";
+			$dummy_user->$profile_key = '';
+		}
+
+		return $dummy_user;
+	}
+
+    function restore_options_from_request() {
+        
+        require_once NEWSLETTER_INCLUDES_DIR . '/controls.php';
+        $controls = new NewsletterControls();
+        $options = $controls->data;
+        
         if (isset($_POST['options']) && is_array($_POST['options'])) {
             // Get all block options
-            $options = stripslashes_deep($_POST['options']);
+            //$options = stripslashes_deep($_POST['options']);
 
             // Deserialize inline edits when
             // render is preformed on saving block options

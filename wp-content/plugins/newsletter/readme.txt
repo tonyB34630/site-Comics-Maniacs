@@ -1,9 +1,7 @@
 === Newsletter ===
 Tags: newsletter, email marketing, welcome email, signup forms, contact, lead generation, marketing automation
-Requires at least: 3.4.0
-Tested up to: 5.7.2
-Stable tag: 7.2.0
-Requires PHP: 5.6
+Tested up to: 5.8.1
+Stable tag: 7.2.8
 Contributors: satollo,webagile,michael-travan
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -120,14 +118,75 @@ Thank you, The Newsletter Team
 
 == Changelog ==
 
+= 7.2.8 =
+
+* Fixed the print_date() when no time is provided
+* Fixed date alignment on posts block
+* Folders reorganization
+* Social block with a new set of icons
+* Boosted performances of the lists management page (for big databases)
+* Added a new scheduler diagnostic panel
+* Seriously improved the cron statistics and diagnostic panel (check it out!)
+* Removed obsolete migration code from ancient versions
+
+= 7.2.7 =
+
+* Fixed JS error on composer sometimes preventing the correct initialization
+
+= 7.2.6 =
+
+* Fixed links on test emails sent to a free email address
+* Added attachment explanation
+* Added link to explain the use of the snippet
+
+= 7.2.5 =
+
+* Fixed subject not saved under specific circumstance
+
+= 7.2.4 =
+
+* Fixed the composer not starting for blog with SSL plugin but still HTTP configured on main WP settings
+* Changed labels on subscriber maintenance panel
+* Updated requirements for WP version
+
+= 7.2.3 =
+
+* [COMPOSER] Added approx. indicators of the subsject visibile part in Apple and Android clients (experimental)
+* [COMPOSER] New mobile version view directly while composing (experimental)
+* [COMPOSER] New test email to test subscribers or to specific email address
+* [COMPOSER] Fixed missing background when creating a new message from a preset
+* [COMPOSER] Added media selector to the CTA block
+* [COMPOSER] Added reference to the tags on HTML and Text blocks
+* [COMPOSER] Move the snippet (preheader) field near the subject
+* [COMPOSER] Footer block with three link options: unsubscribe, manage and view online
+* [COMPOSER] Improve font coherence between blocks (by default)
+* [ANTISPAM] Improved the antispam checks on subscription
+* [GENERAL] Removed obsolete folders and code
+* [NEWSLETTERS] Refactored subject ideas selector
+* [SUBSCRIPTION] Inverted extra profile fields and lists on standard subscription form
+* [GENERAL] IP address extracted checking proxy variables
+* [GENERAL] Improved sending stats collection and display for the delivery engine (not related to click/open stats)
+
+= 7.2.2 =
+
+* [COMPOSER] Posts block excerpt removed when set to 0-length
+* [GENERAL]Added special characters on test message
+* [GENERAL]Added more specific error for action calls on System/Status panel
+* [SUBSCRIPTION] Check for the _wp_amp_action_xhr_converted parameter by AMP plugin
+
+= 7.2.1 =
+
+* [GENERAL] Added more detailed admin logging
+* [NEWSLETTERS] Fixed scheduled date sometimes reset to 1/1/1970
+
 = 7.2.0 =
 
-* Fixed activation email on profile change
-* Extended year selection on newsletter scheduling
-* [DELIVERY] Breaking change: old enqueue() and flush() methods has been removed
-* Fixed alert message on some buttons
-* Fixed error message on multiple subscriptions (when not allowed)
-* Fixed erratic error log line on main log
+* [PROFILE] Fixed activation email on profile change
+* [NEWSLETTERS] Extended year selection on newsletter scheduling
+* [DELIVERY] Breaking change: old enqueue() and flush() methods have been removed
+* [GENERAL] Fixed alert message on some buttons
+* [SUBSCRIPTION] Fixed error message on multiple subscriptions (when not allowed)
+* [GENERAL] Fixed erratic error log line on main log
 
 = 7.1.9 =
 
@@ -140,11 +199,11 @@ Thank you, The Newsletter Team
 
 = 7.1.8 =
 
-* Fixed alignment of single big image on Outlook Android
+* [COMPOSER] Fixed alignment of single big image on Outlook Android
 
 = 7.1.7 =
 
-* Fix of permalink onm email with multilanguage plugins
+* [GENERAL] Fix of permalink onm email with multilanguage plugins
 
 = 7.1.6 =
 

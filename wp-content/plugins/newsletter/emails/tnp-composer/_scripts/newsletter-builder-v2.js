@@ -57,7 +57,7 @@ jQuery.fn.perform_block_edit = function () {
             tnpc_add_global_options(data);
 
             builderAreaHelper.lock();
-            jQuery("#tnpc-block-options-form").load(ajaxurl, data , function () {
+            jQuery("#tnpc-block-options-form").load(ajaxurl, data, function () {
                 console.log('Block form options loaded');
                 start_options = jQuery("#tnpc-block-options-form").serializeArray();
                 tnpc_add_global_options(start_options);
@@ -134,7 +134,10 @@ jQuery(function () {
     }
 
     // subject management
-    jQuery('#options-title').val(jQuery('#tnpc-form input[name="options[subject]"]').val());
+    jQuery('#options-subject').val(jQuery('#tnpc-form input[name="options[subject]"]').val());
+
+    // preheader management
+    jQuery('#options-preheader').val(jQuery('#tnpc-form input[name="options[options_preheader]"]').val());
 
     // ======================== //
     // ==  BACKGROUND COLOR  == //
@@ -197,10 +200,11 @@ function init_builder_area() {
                 ui.item.before(loading_row);
                 ui.item.remove();
                 var data = new Array(
-                    {"name": 'action', "value": 'tnpc_render'},
-                    {"name": 'b', "value": ui.item.data("id")},
-                    {"name": 'full', "value": 1},
-                    {"name": '_wpnonce', "value": tnp_nonce}
+                        {"name": 'action', "value": 'tnpc_render'},
+                        {"name": 'id', "value": ui.item.data("id")},
+                        {"name": 'b', "value": ui.item.data("id")},
+                        {"name": 'full', "value": 1},
+                        {"name": '_wpnonce', "value": tnp_nonce}
                 );
 
                 tnpc_add_global_options(data);
@@ -331,12 +335,13 @@ function tnpc_show_block_options() {
 
     const animationDuration = 500;
 
-    jQuery("#tnpc-blocks").fadeOut(animationDuration);
-    jQuery("#tnpc-global-styles").fadeOut(animationDuration);
-    jQuery("#tnpc-mobile-tab").fadeOut(animationDuration);
-    jQuery("#tnpc-test-tab").fadeOut(animationDuration);
+    //jQuery("#tnpc-blocks").fadeOut(animationDuration);
+    //jQuery("#tnpc-global-styles").fadeOut(animationDuration);
+    //jQuery("#tnpc-mobile-tab").fadeOut(animationDuration);
+    //jQuery("#tnpc-test-tab").fadeOut(animationDuration);
 
     jQuery("#tnpc-block-options").fadeIn(animationDuration);
+    jQuery("#tnpc-block-options").css('display', 'flex');
 
 }
 
@@ -346,8 +351,8 @@ function tnpc_hide_block_options() {
 
     jQuery("#tnpc-block-options").fadeOut(animationDuration);
 
-    var $activeTab = jQuery(".tnpc-tabs .tablinks.active");
-    jQuery('#' + $activeTab.data('tabId')).fadeIn(animationDuration);
+    //var $activeTab = jQuery(".tnpc-tabs .tablinks.active");
+    //jQuery('#' + $activeTab.data('tabId')).fadeIn(animationDuration);
 
     jQuery("#tnpc-block-options-form").html('');
 
@@ -355,25 +360,22 @@ function tnpc_hide_block_options() {
 
 function tnpc_mobile_preview() {
 
-    var d = document.getElementById("tnpc-mobile-preview").contentWindow.document;
-    d.open();
+    return;
 
-    d.write("<!DOCTYPE html>\n<html>\n<head>\n");
-    d.write("<link rel='stylesheet' href='" + TNP_HOME_URL + "?na=emails-composer-css&ver=" + Math.random() + "' type='text/css'>");
-    d.write("<style>.tnpc-row-delete, .tnpc-row-edit-block, .tnpc-row-clone { display: none; }</style>");
-    d.write("<style>body::-webkit-scrollbar {width: 0px;background: transparent;}</style>");
-    d.write("<style>body{scrollbar-width: none; -ms-overflow-style: none;}</style>");
-    d.write("</head>\n<body style='margin: 0; padding: 0;'><div style='width: 320px!important'>");
-    d.write(jQuery("#newsletter-builder-area-center-frame-content").html());
-    d.write("</div>\n</body>\n</html>");
-    d.close();
 }
 
 function tnpc_save(form) {
 
     form.elements["options[message]"].value = tnpc_get_email_content_from_builder_area();
-    if (document.getElementById("options-title")) {
-        form.elements["options[subject]"].value = jQuery('#options-title').val();
+    
+    // When the composer is not showing the subject field (for example in Automated)
+    if (document.getElementById("options-preheader")) {
+        form.elements["options[options_preheader]"].value = jQuery('#options-preheader').val();
+    } else {
+        form.elements["options[options_preheader]"].value = "";
+    }
+    if (document.getElementById("options-subject")) {
+        form.elements["options[subject]"].value = jQuery('#options-subject-subject').val();
     } else {
         form.elements["options[subject]"].value = "";
     }
@@ -540,7 +542,7 @@ function tnpc_load_preset(id, subject, isEditMode) {
             }
 
             if (subject && subject.length > 0) {
-                jQuery('#options-title').val(tnpc_remove_double_quotes_escape_from(subject));
+                jQuery('#options-subject').val(tnpc_remove_double_quotes_escape_from(subject));
             }
         },
     });
@@ -561,7 +563,7 @@ function tnpc_load_preset(id, subject, isEditMode) {
 
 function tnpc_save_preset(form) {
 
-    const presetName = tnpc_remove_double_quotes_from(document.querySelector('#options-title').value);
+    const presetName = tnpc_remove_double_quotes_from(document.querySelector('#options-subject').value);
 
     const presetNameModal = new TNPModal({
         title: 'Choose a preset name',
@@ -570,7 +572,7 @@ function tnpc_save_preset(form) {
         clickConfirmOnPressEnter: true,
         onConfirm: function () {
             const inputEl = document.querySelector('#preset_name');
-            document.querySelector('#options-title').value = inputEl.value;
+            document.querySelector('#options-subject').value = inputEl.value;
             tnpc_save(form);
             form.submit();
         }
@@ -654,7 +656,7 @@ function tnpc_remove_double_quotes_from(str) {
 
 function tnpc_update_preset(form) {
 
-    const presetName = tnpc_remove_double_quotes_from(document.querySelector('#options-title').value);
+    const presetName = tnpc_remove_double_quotes_from(document.querySelector('#options-subject').value);
 
     const presetNameModal = new TNPModal({
         title: 'Choose a preset name',
@@ -663,7 +665,7 @@ function tnpc_update_preset(form) {
         clickConfirmOnPressEnter: true,
         onConfirm: function () {
             const inputEl = document.querySelector('#preset_name');
-            document.querySelector('#options-title').value = inputEl.value;
+            document.querySelector('#options-subject').value = inputEl.value;
             tnpc_save(form);
             form.submit();
         }
@@ -712,8 +714,8 @@ jQuery(document).ready(function () {
             // Close all created elements if clicked outside
             jQuery('#newsletter-builder-area-center-frame-content').on('click', function (e) {
                 if (activeInlineElements.length > 0
-                    && !jQuery(e.target).hasClass(className)
-                    && jQuery(e.target).closest('.tnpc-inline-editable-container').length === 0) {
+                        && !jQuery(e.target).hasClass(className)
+                        && jQuery(e.target).closest('.tnpc-inline-editable-container').length === 0) {
                     removeAllActiveElements();
                 }
             });
@@ -741,11 +743,13 @@ jQuery(document).ready(function () {
             var styleAttr = "style='font-family:" + fontFamily + ";font-size:" + fontSize + ";'";
 
             switch (type) {
-                case 'text': {
+                case 'text':
+                {
                     element = "<textarea name='" + newInputName + "' class='" + className + "-textarea' rows='5' " + styleAttr + ">" + value + "</textarea>";
                     break;
                 }
-                case 'title': {
+                case 'title':
+                {
                     element = "<textarea name='" + newInputName + "' class='" + className + "-textarea' rows='2'" + styleAttr + ">" + value + "</textarea>";
                     break;
                 }
@@ -791,15 +795,16 @@ jQuery(document).ready(function () {
             if (container.hasClass('tnpc-row-block')) {
                 var data = {
                     'action': 'tnpc_render',
+                    'id': container.data('id'),
                     'b': container.data('id'),
                     'full': 1,
                     '_wpnonce': tnp_nonce,
                     'options': {
                         'inline_edits': [{
-                            'type': type,
-                            'post_id': postId,
-                            'content': newContent
-                        }]
+                                'type': type,
+                                'post_id': postId,
+                                'content': newContent
+                            }]
                     },
                     'encoded_options': blockContent.data('json')
                 };
@@ -874,3 +879,102 @@ jQuery(document).ready(function () {
     });
 
 })();
+
+// ========================================================= //
+// =================    SEND A TEST    ===================== //
+// ========================================================= //
+
+(function sendATestIIFE($) {
+
+    var testNewsletterWithEmailFormId = '#test-newsletter-form';
+    var testNewsletterWithEmailForm = document.querySelector(testNewsletterWithEmailFormId);
+    testNewsletterWithEmailForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var testEmail = testNewsletterWithEmailForm.querySelector('input[name="email"]').value;
+
+        let form = document.getElementById("tnpc-form");
+        tnpc_save(form);
+
+        form.act.value = "send-test-to-email-address";
+        var input = document.createElement("input");
+        input.setAttribute("type", "hidden");
+        input.setAttribute("name", "test_address_email");
+        input.setAttribute("value", testEmail);
+        form.appendChild(input);
+
+        form.submit();
+    });
+
+})(jQuery);
+
+// ================================================================== //
+// =================    SUBJECT LENGTH ICONS    ===================== //
+// ================================================================== //
+
+(function subjectLengthIconsIIFE($) {
+    var $subjectContainer = $('#tnpc-subject');
+    var $subjectInput = $('#tnpc-subject input');
+    var subjectCharCounterEl = null;
+
+    $subjectInput.on('focusin', function (e) {
+        $subjectContainer.find('img').fadeTo(400, 1);
+    });
+
+    $subjectInput.on('keyup', function (e) {
+        setSubjectCharactersLenght(this.value.length);
+    });
+
+    $subjectInput.on('focusout', function (e) {
+        $subjectContainer.find('img').fadeTo(300, 0);
+    });
+
+    function setSubjectCharactersLenght(length = 0) {
+
+        if (length === 0 && subjectCharCounterEl !== null) {
+            subjectCharCounterEl.remove();
+            subjectCharCounterEl = null;
+            return;
+        }
+
+        if (!subjectCharCounterEl) {
+            subjectCharCounterEl = document.createElement("span");
+            subjectCharCounterEl.style.position = 'absolute';
+            subjectCharCounterEl.style.top = '-18px';
+            subjectCharCounterEl.style.right = $subjectContainer[0].getBoundingClientRect().width - $subjectInput[0].getBoundingClientRect().width + 'px';
+            subjectCharCounterEl.style.color = '#999';
+            subjectCharCounterEl.style.fontSize = '0.8rem';
+            $subjectContainer.find('div')[0].appendChild(subjectCharCounterEl);
+        }
+
+        const word = length === 1 ? 'character' : 'characters';
+        subjectCharCounterEl.innerHTML = `${length} ${word}`;
+    }
+
+})(jQuery);
+
+// ======================================================================= //
+// =================    COMPOSER MODE VIEW SWITCH    ===================== //
+// ======================================================================= //
+
+(function composerModeViewIIFE($) {
+    const activeClass = 'composer-view-mode__item--active';
+    var status = 'desktop';
+
+    $('.composer-view-mode__item[data-view-mode="' + status + '"]').addClass(activeClass);
+
+    $('.composer-view-mode__item').on('click', function () {
+        var $el = $(this);
+
+        if ($el.data('viewMode') === 'desktop') {
+            status = 'desktop';
+            $('.composer-view-mode__item[data-view-mode="desktop"]').addClass(activeClass);
+            $('.composer-view-mode__item[data-view-mode="mobile"]').removeClass(activeClass);
+        } else if ($el.data('viewMode') === 'mobile') {
+            status = 'mobile';
+            $('.composer-view-mode__item[data-view-mode="desktop"]').removeClass(activeClass);
+            $('.composer-view-mode__item[data-view-mode="mobile"]').addClass(activeClass);
+        }
+
+        tnp_view(status);
+    });
+})(jQuery);

@@ -2,34 +2,32 @@
 $size = ['width' => 600, 'height' => 0];
 $total_width = 600 - $options['block_padding_left'] - $options['block_padding_right'];
 $column_width = $total_width / 2 - 10;
+
+$title_style = TNP_Composer::get_style($options, 'title', $composer, 'title');
+$text_style = TNP_Composer::get_style($options, '', $composer, 'text');
 ?>
 <style>
     .title {
-        font-family: <?php echo $title_font_family ?>;
-        font-size: <?php echo $title_font_size ?>px;
-        font-weight: <?php echo $title_font_weight ?>;
-        color: <?php echo $title_font_color ?>;
+        <?php $title_style->echo_css() ?>
         line-height: normal;
         padding: 0 0 10px 0;
     }
 
     .excerpt {
-        font-family: <?php echo $text_font_family ?>;
-        font-size: <?php echo $text_font_size ?>px;
-        font-weight: <?php echo $text_font_weight ?>;
-        color: <?php echo $text_font_color ?>;
+        <?php $text_style->echo_css() ?>
         line-height: 1.5em;
         padding: 0 0 15px 0;
         text-decoration: none;
     }
 
     .meta {
-        font-family: <?php echo $text_font_family ?>;
-        color: <?php echo $text_font_color ?>;
-        font-size: <?php echo round($text_font_size * 0.9) ?>px;
-        font-weight: normal;
+        font-family: <?php echo $text_style->font_family ?>;
+        color: <?php echo $text_style->font_color ?>;
+        font-size: <?php echo round($text_style->font_size * 0.9) ?>px;
+        font-weight: <?php echo $text_style->font_weight ?>;
         padding: 0 0 5px 0;
         line-height: normal !important;
+        font-style: italic;
     }
     .button {
         padding: 15px 0;
@@ -66,6 +64,7 @@ $column_width = $total_width / 2 - 10;
         }
 
         $button_options['button_url'] = $url;
+        $button_options['button_align'] = 'left';
         ?>
 
         <tr>
@@ -85,8 +84,8 @@ $column_width = $total_width / 2 - 10;
                 <?php if ($media) { ?>
                     <table width="<?php echo $column_width ?>" cellpadding="0" cellspacing="0" border="0" align="left" style="margin: 0;" class="responsive">
                         <tr>
-                            <td>
-                                <?php echo TNP_Composer::image($media) ?>
+                            <td class="pb-1">
+                                <?php echo TNP_Composer::image($media, ['class' => 'fluid']) ?>
                             </td>
                         </tr>
                     </table>
@@ -104,17 +103,19 @@ $column_width = $total_width / 2 - 10;
                                     </tr>
                                 <?php } ?>
 
-                                <tr>
-                                    <td align="<?php echo $align_left ?>" dir="<?php echo $dir ?>">
-                                        <a href="<?php $url ?>" data-id="<?php echo $post->ID ?>" inline-class="excerpt" class="tnpc-row-edit tnpc-inline-editable" data-type="text">
-                                            <?php
-                                            echo TNP_Composer::is_post_field_edited_inline($options['inline_edits'], 'text', $post->ID) ?
-                                                    TNP_Composer::get_edited_inline_post_field($options['inline_edits'], 'text', $post->ID) :
-                                                    tnp_post_excerpt($post, $excerpt_length)
-                                            ?>
-                                        </a>
-                                    </td>
-                                </tr>
+                                <?php if ($excerpt_length) { ?>
+                                    <tr>
+                                        <td align="<?php echo $align_left ?>" dir="<?php echo $dir ?>">
+                                            <a href="<?php $url ?>" data-id="<?php echo $post->ID ?>" inline-class="excerpt" class="tnpc-row-edit tnpc-inline-editable" data-type="text">
+                                                <?php
+                                                echo TNP_Composer::is_post_field_edited_inline($options['inline_edits'], 'text', $post->ID) ?
+                                                        TNP_Composer::get_edited_inline_post_field($options['inline_edits'], 'text', $post->ID) :
+                                                        tnp_post_excerpt($post, $excerpt_length)
+                                                ?>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
 
                                 <?php if ($show_read_more_button) { ?>
                                     <tr>

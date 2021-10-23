@@ -8,7 +8,6 @@
 $default_options = array(
     'text' => 'An Awesome Title',
     'align' => 'center',
-    'block_background' => '',
     'font_family' => '',
     'font_size' => '',
     'font_color' => '',
@@ -16,24 +15,19 @@ $default_options = array(
     'block_padding_left' => 15,
     'block_padding_right' => 15,
     'block_padding_bottom' => 15,
-    'block_padding_top' => 15
+    'block_padding_top' => 15,
+    'block_background' => ''
 );
 $options = array_merge($default_options, $options);
 
-$title_font_family = empty($options['font_family']) ? $global_title_font_family : $options['font_family'];
-$title_font_size = empty($options['font_size']) ? $global_title_font_size : $options['font_size'];
-$title_font_color = empty($options['font_color']) ? $global_title_font_color : $options['font_color'];
-$title_font_weight = empty($options['font_weight']) ? $global_title_font_weight : $options['font_weight'];
+$title_style = TNP_Composer::get_title_style($options, '', $composer);
 
 ?>
 
 <style>
     .title {
+        <?php $title_style->echo_css()?>
         padding: 0;
-        font-size: <?php echo $title_font_size ?>px;
-        font-family: <?php echo $title_font_family ?>;
-        font-weight: <?php echo $title_font_weight ?>;
-        color: <?php echo $title_font_color ?>;
         line-height: normal !important;
         letter-spacing: normal;
     }

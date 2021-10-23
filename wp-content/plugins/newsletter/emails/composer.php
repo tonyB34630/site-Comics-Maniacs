@@ -16,6 +16,7 @@ $email = null;
 if ($controls->is_action()) {
 
     if ($controls->is_action('save_preset')) {
+        $this->admin_logger->info('Saving new preset: ' . $controls->data['subject']);
         // Create new preset email
         $email = new stdClass();
         TNP_Composer::update_email($email, $controls);
@@ -23,13 +24,6 @@ if ($controls->is_action()) {
         $email->editor = NewsletterEmails::EDITOR_COMPOSER;
         $email->subject = $module->sanitize_preset_name($controls->data['subject']);
         $email->message = $controls->data['message'];
-
-	    //Save Global Style options
-	    foreach ($controls->data as $name => $value) {
-		    if (strpos($name, 'options_composer_') === 0) {
-			    $email->options[substr($name, 8)] = $value;
-		    }
-	    }
 
         $email = Newsletter::instance()->save_email($email);
 
@@ -40,7 +34,7 @@ if ($controls->is_action()) {
     }
 
     if ($controls->is_action('update_preset') && !empty($_POST['preset_id'])) {
-
+        $this->admin_logger->info('Updating preset ' . $_POST['preset_id']);
         $email = Newsletter::instance()->get_email((int) $_POST['preset_id']);
         TNP_Composer::update_email($email, $controls);
 
@@ -48,25 +42,19 @@ if ($controls->is_action()) {
             $email->subject = $module->sanitize_preset_name($controls->data['subject']);
         }
 
+        // We store only the blocks, after the TNP_Composer::update_email(...) call we have the full HTML
         $email->message = $controls->data['message'];
 
         $email = Newsletter::instance()->save_email($email);
 
-        //Save Global Style options
-	    foreach ($controls->data as $name => $value) {
-		    if (strpos($name, 'options_composer_') === 0) {
-			    $email->options[substr($name, 8)] = $value;
-		    }
-	    }
-
         $redirect = $module->get_admin_page_url('composer');
         $controls->js_redirect($redirect);
-
-        return;
     }
 
 
     if (empty($_GET['id'])) {
+
+        $this->admin_logger->info('Saving new newsletter from composer');
 
         // Create a new email
         $email = new stdClass();
@@ -84,7 +72,7 @@ if ($controls->is_action()) {
 
         $email = Newsletter::instance()->save_email($email);
     } else {
-
+        $this->admin_logger->info('Saving newsletter ' . $_GET['id'] . ' from composer');
         $email = Newsletter::instance()->get_email($_GET['id']);
         TNP_Composer::update_email($email, $controls);
         $email = Newsletter::instance()->save_email($email);
@@ -92,10 +80,23 @@ if ($controls->is_action()) {
 
     $controls->add_message_saved();
 
-
     if ($controls->is_action('test')) {
         $module->send_test_email($module->get_email($email->id), $controls);
     }
+
+	if ( $controls->is_action( 'send-test-to-email-address' ) ) {
+		$custom_email = sanitize_email( $_POST['test_address_email'] );
+		if ( ! empty( $custom_email ) ) {
+			try {
+				$message            = $module->send_test_newsletter_to_email_address( $module->get_email( $email->id ), $custom_email );
+				$controls->messages .= $message;
+			} catch ( Exception $e ) {
+				$controls->errors = __( 'Newsletter should be saved before send a test', 'newsletter' );
+			}
+		} else {
+			$controls->errors = __( 'Empty email address', 'newsletter' );
+		}
+	}
 
     if ($controls->is_action('preview')) {
         $redirect = $module->get_admin_page_url('edit');
@@ -105,7 +106,6 @@ if ($controls->is_action()) {
 
     $controls->js_redirect($redirect . '&id=' . $email->id);
 
-    return;
 } else {
 
     if (!empty($_GET['id'])) {
@@ -114,7 +114,6 @@ if ($controls->is_action()) {
 }
 
 TNP_Composer::prepare_controls($controls, $email);
-
 ?>
 
 <div id="tnp-notification">

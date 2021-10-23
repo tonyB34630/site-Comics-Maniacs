@@ -510,10 +510,10 @@ if(!function_exists('apollo13framework_bricks_gallery_individual_look')){
 	/**
 	 * Prepares CSS specially for each album
 	 *
-	 * @param null|int $id post ID
+	 * @param int $id post ID
 	 * @param array    $args arguments for generating CSS
 	 */
-	function apollo13framework_bricks_gallery_individual_look($id = null, $args){
+	function apollo13framework_bricks_gallery_individual_look($id, $args){
 		global $apollo13framework_a13;
 		$css = '';
 

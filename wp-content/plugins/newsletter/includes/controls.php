@@ -275,7 +275,7 @@ class NewsletterControls {
     );
 
     /**
-     * 
+     *
      * @param array $options
      */
     function __construct($options = null) {
@@ -313,6 +313,11 @@ class NewsletterControls {
                     if ($type === 'array') {
                         if (!isset($this->data[$name]))
                             $this->data[$name] = [];
+                    }
+                    if ($type === 'checkbox') {
+                        if (!isset($this->data[$name])) {
+                            $this->data[$name] = 0;
+                        }
                     }
                 }
             }
@@ -856,18 +861,23 @@ class NewsletterControls {
     }
 
     /**
-     * General button.
-     * 
-     * @param type $action
-     * @param type $label
-     * @param type $attrs
+     * General button. Attributes:
+     * - id: the element HTML id
+     * - confirm: if string the text is shown in a confirmation message, if true shows a standard confirm message
+     * - icon: the font awesome icon name (fa-xxx)
+     * - style: the CSS style
+     * - data: free data associated to the button click ($controls->button_data) for example to pass the element ID from a list of elements
+     *
+     * @param string $action
+     * @param string $label
+     * @param array $attrs
      */
     function btn($action, $label, $attrs = []) {
         echo '<button class="button-primary tnpc-button"';
         if (isset($attrs['id'])) {
             echo ' id="', esc_attrs($attrs['id']), '"';
         }
-        $onclick = "this.form.act.value='" . esc_attr(esc_js($action)) . "';";
+        $onclick = "this.form.act.value='" . esc_attr(esc_js(trim($action))) . "';";
         if (!empty($attrs['data'])) {
             $onclick .= "this.form.btn.value='" . esc_attr(esc_js($attrs['data'])) . "';";
         }
@@ -897,6 +907,17 @@ class NewsletterControls {
         echo '</button>';
     }
 
+    /**
+     * Creates a link looking lie a standard button. Attributes:
+     * - title: the link "title" HTML attribute
+     * - target: the link "target" HTML attribute
+     * - icon: the font awesome icon name (fa-xxx)
+     * - style: the CSS style
+     * 
+     * @param string $url
+     * @param string $label
+     * @param array $attrs
+     */
     function btn_link($url, $label, $attrs = []) {
         echo '<a href="', esc_attr($url), '" class="button-primary tnpc-button"';
         if (!empty($attrs['style'])) {
@@ -1013,6 +1034,9 @@ class NewsletterControls {
         $this->btn($action, __('Test', 'newsletter'), ['icon' => 'fa-vial']);
     }
 
+    /**
+     * @deprecated
+     */
     function button_primary($action, $label, $function = null) {
         if ($function != null) {
             echo '<button class="button-primary" onclick="this.form.act.value=\'' . esc_attr($action) . '\';' . esc_attr($function) . '">', $label, '</button>';
@@ -1021,6 +1045,9 @@ class NewsletterControls {
         }
     }
 
+    /**
+     * @deprecated
+     */    
     function button_confirm($action, $label, $message = '', $data = '') {
         $this->btn($action, $label, ['data' => $data, 'confirm' => $message]);
     }
@@ -1040,7 +1067,7 @@ class NewsletterControls {
         echo '</textarea>';
     }
 
-    function wp_editor($name, $settings = array()) {
+    function wp_editor($name, $settings = []) {
 
         add_filter('mce_buttons', function ($mce_buttons) {
             $mce_buttons[] = 'wp_add_media';
@@ -1052,11 +1079,10 @@ class NewsletterControls {
 
         $value = $this->get_value($name);
         wp_editor($value, $name, array_merge(array(
-            'tinymce' => array('content_css' => plugins_url('newsletter') . '/css/wp-editor.css?ver=' . filemtime(NEWSLETTER_DIR . '/css/wp-editor.css')),
+            'tinymce' => array('content_css' => plugins_url('newsletter') . '/admin/wp-editor.css?ver=' . NEWSLETTER_VERSION),
             'textarea_name' => 'options[' . esc_attr($name) . ']',
             'wpautop' => false
                         ), $settings));
-        //echo '<p class="description">You can install <a href="https://wordpress.org/plugins/tinymce-advanced/" target="_blank">TinyMCE Advanced</a> for advanced editing features</p>';
     }
 
     function textarea($name, $width = '100%', $height = '50') {
@@ -1113,6 +1139,12 @@ class NewsletterControls {
         }
     }
 
+    /**
+     * Standard checkbox, when not checked no value is transmitted (checkbox2).
+     * 
+     * @param string $name
+     * @param string $label
+     */
     function checkbox($name, $label = '') {
         if ($label != '') {
             echo '<label>';
@@ -1127,13 +1159,19 @@ class NewsletterControls {
         }
     }
 
+    /**
+     * Checkbox with a hidden field to transmit 1 or 0 even when the checkbox is not checked.
+     * 
+     * @param string $name
+     * @param string $label
+     */
     function checkbox2($name, $label = '') {
         if ($label != '') {
             echo '<label>';
         }
         echo '<input type="checkbox" id="' . esc_attr($name) . '" onchange="document.getElementById(\'' . esc_attr($name) . '_hidden\').value=this.checked?\'1\':\'0\'"';
         if (!empty($this->data[$name])) {
-            echo ' checked="checked"';
+            echo ' checked';
         }
         echo '>';
         if ($label != '') {
@@ -1240,7 +1278,7 @@ class NewsletterControls {
 
     /** A list of all lists defined each one with a checkbox to select it. An array
      * of ID of all checked lists is submitted.
-     * 
+     *
      * @param string $name
      */
     function lists($name = 'lists') {
@@ -1873,17 +1911,18 @@ tnp_controls_init();
             $buffer = 'none';
         } else {
             $buffer = date_i18n(get_option('date_format') . ' ' . get_option('time_format'), $time + get_option('gmt_offset') * 3600);
-        }
-        if ($now) {
-            $buffer .= ' (now: ' . gmdate(get_option('date_format') . ' ' .
-                            get_option('time_format'), time() + get_option('gmt_offset') * 3600);
-            $buffer .= ')';
-        }
-        if ($left) {
-            if ($time - time() < 0) {
-                $buffer .= ', ' . (time() - $time) . ' seconds late';
-            } else {
-                $buffer .= ', ' . gmdate('H:i:s', $time - time()) . ' left';
+
+            if ($now) {
+                $buffer .= ' (now: ' . gmdate(get_option('date_format') . ' ' .
+                                get_option('time_format'), time() + get_option('gmt_offset') * 3600);
+                $buffer .= ')';
+            }
+            if ($left) {
+                if ($time - time() < 0) {
+                    $buffer .= ', ' . (time() - $time) . ' seconds late';
+                } else {
+                    $buffer .= ', ' . gmdate('H:i:s', $time - time()) . ' left';
+                }
             }
         }
         return $buffer;
@@ -1905,7 +1944,7 @@ tnp_controls_init();
      * @param string $label
      */
     static function help($url, $label = '') {
-        echo '<a href="', $url, '" target="_blank" title="', esc_attr($label), '"><i class="fas fa-question-circle-o"></i></a>';
+        echo '<a href="', $url, '" target="_blank" title="', esc_attr($label), '"><i class="fas fa-question-circle"></i></a>';
     }
 
     static function idea($url, $label = '') {
@@ -2031,8 +2070,14 @@ tnp_controls_init();
      * Adds the fields used by the composer (version 2) in the page form.
      */
     function composer_fields_v2($name = 'message') {
+
+        // The composer, on saving, fills in those fields
         $this->hidden('subject');
         $this->hidden('message');
+        $this->hidden('options_preheader');
+
+        //$preheader_value = $this->get_value('options_preheader');
+        //    echo '<input name="options[preheader]" id="options-preheader" type="hidden" value="', esc_attr($preheader_value), '">';
     }
 
     function composer_load_v2($show_subject = false, $show_test = true, $context_type = '') {
@@ -2040,24 +2085,22 @@ tnp_controls_init();
         global $tnpc_show_subject;
         $tnpc_show_subject = $show_subject;
 
-        echo "<link href='" . plugins_url('newsletter') . "/emails/tnp-composer/_css/newsletter-builder-v2.css?ver=" . NEWSLETTER_VERSION . "' rel='stylesheet' type='text/css'>";
+        echo "<link href='", plugins_url('newsletter'), "/emails/tnp-composer/_css/newsletter-builder-v2.css?ver=" . NEWSLETTER_VERSION . "' rel='stylesheet' type='text/css'>";
 
-        wp_enqueue_style('tnp-modal-style', plugins_url('newsletter') . '/emails/tnp-composer/_css/tnp-modal.css', array(), NEWSLETTER_VERSION);
-        wp_enqueue_style('tnp-toast-style', plugins_url('newsletter') . '/emails/tnp-composer/_css/tnp-toast.css', array(), NEWSLETTER_VERSION);
         $controls = $this;
         include NEWSLETTER_DIR . '/emails/tnp-composer/index-v2.php';
     }
 
     function subject($name) {
         $value = $this->get_value($name);
-        echo '<div style="position: relative"><input size="80" id="options-', esc_attr($name), '" style="font-size: 14px; font-family: monospace;" name="options[' . esc_attr($name) . ']" type="text" placeholder="" value="';
+        // Leave the ID with this prefix!
+        echo '<div style="position: relative"><input size="80" id="options-subject-', esc_attr($name), '" name="options[' . esc_attr($name) . ']" type="text" placeholder="" value="';
         echo esc_attr($value);
         echo '">';
-        echo '&nbsp;<i class="far fa-lightbulb" onclick="tnp_suggest_subject()"></i>';
+        echo '&nbsp;<i class="far fa-lightbulb tnp-suggest-subject" data-tnp-modal-target="#subject-ideas-modal"></i>';
 
-//        echo '<img src="', NEWSLETTER_URL, '/images/subject/android.png" style="position: absolute; left: 330px; top: 22px; display: block">';
-//        echo '<img src="', NEWSLETTER_URL, '/images/subject/iphone.png" style="position: absolute; left: 380px; top: 22px; display: block">';
-//        echo '<img src="', NEWSLETTER_URL, '/images/subject/gmail.png" style="position: absolute; left: 400px; top: 22px; display: block">';
+        echo '<img src="', plugins_url('newsletter'), '/admin/images/subject/android.png" style="position: absolute; width: 16px; left: 330px; top: 25px; display: block; opacity: 0">';
+        echo '<img src="', plugins_url('newsletter'), '/admin/images/subject/iphone.png" style="position: absolute; width: 16px; left: 380px; top: 25px; display: block; opacity: 0">';
         echo '</div>';
     }
 

@@ -781,14 +781,21 @@ a.to-top:hover::after {
 html.elementor-html #mid:hover{
 	z-index: 20;
 }
+#masthead,
 .container-elementor-header{
 	position: relative;
 	z-index: 11;
 }
+#colophon,
 .container-elementor-footer{
 	position: relative;
 	z-index: 10;
 }
+/* Elementor 3.x fix */
+.elementor-element.elementor-products-grid ul.products .grid-master {
+	display: none;
+}
+
 /* lightGallery ligthbox */
 .lg-sub-html{
 	background-color: transparent;

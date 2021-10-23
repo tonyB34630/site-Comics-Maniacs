@@ -63,8 +63,8 @@ if ($layout == 'full') {
     $options = array_merge(array('block_padding_left' => 15, 'block_padding_right' => 15), $options);
 }
 
-$title_style = TNP_Composer::get_style($options, 'title', $composer, 'title');
-$text_style = TNP_Composer::get_style($options, '', $composer, 'text');
+$title_style = TNP_Composer::get_title_style($options, 'title', $composer);
+$text_style = TNP_Composer::get_text_style($options, '', $composer);
 
 $layout = $options['layout'];
 

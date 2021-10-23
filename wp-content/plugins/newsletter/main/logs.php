@@ -35,6 +35,7 @@ if ($controls->is_action('delete_logs')) {
 
         <form method="post" action="">
             <?php $controls->init(); ?>
+           
 
             <ul class="tnp-log-files">
                 <?php

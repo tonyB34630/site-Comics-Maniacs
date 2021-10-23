@@ -30,6 +30,10 @@ $options = array_merge($default_options, $options);
     });
 </script>
 
+<p>
+    <a href="https://www.thenewsletterplugin.com/documentation/newsletters/newsletter-tags/"
+                       target="_blank">You can use tags to inject subscriber fields</a>.
+</p>
 <table class="form-table">
     <tr>
         <td>

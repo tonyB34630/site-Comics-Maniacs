@@ -12,9 +12,8 @@ if ($controls->is_action('activate')) {
         $controls->errors .= __('Error while activating:', 'newsletter') . " " . $result->get_error_message();
     } else {
         wp_clean_plugins_cache(false);
-        delete_transient("tnp_extensions_json");
+        $this->clear_extensions_cache();
         $controls->js_redirect('admin.php?page=newsletter_extensions_index');
-        wp_die();
     }
 }
 

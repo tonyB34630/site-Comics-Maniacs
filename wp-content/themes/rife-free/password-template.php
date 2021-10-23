@@ -15,7 +15,9 @@ global $apollo13framework_a13;
 if($apollo13framework_a13->get_option( 'page_password_template_type' ) === 'custom' ){
 	$_page = $apollo13framework_a13->get_option( 'page_password_template' );
 
-	define('A13FRAMEWORK_CUSTOM_PASSWORD_PROTECTED', true );
+	if( !defined( 'A13FRAMEWORK_CUSTOM_PASSWORD_PROTECTED' ) ){
+		define('A13FRAMEWORK_CUSTOM_PASSWORD_PROTECTED', true );
+	}
 
 	//make query
 	$query = new WP_Query( array('page_id' => $_page ) );

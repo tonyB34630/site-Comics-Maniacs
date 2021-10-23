@@ -1,27 +1,22 @@
+<?php
+$text_style = TNP_Composer::get_text_style($options, '', $composer);
+?>
 <style>
     .text {
-        font-family: <?php echo $text_font_family ?>;
-        font-size: <?php echo $text_font_size ?>px;
-        font-weight: <?php echo $text_font_weight ?>;
-        color: <?php echo $text_font_color ?>;
+        <?php $text_style->echo_css(0.9) ?>
         text-decoration: none;
         line-height: normal;
         padding: 10px;
     }
 
     .title {
-        font-family: <?php echo $text_font_family ?>;
-        font-size: <?php echo $text_font_size * 1.2 ?>px;
-        font-weight: <?php echo $text_font_weight ?>;
-        color: <?php echo $text_font_color ?>;
+        <?php $text_style->echo_css(1.2) ?>
         text-decoration: none;
         line-height: normal;
     }
 
     .logo {
-        font-family: <?php echo $text_font_family ?>;
-        font-weight: <?php echo $text_font_weight ?>;
-        color: <?php echo $text_font_color ?>;
+        <?php $text_style->echo_css() ?>
         line-height: normal !important;
     }
 </style>
@@ -32,13 +27,14 @@
             <?php if ($media) { ?>
                 <?php echo TNP_Composer::image($media) ?>
             <?php } else { ?>
-                <a href="<?php echo home_url() ?>" target="_blank" inline-class="title">
-                    <?php echo esc_attr($info['header_title']) ?>
-                </a>
+            [logo]
             <?php } ?>
         </td>
-        <td width="50%" align="center" inline-class="text">
-            <?php echo esc_html($info['header_sub']) ?>
+        <td width="50%" align="center" style="padding: 10px">
+            <a href="<?php echo home_url() ?>" target="_blank" inline-class="title">
+                <?php echo esc_attr($info['header_title']) ?>
+            </a>
+            <div inline-class="text"><?php echo esc_attr($info['header_sub']) ?></div>
         </td>
     </tr>
 </table>

@@ -1262,7 +1262,7 @@ jQuery.noConflict();
 
 							if(!!parseInt(G.close_mobile_menu_on_click, 10)){
 								//all menu items that are not parent
-								menu_list.children().not(sub_parents).off('click.mobile');
+								menu_list.find('li').not(sub_parents).off('click.mobile');
 							}
 						}
 						else{
@@ -1280,7 +1280,7 @@ jQuery.noConflict();
 							}
 							if(!!parseInt(G.close_mobile_menu_on_click, 10)){
 								//all menu items that are not parent
-								menu_list.children().not(sub_parents).off('click.mobile').on('click.mobile', function(){
+								menu_list.find('li').not(sub_parents).off('click.mobile').on('click.mobile', function(){
 									menu_init.trigger('click');
 								});
 							}

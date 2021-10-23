@@ -140,7 +140,7 @@ if ($controls->is_action('update_inactive')) {
                             </tr>
                         </thead>
                         <tr>
-                            <td><?php _e('Total collected emails', 'newsletter') ?></td>
+                            <td><?php _e('Total', 'newsletter') ?></td>
                             <td>
                                 <?php echo $wpdb->get_var("select count(*) from " . NEWSLETTER_USERS_TABLE); ?>
                             </td>
@@ -190,7 +190,10 @@ if ($controls->is_action('update_inactive')) {
                             </td>
                         </tr>
                         <tr>
-                            <td><?php _e('Inactive since', 'newsletter') ?></td>
+                            <td>
+                                <?php _e('Inactive since', 'newsletter') ?>
+                                <?php $controls->field_help('https://www.thenewsletterplugin.com/documentation/subscribers-and-management/subscribers/#inactive')?>
+                            </td>
                             <td>
                                 <?php
                                 $controls->select('inactive_time', array(
@@ -208,7 +211,7 @@ if ($controls->is_action('update_inactive')) {
                                     '120' => '10 ' . __('years', 'newsletter')
                                 ))
                                 ?>
-                                to
+                                add to
                                 <?php $controls->lists_select('list_inactive'); ?>
 
                             </td>
